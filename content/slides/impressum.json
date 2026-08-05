@@ -1,0 +1,14 @@
+{
+  "slideId": "impressum",
+  "title": "Impressum",
+  "slideType": "legal_impressum",
+  "spatial": {
+    "x": 0,
+    "y": -4000,
+    "z": 0,
+    "scale": 1,
+    "rotateX": 0,
+    "rotateY": 0,
+    "rotateZ": 0
+  }
+}

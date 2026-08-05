@@ -1,0 +1,61 @@
+{
+  "slideId": "strategy",
+  "title": "Strategy",
+  "spatial": {
+    "x": -4000,
+    "y": 0,
+    "z": 4000,
+    "scale": 1,
+    "rotateX": 0,
+    "rotateY": 0,
+    "rotateZ": 0
+  },
+  "blocks": [
+    {
+      "rows": [
+        {
+          "rowId": "strategy-no",
+          "heading": "NO!",
+          "text": "Once there was a company, its boss decided that the company should invest in brand communication. Now the company has a new logo and all employees have a new screensaver with the new mission, vision and values.",
+          "image": "/uploads/No-1024x800.png"
+        },
+        {
+          "rowId": "strategy-storytime",
+          "heading": "Storytelling",
+          "text": "People talk about unusual events. Things that they have never witnessed before. These events can reach from employees greeting the customers in an uncommon / charming way to hiding messages in the packaging of your products. There are many possibilities and being playful and open to experiments is key. There is never just one story about your brand - there are many stories. All of them shape the character of your brand and contribute to its personality. Luckily, i'm not the first person that has thought about this. There are frameworks to break down your overall Brand story into characters and roles for each department and employee.",
+          "image": "/uploads/Dragon_red-1024x800.png",
+          "isDarkRow": true
+        },
+        {
+          "rowId": "strategy-shortcuts",
+          "heading": "Shortcuts Exist",
+          "text": "They are small or big gaps in your communication that can be filled with experiences that you want your customer to have in relation to your brand.",
+          "image": "/images/Shortcuts-Background_red-1024x770.png",
+          "isDarkRow": false
+        },
+        {
+          "rowId": "strategy-perfect",
+          "heading": "Perfect is not good enough",
+          "text": "Or too good. Many brands are very generic. They are all the best in their market, have leading technology, are innovative thus successful and are endorsed by beautiful people with the perfect white smile. Too many brands are competing for perfection. What makes your brand interesting is the complexity of its personality, the edges and unexpected features and surprises.",
+          "image": "/images/Too-Good_red_pattern.png",
+          "isDarkRow": true
+        },
+        {
+          "rowId": "strategy-humble",
+          "heading": "Underselling and beeing humble",
+          "text": "Making promises might get you some new customers. Keeping promises might help you keep your customers. Surprising them after they already chose you will turn into ambassadors for your brand.",
+          "image": "/images/Humble-1-1024x770.png",
+          "isDarkRow": false
+        },
+        {
+          "rowId": "strategy-functions",
+          "heading": "Emotional and sociological functions",
+          "text": "Everything your brand offers has a function in society, a purpose so to speak. Sometimes there are similar products that serve similar purposes. Sometimes very different products can serve the same purpose. Discovering these similarities takes a wild interpretation. It also provides a useful framework to grow brands into new markets.",
+          "image": "/images/Functions_black.png",
+          "isDarkRow": true
+        }
+      ],
+      "_template": "content_row_module"
+    }
+  ]
+}

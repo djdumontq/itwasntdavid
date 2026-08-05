@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: itwasntdavid-app
+    # Use host network mode on Linux to share localhost ports (5176 & 4004) natively.
+    # This resolves TinaCMS binding to localhost inside the container.
+    network_mode: "host"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+      - CI=true

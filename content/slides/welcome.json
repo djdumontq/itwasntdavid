@@ -1,0 +1,70 @@
+{
+  "slideId": "welcome",
+  "title": "Welcome",
+  "slideType": "welcome_chat",
+  "spatial": {
+    "x": 0,
+    "y": 0,
+    "z": 12000,
+    "scale": 1,
+    "rotateX": 0,
+    "rotateY": 0,
+    "rotateZ": 0
+  },
+  "chatMessages": [
+    {
+      "name": "ms1",
+      "msg": "Hi there!",
+      "delay": 0,
+      "align": "left"
+    },
+    {
+      "name": "ms1",
+      "msg": "I'm David",
+      "delay": 1000,
+      "align": "left"
+    },
+    {
+      "name": "ms2",
+      "msg": "I consult companies and freelancers on their brand communication",
+      "delay": 1500,
+      "align": "left"
+    },
+    {
+      "name": "ms3",
+      "msg": "My focus is on strategy and storytelling",
+      "delay": 1800,
+      "align": "left"
+    },
+    {
+      "name": "ms2",
+      "msg": "...but i do implementations too",
+      "delay": 1800,
+      "align": "left"
+    },
+    {
+      "name": "ms4",
+      "msg": "How can I help you?",
+      "delay": 1800,
+      "align": "left"
+    },
+    {
+      "name": "ms5",
+      "msg": "I would like to know more about <a href='#strategy'>communication strategy</a>",
+      "delay": 1000,
+      "align": "right"
+    },
+    {
+      "name": "ms5",
+      "msg": "I would like to know more about <a href='#storytelling'>Storytelling</a>",
+      "delay": 1200,
+      "align": "right"
+    },
+    {
+      "name": "ms5",
+      "msg": "I would like to get in <a href='#contact'>touch</a>",
+      "delay": 1200,
+      "align": "right"
+    }
+  ]
+}

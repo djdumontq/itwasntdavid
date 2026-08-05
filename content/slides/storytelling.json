@@ -1,0 +1,30 @@
+{
+  "slideId": "storytelling",
+  "title": "Storytelling",
+  "slideType": "content_blocks",
+  "spatial": {
+    "x": 4000,
+    "y": 0,
+    "z": 4000,
+    "scale": 1,
+    "rotateX": 0,
+    "rotateY": 0,
+    "rotateZ": 0
+  },
+  "contentRows": [
+    {
+      "rowId": "storytelling-no",
+      "heading": "NO!",
+      "text": "Once there was a company, its boss decided that the company should invest in brand communication. Now the company has a new logo and all employees have a new screensaver with the new mission, vision and values.",
+      "image": "/images/No-1024x800.png",
+      "isDarkRow": false
+    },
+    {
+      "rowId": "strategy-perfect",
+      "heading": "Storytelling",
+      "text": "People talk about unusual events. Things that they have never witnessed before. These events can reach from employees greeting the customers in an uncommon / charming way to hiding messages in the packaging of your products. There are many possibilities and being playful and open to experiments is key. There is never just one story about your brand - there are many stories. All of them shape the character of your brand and contribute to its personality. Luckily, i'm not the first person that has thought about this. There are frameworks to break down your overall Brand story into characters and roles for each department and employee.",
+      "image": "/images/Dragon_red-1024x800.png",
+      "isDarkRow": true
+    }
+  ]
+}
