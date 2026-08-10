@@ -137,11 +137,28 @@ html, body {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+}
+
+/* Paper texture noise overlay on top of illustrations */
+.pictureside::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/images/paper.png');
+  background-repeat: repeat;
+  mix-blend-mode: multiply; /* Blends the paper grain and fibers directly over the image */
+  opacity: 0.85; /* Visual density of the paper overlay */
+  pointer-events: none; /* Allows pointer interactions to pass through to the image */
+  z-index: 2;
 }
 
 .rowdecoration {
-  max-width: 250px;
-  max-height: 250px;
+  max-width: 340px;
+  max-height: 340px;
   height: auto;
   width: auto;
   display: block;
@@ -149,6 +166,8 @@ html, body {
   opacity: 0.85;
   box-shadow: none;
   transition: transform 0.4s ease, opacity 0.4s ease;
+  position: relative;
+  z-index: 1;
 }
 
 .rowdecoration:hover {
