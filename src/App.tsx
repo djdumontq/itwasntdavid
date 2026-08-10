@@ -74,6 +74,33 @@ export default function App() {
     return () => window.removeEventListener("hashchange", handleHashChange);
   }, []);
 
+  // Dynamic SEO Title and Meta Description updates based on active slide
+  useEffect(() => {
+    // 1. Format dynamic title
+    const slideTitle = slidesMap[activeId]?.title || activeId;
+    const cleanTitle = slideTitle.charAt(0).toUpperCase() + slideTitle.slice(1);
+    document.title = `David Dumont | ${cleanTitle}`;
+
+    // 2. Select optimized description
+    const descriptions: Record<string, string> = {
+      welcome: "Brand consultant helping leaders design honest strategies, write compelling stories, and deploy self-hosted digital infrastructure.",
+      strategy: "Beyond the 'New Logo' Fallacy. Explore David Dumont's approach to strategic brand development, closing communication gaps, and emotional strategy.",
+      ideology: "There is no cloud—just someone else's computer. Explore David Dumont's philosophy on digital sovereignty, data privacy, and hosting consulting.",
+      implementation: "Tools I trust. How David Dumont builds clean, Git-backed systems with open-source tech like TinaCMS, NocoBase, and Docmost.",
+      about: "Meet David Dumont. Learn about his career from traditional marketing agency lead to open-source self-hosting consultant.",
+      contact: "Get in touch with David Dumont. Connect via email, LinkedIn, or schedule a consulting session.",
+      imprint: "Legal imprint and contact details for David Dumont."
+    };
+
+    let metaDesc = document.querySelector('meta[name="description"]');
+    if (!metaDesc) {
+      metaDesc = document.createElement('meta');
+      metaDesc.setAttribute('name', 'description');
+      document.head.appendChild(metaDesc);
+    }
+    metaDesc.setAttribute('content', descriptions[activeId] || descriptions.welcome);
+  }, [activeId, slidesMap]);
+
   // Fetch GraphQL payload for active slide without clearing payload state
   useEffect(() => {
     const filename = `${activeId}.json`;

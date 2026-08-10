@@ -118,6 +118,7 @@
   height: 44px;
   border-radius: 50%;
   object-fit: cover;
+  object-position: center 15%;
   border: 2px solid #ffffff;
   flex-shrink: 0;
   box-shadow: 0 3px 10px rgba(44, 66, 81, 0.15);
