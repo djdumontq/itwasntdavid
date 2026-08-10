@@ -97,15 +97,17 @@ export const WelcomeChat: React.FC<WelcomeChatProps> = ({
                     } ${isCurrentlyTyping ? "is-typing-state" : "is-text-state"}`}
                   >
                     <div className="message-content">
-                      <img
-                        src="/images/profile-small.png"
-                        onError={(e) => {
-                          (e.target as HTMLImageElement).src =
-                            "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'><circle cx='20' cy='20' r='20' fill='%232C4251'/><text x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' fill='%23FDFFFC' font-size='16' font-family='sans-serif'>DD</text></svg>";
-                        }}
-                        className={`profpic ${isCurrentlyTyping ? "typing-avatar" : ""}`}
-                        alt="David Dumont"
-                      />
+                      {item.align === "left" && (
+                        <img
+                          src="/images/profile-small.png"
+                          onError={(e) => {
+                            (e.target as HTMLImageElement).src =
+                              "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'><circle cx='20' cy='20' r='20' fill='%232C4251'/><text x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' fill='%23FDFFFC' font-size='16' font-family='sans-serif'>DD</text></svg>";
+                          }}
+                          className={`profpic ${isCurrentlyTyping ? "typing-avatar" : ""}`}
+                          alt="David Dumont"
+                        />
+                      )}
                       <div className="message-bubble">
                         {isCurrentlyTyping ? (
                           <div className="typing-indicator-inner">

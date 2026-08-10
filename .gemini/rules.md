@@ -37,7 +37,6 @@ pnpm dev
 Each 3D spatial slide is saved as an independent JSON document in `content/pages/`:
 - `content/pages/welcome.json` (Spatial $X: 0, Y: 0, Z: 12000$)
 - `content/pages/strategy.json` (Spatial $X: -4000, Y: 0, Z: 4000$)
-- `content/pages/storytelling.json` (Spatial $X: 4000, Y: 0, Z: 4000$)
 - `content/pages/contact.json` (Spatial $X: 0, Y: 4000, Z: 4000$)
 - `content/pages/impressum.json` (Spatial $X: 0, Y: -4000, Z: 0$)
 

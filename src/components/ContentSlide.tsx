@@ -16,6 +16,7 @@ interface ContentSlideProps {
 export const ContentSlide: React.FC<ContentSlideProps> = ({ title, rows }) => {
   return (
     <div className="container">
+      {title && <div className="poster-bg-text">{title}</div>}
       <h1>{title}</h1>
       {rows &&
         rows.map((row, idx) => (
@@ -26,7 +27,10 @@ export const ContentSlide: React.FC<ContentSlideProps> = ({ title, rows }) => {
           >
             <div className="textside">
               {row.heading && <h2>{row.heading}</h2>}
-              {row.text && <p>{row.text}</p>}
+              {row.text &&
+                row.text.split("\n\n").map((para, pIdx) => (
+                  <p key={pIdx}>{para}</p>
+                ))}
             </div>
             {row.image && (
               <div className="pictureside">

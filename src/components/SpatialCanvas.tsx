@@ -3,7 +3,7 @@ import { SlideBlockRenderer } from "./SlideBlockRenderer";
 import { WelcomeChat, ChatMessage } from "./WelcomeChat";
 import { ContentSlide, ContentRow } from "./ContentSlide";
 import { ContactSlide, ContactItem } from "./ContactSlide";
-import { ImpressumSlide } from "./ImpressumSlide";
+import { ImprintSlide } from "./ImprintSlide";
 import { tinaField } from "tinacms/dist/react";
 
 export interface SpatialData {
@@ -112,7 +112,7 @@ export const SpatialCanvas: React.FC<SpatialCanvasProps> = ({
                     <SlideBlockRenderer
                       key={block.id || bIdx}
                       block={block}
-                      slideTitle={slide.title}
+                      slideTitle={bIdx === 0 ? slide.title : undefined}
                       onNavigateSlide={onNavigateSlide}
                     />
                   ))
@@ -141,7 +141,7 @@ export const SpatialCanvas: React.FC<SpatialCanvasProps> = ({
                     )}
 
                     {slide.slideType === "legal_impressum" && (
-                      <ImpressumSlide title={slide.title} body={slide.body} />
+                      <ImprintSlide title={slide.title} body={slide.body} />
                     )}
                   </>
                 )}

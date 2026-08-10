@@ -15,56 +15,50 @@
       "chatMessages": [
         {
           "name": "ms1",
-          "msg": "Hi there!",
-          "delay": 0,
-          "align": "left"
-        },
-        {
-          "name": "ms1",
-          "msg": "I'm David",
+          "msg": "Hi there! I'm David.",
           "delay": 1000,
           "align": "left"
         },
         {
           "name": "ms2",
-          "msg": "I consult companies and freelancers on their brand communication",
-          "delay": 1500,
+          "msg": "I consult companies and freelancers on how to communicate their brand and build their infrastructure.",
+          "delay": 2000,
           "align": "left"
         },
         {
           "name": "ms3",
-          "msg": "My focus is on strategy and storytelling",
-          "delay": 1800,
-          "align": "left"
-        },
-        {
-          "name": "ms2",
-          "msg": "...but i do implementations too",
-          "delay": 1800,
+          "msg": "I care about strategic storytelling, digital sovereignty, and open-source tools.",
+          "delay": 2000,
           "align": "left"
         },
         {
           "name": "ms4",
-          "msg": "How can I help you?",
-          "delay": 1800,
+          "msg": "How can I help you today?",
+          "delay": 1000,
           "align": "left"
         },
         {
           "name": "ms5",
-          "msg": "I would like to know more about <a href='#strategy'>communication strategy</a>",
+          "msg": "Let's talk about <a href='#strategy'>Strategic Storytelling</a>.",
           "delay": 1000,
           "align": "right"
         },
         {
-          "name": "ms5",
-          "msg": "I would like to know more about <a href='#storytelling'>Storytelling</a>",
+          "name": "ms6",
+          "msg": "Tell me more about <a href='#ideology'>Digital Sovereignty</a>.",
           "delay": 1200,
           "align": "right"
         },
         {
-          "name": "ms5",
-          "msg": "I would like to get in <a href='#contact'>touch</a>",
-          "delay": 1200,
+          "name": "ms7",
+          "msg": "I need help with <a href='#implementation'>Open-Source Tools</a> (Websites, Collaboration, Data).",
+          "delay": 1400,
+          "align": "right"
+        },
+        {
+          "name": "ms8",
+          "msg": "I'd just like to <a href='#contact'>get in touch</a>.",
+          "delay": 1600,
           "align": "right"
         }
       ],

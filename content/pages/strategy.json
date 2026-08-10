@@ -15,42 +15,42 @@
       "rows": [
         {
           "rowId": "strategy-no",
-          "heading": "NO!",
-          "text": "Once there was a company, its boss decided that the company should invest in brand communication. Now the company has a new logo and all employees have a new screensaver with the new mission, vision and values.",
+          "heading": "The \"New Logo\" Fallacy",
+          "text": "Once upon a time, a CEO decided to invest in \"brand communication.\" The result? A new logo, and a mandated corporate screensaver touting the company's revised mission, vision, and values.\n\nBut true branding goes far deeper than a coat of paint. It is the sum of every interaction.",
           "image": "/uploads/No-1024x800.png"
         },
         {
           "rowId": "strategy-storytime",
-          "heading": "Storytelling",
-          "text": "People talk about unusual events. Things that they have never witnessed before. These events can reach from employees greeting the customers in an uncommon / charming way to hiding messages in the packaging of your products. There are many possibilities and being playful and open to experiments is key. There is never just one story about your brand - there are many stories. All of them shape the character of your brand and contribute to its personality. Luckily, i'm not the first person that has thought about this. There are frameworks to break down your overall Brand story into characters and roles for each department and employee.",
+          "heading": "Storytelling: Beyond the Master Narrative",
+          "text": "People talk about the unexpected. They remember the things they’ve never witnessed before—whether it's a uniquely charming greeting at the front desk or a clever message hidden inside product packaging.\n\nThere is never just one story about your brand; there are many. Each one shapes your brand's character and contributes to its living personality. By staying playful and open to experimentation, we can use proven frameworks to break down your overarching brand narrative into actionable roles for every single department and employee.",
           "image": "/uploads/Dragon_red-1024x800.png",
           "isDarkRow": true
         },
         {
           "rowId": "strategy-shortcuts",
-          "heading": "Shortcuts Exist",
-          "text": "They are small or big gaps in your communication that can be filled with experiences that you want your customer to have in relation to your brand.",
+          "heading": "Closing the Gaps",
+          "text": "What some might call \"shortcuts\" are actually untrapped opportunities. They are the white spaces and gaps in your communication strategy that can be intentionally designed and filled with the exact experiences you want your customers to have.",
           "image": "/images/Shortcuts-Background_red-1024x770.png",
           "isDarkRow": false
         },
         {
           "rowId": "strategy-perfect",
-          "heading": "Perfect is not good enough",
-          "text": "Or too good. Many brands are very generic. They are all the best in their market, have leading technology, are innovative thus successful and are endorsed by beautiful people with the perfect white smile. Too many brands are competing for perfection. What makes your brand interesting is the complexity of its personality, the edges and unexpected features and surprises.",
+          "heading": "The Problem with \"Perfect\"",
+          "text": "Many brands default to the generic: they claim to be the market leader, boast about their innovation, and rely on stock-photo perfection. But competing on flawlessness is a losing game.\n\nWhat actually makes a brand magnetic is its complexity—its edges, its unexpected features, and its surprises. Perfection is forgettable; personality is sticky.",
           "image": "/images/Too-Good_red_pattern.png",
           "isDarkRow": true
         },
         {
           "rowId": "strategy-humble",
-          "heading": "Underselling and beeing humble",
-          "text": "Making promises might get you some new customers. Keeping promises might help you keep your customers. Surprising them after they already chose you will turn into ambassadors for your brand.",
+          "heading": "The Power of Humility",
+          "text": "Making bold promises might win you new customers. Keeping those promises might help you retain them. But surprising them after they have already chosen you? That is what turns casual buyers into lifelong brand ambassadors. Sometimes, the best strategy is to undersell and over-deliver.",
           "image": "/images/Humble-1-1024x770.png",
           "isDarkRow": false
         },
         {
           "rowId": "strategy-functions",
-          "heading": "Emotional and sociological functions",
-          "text": "Everything your brand offers has a function in society, a purpose so to speak. Sometimes there are similar products that serve similar purposes. Sometimes very different products can serve the same purpose. Discovering these similarities takes a wild interpretation. It also provides a useful framework to grow brands into new markets.",
+          "heading": "Emotional and Sociological Strategy",
+          "text": "Everything your brand offers serves a broader function in society. Often, completely different products fulfill the exact same underlying human need. Uncovering these hidden similarities requires bold, creative interpretation, but doing so unlocks a powerful framework for evolving your brand and expanding into entirely new markets.",
           "image": "/images/Functions_black.png",
           "isDarkRow": true
         }

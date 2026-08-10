@@ -1,0 +1,41 @@
+{
+  "slideId": "ideology",
+  "title": "Ideology",
+  "spatial": {
+    "x": 4000,
+    "y": 0,
+    "z": 4000,
+    "scale": 1,
+    "rotateX": 0,
+    "rotateY": 0,
+    "rotateZ": 0
+  },
+  "blocks": [
+    {
+      "rows": [
+        {
+          "rowId": "ideology-no-cloud",
+          "heading": "There Is No Cloud",
+          "text": "It is a brilliant piece of marketing, really. The \"cloud\" sounds fluffy, infinite, and perfectly safe. But let’s strip away the poetry: there is no cloud. It is just someone else’s computer.\n\nRight now, most brands are happily handing over their entire operational heartbeat to a handful of foreign tech oligarchies. They aren't buying infrastructure; they are just renting space on a server they will never see. And here is the harsh reality of that rental agreement: when it goes offline, it is entirely out of your reach. There is no plug you can check, no server room you can walk into, and absolutely no one to talk to while your business grinds to a halt.",
+          "image": "/uploads/no-cloud.png",
+          "isDarkRow": false
+        },
+        {
+          "rowId": "ideology-lightswitch",
+          "heading": "The Geopolitical Light Switch",
+          "text": "The world has edges, and things get complicated. Tensions shift, trade policies fracture, and tech giants can rewrite their terms of service over a weekend.\n\nWhen your entire business relies on an overseas monopoly, your brand is fragile. Someone else is holding the light switch. If they decide to flip it—whether due to a global crisis, a sudden embargo, or a simple boardroom whim—your business goes dark.",
+          "image": "/uploads/lightswitch.png",
+          "isDarkRow": true
+        },
+        {
+          "rowId": "ideology-reach",
+          "heading": "Keeping It Within Reach",
+          "text": "Digital sovereignty is the antidote to this fragility. It is the simple, radical idea that you should actually own the tools you rely on.\n\nBy building your systems on open-source software and hosting them where you can reach them, you immunize your brand against external chaos. The software belongs to the community, and the data belongs strictly to you. No revoked licenses. No foreign surveillance. No sudden lock-outs.\n\nIt is not just a technical choice. It is a philosophy of independence, ensuring that your foundation is as resilient as the stories you tell.",
+          "image": "/uploads/sovereignty.png",
+          "isDarkRow": false
+        }
+      ],
+      "_template": "content_row_module"
+    }
+  ]
+}

@@ -17,6 +17,7 @@ export const ContactSlide: React.FC<ContactSlideProps> = ({
 }) => {
   return (
     <div className="container">
+      {title && <div className="poster-bg-text">{title}</div>}
       <h1>{title}</h1>
       <div className="cont">
         <ul className="contact">

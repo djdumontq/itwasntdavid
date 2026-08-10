@@ -1,6 +1,6 @@
 import React from "react";
 
-interface ImpressumSlideProps {
+interface ImprintSlideProps {
   title?: string;
   text?: string;
   body?: any;
@@ -33,14 +33,15 @@ const defaultOriginalHtml = `
 <p>Quelle: <a href="https://www.e-recht24.de">https://www.e-recht24.de</a></p>
 `;
 
-export const ImpressumSlide: React.FC<ImpressumSlideProps> = ({
-  title = "Impressum",
+export const ImprintSlide: React.FC<ImprintSlideProps> = ({
+  title = "Imprint",
   text,
 }) => {
   const contentHtml = text || defaultOriginalHtml;
 
   return (
     <div className="container">
+      {title && <div className="poster-bg-text">{title}</div>}
       {title && <h1>{title}</h1>}
       <div
         className="content"

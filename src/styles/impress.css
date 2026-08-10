@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@700;800&display=swap');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
 
 :root {
@@ -17,7 +17,7 @@ html, body {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Outfit', sans-serif;
   background-color: #ffffff;
   background-image: url('/images/paper.png');
   background-repeat: repeat;
@@ -41,7 +41,7 @@ html, body {
   width: 100vw;
   height: 100vh;
   margin: 0;
-  padding: 70px 0 30px 0;
+  padding: 80px 0 120px 0;
   box-sizing: border-box;
   transform-style: preserve-3d;
   transition: opacity 1s ease-in-out, filter 1s ease-in-out;
@@ -88,19 +88,21 @@ html, body {
 
 /* Page Headings */
 .page h1 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
   margin-top: 20px;
   text-transform: uppercase;
   font-size: 50px;
-  font-weight: 700;
+  font-weight: 800;
   padding: 10px 0 20px 0;
   color: var(--color-dark);
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
 }
 
 .page h2 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
   text-transform: uppercase;
   font-size: 36px;
-  font-weight: 600;
+  font-weight: 700;
   margin-bottom: 15px;
   color: var(--color-dark);
 }
@@ -138,8 +140,10 @@ html, body {
 }
 
 .rowdecoration {
-  max-width: 100%;
+  max-width: 250px;
+  max-height: 250px;
   height: auto;
+  width: auto;
   display: block;
   margin: auto;
   opacity: 0.85;
@@ -345,7 +349,7 @@ html, body {
   .step {
     width: 100vw !important;
     height: 100vh !important;
-    padding: 65px 15px 20px 15px !important;
+    padding: 65px 15px 100px 15px !important;
   }
 
   .container {
@@ -373,5 +377,225 @@ html, body {
   .textside, .pictureside {
     width: 100% !important;
     min-width: 0 !important;
+  }
+}
+
+/* Vertical Timeline styles */
+.timeline_container {
+  width: 100%;
+  margin-top: 30px;
+}
+
+.timeline_intro {
+  margin-bottom: 40px;
+  font-size: 20px;
+  line-height: 1.6;
+}
+
+.timeline_list {
+  position: relative;
+  padding-left: 45px;
+  border-left: 4px solid var(--color-accent);
+  margin-left: 20px;
+}
+
+.timeline_item {
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.timeline_item:last-child {
+  margin-bottom: 0;
+}
+
+.timeline_dot {
+  position: absolute;
+  left: -54px;
+  top: 6px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: var(--color-accent);
+  border: 3px solid #ffffff;
+  box-shadow: 0 0 8px rgba(0, 186, 240, 0.4);
+}
+
+.timeline_content {
+  color: var(--color-dark);
+}
+
+.timeline_content h3 {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0 0 6px 0;
+  text-transform: uppercase;
+}
+
+.timeline_content h4 {
+  font-size: 18px;
+  font-weight: 500;
+  font-style: italic;
+  color: #7F8C8D;
+  margin: 0 0 10px 0;
+}
+
+.timeline_content p {
+  font-size: 20px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Bento Grid Styles */
+.bento_container {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.bento_intro {
+  margin-bottom: 35px;
+}
+
+.bento_intro p {
+  font-size: 20px;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0;
+}
+
+.bento_grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 30px;
+  width: 100%;
+}
+
+.bento_card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 30px;
+  border-radius: 16px;
+  border: 3px solid var(--color-dark);
+  box-shadow: 6px 6px 0px var(--color-dark);
+  background-color: var(--color-light);
+  color: var(--color-dark);
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+.bento_card.bento_card_dark {
+  background-color: var(--color-dark);
+  color: var(--color-light);
+  box-shadow: 6px 6px 0px #000000;
+}
+
+.bento_card:hover {
+  transform: translate(-4px, -4px) !important;
+  box-shadow: 10px 10px 0px var(--color-dark);
+}
+
+.bento_card.bento_card_dark:hover {
+  box-shadow: 10px 10px 0px #000000;
+}
+
+.bento_card_content {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  text-align: left;
+}
+
+.bento_card h3 {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.bento_card p {
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0;
+  opacity: 0.9;
+}
+
+.bento_card_image_wrapper {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 140px;
+}
+
+.bento_card_image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  opacity: 0.9;
+  transition: transform 0.4s ease;
+}
+
+.bento_card:hover .bento_card_image {
+  transform: scale(1.05);
+}
+
+/* Grid sizes */
+.bento_span_4 {
+  grid-column: span 4;
+}
+
+.bento_span_6 {
+  grid-column: span 6;
+}
+
+.bento_span_8 {
+  grid-column: span 8;
+}
+
+.bento_span_12 {
+  grid-column: span 12;
+}
+
+/* Responsive bento grid */
+@media (max-width: 900px) {
+  .bento_grid {
+    gap: 20px;
+  }
+  .bento_span_4, .bento_span_6, .bento_span_8, .bento_span_12 {
+    grid-column: span 12;
+  }
+  .bento_card {
+    padding: 20px;
+  }
+  .bento_card_image_wrapper {
+    height: 120px;
+  }
+}
+
+/* Bold Editorial Typographic Poster overlay */
+.poster-bg-text {
+  position: absolute;
+  top: 10%;
+  left: 2%;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 200px;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(214, 0, 0, 0.08);
+  pointer-events: none;
+  z-index: -1;
+  user-select: none;
+  white-space: nowrap;
+  letter-spacing: -2px;
+  line-height: 1;
+}
+
+@media (max-width: 768px) {
+  .poster-bg-text {
+    font-size: 100px;
+    top: 5%;
+    left: 2%;
   }
 }

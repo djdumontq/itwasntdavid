@@ -9,16 +9,18 @@ import { SpatialCanvas, SlideData } from "./components/SpatialCanvas";
 // Import Slide Pages fallback data
 import welcomePage from "../content/pages/welcome.json";
 import strategyPage from "../content/pages/strategy.json";
-import storytellingPage from "../content/pages/storytelling.json";
+import ideologyPage from "../content/pages/ideology.json";
+import implementationPage from "../content/pages/implementation.json";
 import contactPage from "../content/pages/contact.json";
-import impressumPage from "../content/pages/impressum.json";
+import imprintPage from "../content/pages/imprint.json";
 
 const defaultSlidesMap: Record<string, SlideData> = {
   welcome: welcomePage as SlideData,
   strategy: strategyPage as SlideData,
-  storytelling: storytellingPage as SlideData,
+  ideology: ideologyPage as SlideData,
+  implementation: implementationPage as SlideData,
   contact: contactPage as SlideData,
-  impressum: impressumPage as SlideData,
+  imprint: imprintPage as SlideData,
 };
 
 function LiveTinaBinder({

@@ -138,6 +138,56 @@ export default defineConfig({
                   { type: "string", name: "author", label: "Author / Subtitle" },
                 ],
               },
+              {
+                name: "timeline_module",
+                label: "⏳ Vertical Timeline Module",
+                fields: [
+                  { type: "string", name: "introHeading", label: "Intro Heading" },
+                  { type: "string", name: "introText", label: "Intro Text", ui: { component: "textarea" } },
+                  {
+                    type: "object",
+                    name: "items",
+                    label: "Timeline Stations",
+                    list: true,
+                    fields: [
+                      { type: "string", name: "title", label: "Station Title" },
+                      { type: "string", name: "subtitle", label: "Subtitle / Sub-header" },
+                      { type: "string", name: "text", label: "Description", ui: { component: "textarea" } },
+                    ],
+                  },
+                ],
+              },
+              {
+                name: "bento_grid_module",
+                label: "🍱 Bento Grid Module",
+                fields: [
+                  { type: "string", name: "heading", label: "Heading" },
+                  { type: "string", name: "subheading", label: "Subheading/Intro Text", ui: { component: "textarea" } },
+                  {
+                    type: "object",
+                    name: "cards",
+                    label: "Bento Cards",
+                    list: true,
+                    fields: [
+                      { type: "string", name: "title", label: "Card Title" },
+                      { type: "string", name: "text", label: "Card Text", ui: { component: "textarea" } },
+                      { type: "image", name: "image", label: "Card Image/Illustration" },
+                      {
+                        type: "string",
+                        name: "gridSize",
+                        label: "Card Width",
+                        options: [
+                          { value: "4", label: "Small (1/3 width)" },
+                          { value: "6", label: "Medium (1/2 width)" },
+                          { value: "8", label: "Large (2/3 width)" },
+                          { value: "12", label: "Full (100% width)" },
+                        ],
+                      },
+                      { type: "boolean", name: "isDarkCard", label: "Dark Background Card" },
+                    ],
+                  },
+                ],
+              },
             ],
           },
         ],

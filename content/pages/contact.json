@@ -1,6 +1,6 @@
 {
   "slideId": "contact",
-  "title": "Contact",
+  "title": "Meet David",
   "spatial": {
     "x": 0,
     "y": 4000,
@@ -12,7 +12,38 @@
   },
   "blocks": [
     {
-      "_template": "contact_cards_module",
+      "introHeading": "Why does the marketing guy host open source tools now?",
+      "introText": "My career isn't a list of job titles; it is a list of learnings and realizations about organizations, communication, and technology.",
+      "items": [
+        {
+          "title": "Station 1: The Human Baseline",
+          "subtitle": "(Temi-Community, Arthen Kommunikation, Hieroglifs Translations)",
+          "text": "Working in CSR, PR, and intercultural community building taught me that every organization is fundamentally human, and empathy is the absolute baseline required to figure out what makes a tribe tick. I bring this directly into my consulting by ensuring cultural and team alignment from day one. Before a brand can sell anything, I read the room, align the people inside and outside the building, and translate human understanding into hard strategic alignment."
+        },
+        {
+          "title": "Station 2: The Illusion of the Concept",
+          "subtitle": "(Brandway & China Academy of Art)",
+          "text": "Consulting on business development and marketing across Europe and Asia revealed a harsh truth: a beautiful brand strategy on a boardroom whiteboard is completely useless if it only exists in theory. I bring conceptual clarity to cut through that noise. I avoid generic corporate buzzwords and copy-pasted marketing funnels, applying the strategic discipline to build a sharp, distinct brand narrative that actually stands for something in a crowded market."
+        },
+        {
+          "title": "Station 3:  Reality meets Execution",
+          "subtitle": "(MaintMaster Systems)",
+          "text": "Driving marketing communication and web performance proved that the market does not care about your mood board—it cares if the machine actually works. Because a concept means absolutely nothing until you build the system that delivers the message, I bring relentless execution power to every project. I refuse to let strategy die on a whiteboard; instead, I turn high-level brand narratives into functioning websites, measurable KPIs, and shipped results."
+        },
+        {
+          "title": "Station 4: The Operating System",
+          "subtitle": "(STAGIL & catworkx)",
+          "text": "Leading digital Go-To-Market teams in the Atlassian ecosystem taught me how critical a company's internal operating system is. I saw firsthand how a strict \"single source of truth\" philosophy (like Jira) and powerful collaboration tech can successfully steer and control an entire organization. But I also saw the dark side: the aggressive cloud push and forced \"End of Life\" deadlines that trapped independent businesses in expensive vendor lock-in. I bring this dual perspective to your business, auditing your digital stack to build highly efficient, centralized workflows while actively protecting you from the SaaS monopoly."
+        },
+        {
+          "title": "Station 5: Reclaiming Sovereignty",
+          "subtitle": "(Westwind Hamburg e.V. & Independent Consulting)",
+          "text": "Managing digital systems for grassroots non-profits—where we repair bicycles to provide affordable mobility for refugees and low-income individuals—reinforced what actually matters: technology must serve the mission, not the shareholders of a foreign tech giant. I bring this philosophy of total digital independence to founder-owned businesses and NGOs. I deliver a modern, AI-supported open-source stack—deploying lightning-fast websites with TinaCMS, structured data with NocoBase, and secure team brains with Docmost—so you can keep your soul, own your data, and control your infrastructure."
+        }
+      ],
+      "_template": "timeline_module"
+    },
+    {
       "items": [
         {
           "icon": "fa-envelope",
@@ -22,14 +53,15 @@
         {
           "icon": "fa-mobile-alt",
           "title": "Call",
-          "text": "<a href='tel:+4917631728287' style='color:#FDFFFC;'>+49 176 31 72 82 87</a>"
+          "text": "<a href='tel:+4917641641313' style='color:#FDFFFC;'>+49 176 41641313</a>"
         },
         {
           "icon": "fa-map-marker-alt",
           "title": "Location",
-          "text": "St. Pauli, Hamburg"
+          "text": "Juliusstraße 22, 22769 Hamburg"
         }
-      ]
+      ],
+      "_template": "contact_cards_module"
     }
   ]
 }

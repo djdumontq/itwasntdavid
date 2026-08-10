@@ -1,0 +1,62 @@
+{
+  "slideId": "implementation",
+  "title": "Implementation",
+  "spatial": {
+    "x": 0,
+    "y": -4000,
+    "z": 4000,
+    "scale": 1,
+    "rotateX": 0,
+    "rotateY": 0,
+    "rotateZ": 0
+  },
+  "blocks": [
+    {
+      "heading": "Tools I Trust",
+      "subheading": "Strategy is just a story until you build the infrastructure to support it.\n\nWhen it comes to implementation, I don't just reach for the biggest, trendiest SaaS provider. I look for open-source tools that are elegant, resilient, and most importantly, give you absolute control over your own data. I only implement systems that I genuinely like using. Here is what I build with:",
+      "cards": [
+        {
+          "title": "TinaCMS: Websites without the Bloat",
+          "text": "Most content management systems (like WordPress) are bloated and trap your content in a messy database. TinaCMS takes a completely different approach. It is Git-backed, meaning your website's content lives as clean, portable text files right alongside your code.\n\nBut for the marketing team? It provides a beautiful, visual, real-time editor. It is the perfect bridge between high-performance, developer-friendly architecture and intuitive, everyday storytelling.",
+          "image": "/uploads/tinacms-logo.png",
+          "gridSize": "4",
+          "isDarkCard": true
+        },
+        {
+          "title": "NocoBase: Data on Your Terms",
+          "text": "Every business runs on databases, but you shouldn't have to pay a monthly fee per user to a Silicon Valley giant just to organize your own information.\n\nNocoBase is an incredibly flexible, open-source platform. It allows us to build tailored, relational databases that adapt to your business—not the other way around.\n\nUse it for: Project management, handling complex structured data, service management, and building custom work management systems.",
+          "image": "/uploads/nocobase-logo.png",
+          "gridSize": "4",
+          "isDarkCard": false
+        },
+        {
+          "title": "Docmost: The Company Brain",
+          "text": "A brand needs a central hub—a place where processes, ideas, and documentation live. But putting your company's entire intellectual property into a proprietary cloud workspace is a massive risk.\n\nDocmost is an open-source collaborative workspace that acts as the brain of your operations. It feels fluid, modern, and intuitive for teams to use, but it runs entirely on your terms.\n\nUse it for: Internal documentation, real-time team collaboration, and building a secure, centralized knowledge management hub.",
+          "image": "/uploads/docmost-logo.png",
+          "gridSize": "4",
+          "isDarkCard": true
+        }
+      ],
+      "_template": "bento_grid_module"
+    },
+    {
+      "rows": [
+        {
+          "rowId": "implementation-ai",
+          "heading": "AI-Supported Setup: Speed Meets Control",
+          "text": "What do all of these tools have in common? Under the hood, they can be entirely configured and set up via the command line (CLI).\n\nThis unlocks a massive advantage: human editability powered by AI support. Because these tools rely on clean code and text-based configurations rather than clunky, rigid menus, we can leverage artificial intelligence to write and deploy the setup scripts at lightning speed. The result? I can help you build and launch custom, fully functional systems in a single afternoon that would take traditional IT teams weeks to accomplish.",
+          "image": "/uploads/ai-setup.png",
+          "isDarkRow": false
+        },
+        {
+          "rowId": "implementation-hosting",
+          "heading": "Hosting Consulting: Keeping it within reach",
+          "text": "A good tool is only as secure as the server it runs on. I don't just set up the software; I consult on how to host it so it stays within your reach.\n\nUsing secure, isolated container technologies like Docker and rootless Podman, we can design an infrastructure that fits your scale. Whether that means running a local server right in your office, or deploying to a carefully selected, privacy-respecting European host, I make sure your foundation is robust, private, and truly yours.",
+          "image": "/uploads/docker-logo.png",
+          "isDarkRow": true
+        }
+      ],
+      "_template": "content_row_module"
+    }
+  ]
+}

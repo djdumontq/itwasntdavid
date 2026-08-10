@@ -30,7 +30,7 @@ pnpm dev
 
 ### 2. Continuous 3D Glide Navigation
 - `<SpatialCanvas>` and `<NavigationToolbar>` remain continuously mounted in [src/App.tsx](file:///home/david/Projects/itwasntdavid/src/App.tsx).
-- Selecting navigation links (`#/welcome`, `#/strategy`, `#/storytelling`, `#/contact`, `#/impressum`) glides the 3D camera smoothly across 3D space over `1000ms` without page reloads.
+- Selecting navigation links (`#/welcome`, `#/strategy`, `#/contact`, `#/imprint`) glides the 3D camera smoothly across 3D space over `1000ms` without page reloads.
 
 ---
 
@@ -40,9 +40,8 @@ pnpm dev
 Each 3D spatial slide is an independent JSON document in `content/pages/`:
 - `welcome.json`: Spatial $(0, 0, 12000)$ — Interactive chat introduction.
 - `strategy.json`: Spatial $(-4000, 0, 4000)$ — Communication strategy rows.
-- `storytelling.json`: Spatial $(4000, 0, 4000)$ — Brand storytelling rows.
 - `contact.json`: Spatial $(0, 4000, 4000)$ — Contact cards.
-- `impressum.json`: Spatial $(0, -4000, 0)$ — Legal imprint notice.
+- `imprint.json`: Spatial $(0, -4000, 0)$ — Legal imprint notice.
 
 ### 2. Modular Content Blocks (`blocks` List)
 On any slide page, editors can add, remove, and re-order reusable module blocks:

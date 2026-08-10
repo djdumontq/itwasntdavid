@@ -2,7 +2,9 @@ import React from "react";
 import { WelcomeChat } from "./WelcomeChat";
 import { ContentSlide } from "./ContentSlide";
 import { ContactSlide } from "./ContactSlide";
-import { ImpressumSlide } from "./ImpressumSlide";
+import { ImprintSlide } from "./ImprintSlide";
+import { TimelineSlide } from "./TimelineSlide";
+import { BentoGridSlide } from "./BentoGridSlide";
 import { tinaField } from "tinacms/dist/react";
 
 interface SlideBlockRendererProps {
@@ -58,10 +60,36 @@ export const SlideBlockRenderer: React.FC<SlideBlockRendererProps> = ({
     );
   }
 
-  if (normalized.includes("legal") || normalized.includes("impressum")) {
+  if (normalized.includes("legal") || normalized.includes("imprint")) {
     return (
       <div data-tina-field={tinaField(block)}>
-        <ImpressumSlide title={slideTitle} text={block.text || block.body} />
+        <ImprintSlide title={slideTitle} text={block.text || block.body} />
+      </div>
+    );
+  }
+
+  if (normalized.includes("timeline")) {
+    return (
+      <div data-tina-field={tinaField(block)}>
+        <TimelineSlide
+          title={slideTitle}
+          introHeading={block.introHeading}
+          introText={block.introText}
+          items={block.items || []}
+        />
+      </div>
+    );
+  }
+
+  if (normalized.includes("bento")) {
+    return (
+      <div data-tina-field={tinaField(block)}>
+        <BentoGridSlide
+          title={slideTitle}
+          heading={block.heading}
+          subheading={block.subheading}
+          cards={block.cards || []}
+        />
       </div>
     );
   }
