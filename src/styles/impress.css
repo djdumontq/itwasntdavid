@@ -108,216 +108,35 @@ html, body {
 }
 
 /* Content rows */
-.page {
-  counter-reset: row-counter;
-}
-
 .content_row {
   display: flex;
   flex-direction: row;
   width: 100%;
-  padding: 50px;
-  margin-bottom: 50px;
-  font-size: 18px;
+  padding: 30px 0;
+  font-size: 22px;
   line-height: 1.6;
   justify-content: space-between;
   align-items: center;
-  gap: 50px;
-  background: transparent;
-  border: none;
-  box-shadow: none;
-  border-radius: 0;
-  position: relative;
-  overflow: visible;
-  counter-increment: row-counter;
+  gap: 40px;
 }
 
-/* Skewed edgy background sheet (varied shapes) */
-.content_row::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: var(--color-light);
-  background-image: url('/images/paper.png');
-  background-repeat: repeat;
-  border: 1px solid rgba(44, 66, 81, 0.15);
-  box-shadow: 0 4px 20px rgba(44, 66, 81, 0.05);
-  border-radius: 0;
-  z-index: 1;
-  pointer-events: none;
-}
-
-/* Unique hand-drafted skews and rotations for each row background */
-.content_row:nth-child(6n+1)::before { transform: skewX(-3.5deg) rotate(-0.15deg); }
-.content_row:nth-child(6n+2)::before { transform: skewX(2.8deg) rotate(0.1deg); }
-.content_row:nth-child(6n+3)::before { transform: skewX(-1.5deg) rotate(-0.25deg); }
-.content_row:nth-child(6n+4)::before { transform: skewX(3.4deg) rotate(0.2deg); }
-.content_row:nth-child(6n+5)::before { transform: skewX(-2.2deg) rotate(-0.1deg); }
-.content_row:nth-child(6n+6)::before { transform: skewX(1.8deg) rotate(0.25deg); }
-
-/* Page corner crosshairs (+) */
-.content_row_crosshair {
-  position: absolute;
-  font-family: monospace;
-  font-size: 14px;
-  color: var(--color-dark);
-  opacity: 0.3;
-  z-index: 2;
-}
-
-.content_row_crosshair.top-left {
-  top: 15px;
-  left: 15px;
-}
-
-.content_row_crosshair.bottom-right {
-  bottom: 15px;
-  right: 15px;
-}
-
-/* Background 45 degree angle drafting line */
-.content_row::after {
-  content: "ANGLE: 45.00°";
-  position: absolute;
-  top: -20px;
-  right: 8%;
-  font-family: monospace;
-  font-size: 10px;
-  color: rgba(214, 0, 0, 0.1);
-  transform: rotate(-45deg);
-  transform-origin: top right;
-  border-bottom: 1px dashed rgba(214, 0, 0, 0.12);
-  width: 300px;
-  text-align: right;
-  padding-bottom: 2px;
-  pointer-events: none;
-  z-index: 2;
-}
-
-/* Dark row overrides: styled as a blue blueprint (cyanotype) */
-.content_row.blackrow {
+.blackrow {
   flex-direction: row-reverse;
-}
-
-.content_row.blackrow::before {
-  background-color: #1a2f3c; /* Blueprint Cyanotype Blue */
-  background-image: url('/images/paper.png');
-  background-repeat: repeat;
-  background-blend-mode: overlay; /* Highly visible paper texture overlay on dark color! */
-  border: 1px solid rgba(0, 186, 240, 0.35);
-  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.25);
-  filter: contrast(1.15) brightness(1.05); /* Highlight fiber lines */
-}
-
-.content_row.blackrow::after {
-  content: "GUIDE: 45.00°";
-  color: rgba(0, 186, 240, 0.15);
-  border-bottom: 1px dashed rgba(0, 186, 240, 0.2);
-}
-
-.content_row.blackrow .content_row_crosshair {
-  color: var(--color-accent);
-  opacity: 0.5;
+  background: transparent;
 }
 
 .textside {
-  flex: 1.2;
+  flex: 1;
   min-width: 300px;
   color: var(--color-dark);
-  position: relative;
-  z-index: 2; /* Ensures text is on top of skewed background */
 }
 
-/* Technical figure tag using row-counter */
-.textside::before {
-  content: "DET-0" counter(row-counter);
-  display: inline-block;
-  font-family: monospace;
-  font-size: 11px;
-  font-weight: 700;
-  color: var(--color-accent);
-  border: 1px solid var(--color-accent);
-  padding: 2px 8px;
-  border-radius: 3px;
-  margin-bottom: 15px;
-  letter-spacing: 1px;
-  background: rgba(0, 186, 240, 0.05);
-}
-
-.content_row.blackrow .textside::before {
-  color: var(--color-accent);
-  border-color: var(--color-accent);
-  background: rgba(0, 186, 240, 0.12);
-}
-
-.content_row.blackrow .textside h2,
-.content_row.blackrow .textside p {
-  color: var(--color-light);
-}
-
-.content_row.blackrow .textside p {
-  opacity: 0.9;
-}
-
-/* Schematic layout borders and dimension lines for illustration box */
 .pictureside {
   flex: 1;
   min-width: 300px;
-  position: relative;
-  padding: 30px;
-  background-image: radial-gradient(rgba(44, 66, 81, 0.12) 1px, transparent 1px);
-  background-size: 16px 16px;
-  border: 1px dashed rgba(44, 66, 81, 0.25);
-  border-radius: 4px;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 290px;
-  z-index: 2; /* Crucial: Ensures images and canvas are on top of skewed background! */
-}
-
-.content_row.blackrow .pictureside {
-  background-image: radial-gradient(rgba(0, 186, 240, 0.3) 1px, transparent 1px);
-  border: 1px dashed rgba(0, 186, 240, 0.4);
-}
-
-/* Horizontal dimension line under image */
-.pictureside::before {
-  content: "";
-  position: absolute;
-  bottom: 8px;
-  left: 20px;
-  right: 20px;
-  height: 1px;
-  background: var(--color-dark);
-  opacity: 0.3;
-}
-
-.content_row.blackrow .pictureside::before {
-  background: var(--color-accent);
-  opacity: 0.5;
-}
-
-/* Dimension label */
-.pictureside::after {
-  content: "SCALE 1 : 1.25";
-  position: absolute;
-  bottom: 12px;
-  width: 100%;
-  text-align: center;
-  font-family: monospace;
-  font-size: 9px;
-  color: var(--color-dark);
-  opacity: 0.5;
-  letter-spacing: 1px;
-}
-
-.content_row.blackrow .pictureside::after {
-  color: var(--color-accent);
-  opacity: 0.7;
 }
 
 .rowdecoration {
