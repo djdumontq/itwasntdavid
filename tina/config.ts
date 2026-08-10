@@ -10,7 +10,12 @@ export default defineConfig({
     process.env.HEAD ||
     "main",
   token: process.env.TINA_TOKEN || "e44b680435ab5d35f7cdda34efdcfe4841bf4d4f",
-  contentApiUrlOverride: process.env.NODE_ENV === "development" ? "http://localhost:4004/graphql" : undefined,
+  contentApiUrlOverride:
+    typeof window !== "undefined" &&
+    (window.location.hostname === "localhost" ||
+      window.location.hostname === "127.0.0.1")
+      ? "http://localhost:4004/graphql"
+      : undefined,
   media: {
     tina: {
       publicFolder: "public",
