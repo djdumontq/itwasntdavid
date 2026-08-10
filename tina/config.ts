@@ -1,14 +1,16 @@
 import { defineConfig } from "tinacms";
 
 export default defineConfig({
-  clientId: process.env.TINA_PUBLIC_CLIENT_ID || null,
+  clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID || process.env.TINA_PUBLIC_CLIENT_ID || "990d6829-e24d-4076-bf14-9ee154bded4c",
   branch:
+    process.env.NEXT_PUBLIC_TINA_BRANCH ||
     process.env.TINA_PUBLIC_BRANCH ||
+    process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_REF ||
     process.env.VERCEL_GIT_COMMIT_REF ||
     process.env.HEAD ||
     "main",
-  token: process.env.TINA_TOKEN || null,
-  contentApiUrlOverride: "http://localhost:4004/graphql",
+  token: process.env.TINA_TOKEN || "e44b680435ab5d35f7cdda34efdcfe4841bf4d4f",
+  contentApiUrlOverride: process.env.NODE_ENV === "development" ? "http://localhost:4004/graphql" : undefined,
   media: {
     tina: {
       publicFolder: "public",
