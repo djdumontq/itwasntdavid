@@ -48,7 +48,7 @@
         {
           "icon": "fa-envelope",
           "title": "Email",
-          "text": "<a href='mailto:post@daviddumont.de' style='color:#FDFFFC;'>post@daviddumont.de</a>"
+          "text": "<a href='mailto:davidi.dumont@gmail.com' style='color:var(--color-light);'>davidi.dumont@gmail.com</a>"
         },
         {
           "icon": "fa-mobile-alt",

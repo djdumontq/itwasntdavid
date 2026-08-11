@@ -8,10 +8,10 @@ interface ImprintSlideProps {
 
 const defaultOriginalHtml = `
 <h2>Angaben gemäß § 5 TMG</h2>
-<p>David Dumont<br/> Schanzenstraße 69<br/> 20375 Hamburg</p>
+<p>David Dumont<br/> Juliusstraße 22<br/> 22769 Hamburg</p>
 
 <h2>Kontakt</h2>
-<p>Telefon: +15788244167<br/> E-Mail: hello@daviddumont.de</p>
+<p>Telefon: +49 176 41641313<br/> E-Mail: davidi.dumont@gmail.com</p>
 
 <h2>Umsatzsteuer-ID</h2>
 <p>Umsatzsteuer-Identifikationsnummer gemäß §27 a Umsatzsteuergesetz:<br/> DE314227046</p>
