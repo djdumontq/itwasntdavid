@@ -15,8 +15,8 @@
       "rows": [
         {
           "rowId": "ideology-no-cloud",
-          "heading": "There Is No Cloud",
-          "text": "It is a brilliant piece of marketing, really. The \"cloud\" sounds fluffy, infinite, and perfectly safe. But let’s strip away the poetry: there is no cloud. It is just someone else’s computer.\n\nRight now, most brands are happily handing over their entire operational heartbeat to a handful of foreign tech oligarchies. They aren't buying infrastructure; they are just renting space on a server they will never see. And here is the harsh reality of that rental agreement: when it goes offline, it is entirely out of your reach. There is no plug you can check, no server room you can walk into, and absolutely no one to talk to while your business grinds to a halt.",
+          "heading": "The cloud is just someone else’s computer",
+          "text": "...and right now, that computer belongs to a foreign monopoly.\n\nCorporate IT has quietly turned into a hostage situation. Most brands are willingly handing over their entire operational heartbeat to a handful of tech oligarchies, paying a monthly ransom just to access their own data.\n\nBy locking themselves into these closed ecosystems, companies outsource their own capacity for innovation and leave themselves entirely at the mercy of foreign vendors. It is a calculated trap: these monopolies don't price based on value. They calculate exactly how painful it would be for you to leave, capping their fees just barely below your cost of switching.",
           "image": "/uploads/no-cloud.png",
           "isDarkRow": false
         },
