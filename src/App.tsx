@@ -165,7 +165,9 @@ export default function App() {
 
       {/* Navigation & 3D Spatial Canvas stay mounted continuously for smooth 1000ms 3D glide transitions */}
       <NavigationToolbar
-        slides={slides.map((s) => ({ id: s.slideId, title: s.title || s.slideId }))}
+        slides={slides
+          .filter((s) => s.slideId !== "imprint")
+          .map((s) => ({ id: s.slideId, title: s.title || s.slideId }))}
         activeId={activeId}
         onSelectSlide={handleSelectSlide}
       />

@@ -59,6 +59,11 @@
           "icon": "fa-map-marker-alt",
           "title": "Location",
           "text": "Sternschanze, Hamburg"
+        },
+        {
+          "icon": "fa-info-circle",
+          "title": "Imprint",
+          "text": "<a href='#imprint' style='color:var(--color-light); text-decoration:underline;'>Imprint / Legal</a>"
         }
       ],
       "_template": "contact_cards_module"
