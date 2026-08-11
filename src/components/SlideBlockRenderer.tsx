@@ -103,10 +103,10 @@ export const SlideBlockRenderer: React.FC<SlideBlockRendererProps> = ({
             fontSize: "32px",
             lineHeight: 1.5,
             fontStyle: "italic",
-            borderLeft: "4px solid #00BAF0",
+            borderLeft: "4px solid var(--color-accent)",
             paddingLeft: "24px",
             margin: "40px 0",
-            color: "#2C4251",
+            color: "var(--color-dark)",
           }}
         >
           "{block.quote}"

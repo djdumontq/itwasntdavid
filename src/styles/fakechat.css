@@ -139,14 +139,14 @@
 }
 
 .message-left .message-bubble {
-  background: #2C4251;
+  background: var(--color-dark);
   color: #ffffff;
   transform-origin: bottom left;
 }
 
 .message-right .message-bubble {
   background: #e4e9ed;
-  color: #2C4251;
+  color: var(--color-dark);
   transform-origin: bottom right;
 }
 
@@ -223,7 +223,7 @@
   width: 9px;
   height: 9px;
   border-radius: 50%;
-  background: #00BAF0;
+  background: var(--color-accent);
   animation: typingBounce 1.3s infinite ease-in-out both;
 }
 

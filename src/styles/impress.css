@@ -2,9 +2,9 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
 
 :root {
-  --color-dark: #2C4251;
-  --color-light: #FDFFFC;
-  --color-accent: #00BAF0;
+  --color-dark: #1F2833;
+  --color-light: #F7F5F0;
+  --color-accent: #E05A47;
 }
 
 * {
@@ -233,7 +233,7 @@ html, body {
   font-size: 17px;
   line-height: 1.6;
   margin-bottom: 15px;
-  color: #2C4251;
+  color: var(--color-dark);
 }
 
 /* Mobile Menu Backdrop */
