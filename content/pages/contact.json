@@ -3,9 +3,9 @@
   "title": "Meet David",
   "spatial": {
     "x": 0,
-    "y": 4000,
-    "z": 4000,
-    "scale": 1,
+    "y": 2000,
+    "z": 7000,
+    "scale": 1.5,
     "rotateX": 0,
     "rotateY": 0,
     "rotateZ": 0

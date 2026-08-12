@@ -2,10 +2,10 @@
   "slideId": "strategy",
   "title": "Strategic Storytelling",
   "spatial": {
-    "x": -4000,
+    "x": -2000,
     "y": 0,
-    "z": 4000,
-    "scale": 1,
+    "z": 7000,
+    "scale": 1.5,
     "rotateX": 0,
     "rotateY": 0,
     "rotateZ": 0
