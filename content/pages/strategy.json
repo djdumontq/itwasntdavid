@@ -2,10 +2,10 @@
   "slideId": "strategy",
   "title": "Strategic Storytelling",
   "spatial": {
-    "x": -2000,
+    "x": -2400,
     "y": 0,
-    "z": 7000,
-    "scale": 1.5,
+    "z": 10000,
+    "scale": 1,
     "rotateX": 0,
     "rotateY": 0,
     "rotateZ": 0
@@ -27,17 +27,31 @@
           "isDarkRow": true
         },
         {
+          "rowId": "strategy-shortcuts",
+          "heading": "Closing the Gaps",
+          "text": "What some might call \"shortcuts\" are actually untrapped opportunities. They are the white spaces and gaps in your communication strategy that can be intentionally designed and filled with the exact experiences you want your customers to have.",
+          "image": "/uploads/Shortcuts-Background_red-1024x770.png",
+          "isDarkRow": false
+        },
+        {
           "rowId": "strategy-perfect",
           "heading": "The Problem with \"Perfect\"",
           "text": "Many brands default to the generic: they claim to be the market leader, boast about their innovation, and rely on stock-photo perfection. But competing on flawlessness is a losing game.\n\nWhat actually makes a brand magnetic is its complexity—its edges, its unexpected features, and its surprises. Perfection is forgettable; personality is sticky.",
           "image": "/uploads/Too-Good_red_pattern.png",
-          "isDarkRow": false
+          "isDarkRow": true
         },
         {
           "rowId": "strategy-humble",
           "heading": "The Power of Humility",
           "text": "Making bold promises might win you new customers. Keeping those promises might help you retain them. But surprising them after they have already chosen you? That is what turns casual buyers into lifelong brand ambassadors. Sometimes, the best strategy is to undersell and over-deliver.",
           "image": "/uploads/Humble-1-1024x770.png",
+          "isDarkRow": false
+        },
+        {
+          "rowId": "strategy-functions",
+          "heading": "Emotional and Sociological Strategy",
+          "text": "Everything your brand offers serves a broader function in society. Often, completely different products fulfill the exact same underlying human need. Uncovering these hidden similarities requires bold, creative interpretation, but doing so unlocks a powerful framework for evolving your brand and expanding into entirely new markets.",
+          "image": "/uploads/Functions_black.png",
           "isDarkRow": true
         }
       ],

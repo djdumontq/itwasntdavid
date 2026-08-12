@@ -4,8 +4,8 @@
   "spatial": {
     "x": 0,
     "y": -2000,
-    "z": 7000,
-    "scale": 1.5,
+    "z": 10000,
+    "scale": 1,
     "rotateX": 0,
     "rotateY": 0,
     "rotateZ": 0
