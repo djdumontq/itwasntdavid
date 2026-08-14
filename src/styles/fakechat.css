@@ -123,6 +123,7 @@
   flex-shrink: 0;
   box-shadow: 0 3px 10px rgba(44, 66, 81, 0.15);
   animation: avatarPop 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  filter: none !important; /* Explicitly protect the profile picture from any noisy-edge filters */
 }
 
 .typing-avatar {
