@@ -51,8 +51,8 @@
         <filter id="noisy-edge-image">
           <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" result="noise" />
           
-          <!-- Displace the image graphic with scale 6.0 -->
-          <feDisplacementMap in="SourceGraphic" in2="noise" scale="6.0" xChannelSelector="R" yChannelSelector="G" result="displacedSource" />
+          <!-- Displace the image graphic with scale 20.0 -->
+          <feDisplacementMap in="SourceGraphic" in2="noise" scale="20.0" xChannelSelector="R" yChannelSelector="G" result="displacedSource" />
           
           <!-- Merge the clean image on top of the displaced image -->
           <feMerge>
