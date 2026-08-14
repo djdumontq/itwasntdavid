@@ -87,7 +87,7 @@ html, body {
 }
 
 /* Noisy/Rough Stamp-like Edges on Titles */
-h1, h2, h3, h4, h5, h6, .brand-title, .poster-bg-text {
+h1, h2, h3, h4, h5, h6, .poster-bg-text {
   filter: url(#noisy-edge);
 }
 
