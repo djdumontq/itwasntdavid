@@ -1,0 +1,15 @@
+### Empathy
+
+_(Temi-Community, Arthen Kommunikation, Hieroglifs Translations)_ Working in CSR, PR, and intercultural community building taught me that behind every organization, system, or project, there are simply human beings looking to be understood. Empathy isn't a tactic to drive transactions—it is the quiet, essential practice of active listening. I prioritize meeting teams where they truly are: reading the room, creating room for different perspectives, and building genuine trust across boundaries. Long before we talk about strategy or outcomes, we have to listen to the people behind them.
+
+### Concept
+_(Brandway &China Academy of Art)_ Consulting on business development and marketing across Europe and Asia revealed a harsh truth: a beautiful brand strategy on a boardroom whiteboard is worth little if it only exists in theory. I bring conceptual clarity to cut through that noise. I avoid generic corporate buzzwords and copy-pasted marketing funnels, applying the strategic discipline to build a sharp, distinct brand narrative that actually stands for something in a crowded market.
+
+### Execution
+_(MaintMaster Systems)_ Driving marketing communication and web performance proved that the market does not care about your mood board—it cares if the machine actually works. Because a concept means absolutely nothing until you build the system that delivers the message, I bring relentless execution power to every project. I refuse to let strategy die on a whiteboard; instead, I turn high-level brand narratives into functioning websites, measurable KPIs, and shipped results.
+
+### Operating System
+_(STAGIL & catworkx)_ Leading digital Go-To-Market teams in the Atlassian ecosystem taught me how critical a company's internal operating system is. I saw firsthand how a strict "single source of truth" philosophy (like Jira) and powerful collaboration tech can successfully steer and control an entire organization. But I also saw the flip side: the aggressive cloud push and forced "End of Life" deadlines that trapped independent businesses in expensive vendor lock-in. I bring this dual perspective to your business, auditing your digital stack to build highly efficient, centralized workflows while actively protecting you from the SaaS monopoly.
+
+### Sovereignty
+_(Westwind Hamburg e.V. & Independent Consulting)_ Managing digital systems for grassroots non-profits—where we repair bicycles to provide affordable mobility for refugees and low-income individuals—reinforced what actually matters: technology must serve the mission, not the shareholders of a foreign tech giant. I bring this philosophy of total digital independence to founder-owned businesses and NGOs. I deliver a modern, AI-supported open-source stack—deploying lightning-fast websites with TinaCMS, structured data with NocoBase, and secure team brains with Docmost—so you can keep your soul, own your data, and control your infrastructure.
