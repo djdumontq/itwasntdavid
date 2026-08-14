@@ -162,8 +162,8 @@ h1, h2, h3, h4, h5, h6, .brand-title, .poster-bg-text, .rowdecoration {
 }
 
 .rowdecoration {
-  max-width: 340px;
-  max-height: 340px;
+  max-width: 440px;
+  max-height: 440px;
   height: auto;
   width: auto;
   display: block;
