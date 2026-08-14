@@ -36,8 +36,14 @@
           <!-- Generate slightly wider noise pattern -->
           <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" result="noise" />
           
-          <!-- Displace the original source graphic (wider rough edges using native font color) -->
-          <feDisplacementMap in="SourceGraphic" in2="noise" scale="3.5" xChannelSelector="R" yChannelSelector="G" />
+          <!-- Displace the source graphic to create the rough edges/bleed outline -->
+          <feDisplacementMap in="SourceGraphic" in2="noise" scale="3.5" xChannelSelector="R" yChannelSelector="G" result="displacedSource" />
+          
+          <!-- Merge the crisp original SourceGraphic on top of the displaced noisy background -->
+          <feMerge>
+            <feMergeNode in="displacedSource" />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
         </filter>
       </defs>
     </svg>
