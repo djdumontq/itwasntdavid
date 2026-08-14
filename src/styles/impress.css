@@ -18,8 +18,8 @@ html, body {
   height: 100vh;
   overflow: hidden;
   font-family: 'Outfit', sans-serif;
-  background-color: #ffffff;
-  background-image: url('/images/paper.png');
+  background-color: var(--color-light);
+  background-image: url('/images/paper.png'), url('/images/paper.png');
   background-repeat: repeat;
   color: var(--color-dark);
 }
