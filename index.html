@@ -29,25 +29,15 @@
   </head>
   <body>
     <div id="root"></div>
-    <!-- SVG Filter for Noisy/Rough Font Edges & Shadows -->
+    <!-- SVG Filter for Noisy/Rough Font Edges -->
     <svg style="position: absolute; width: 0; height: 0; pointer-events: none; overflow: hidden;" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
       <defs>
         <filter id="noisy-edge">
-          <!-- Generate fine-grained noise -->
-          <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" result="noise" />
+          <!-- Generate slightly wider noise pattern -->
+          <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" result="noise" />
           
-          <!-- Displace the original source graphic (rough edges on text) -->
-          <feDisplacementMap in="SourceGraphic" in2="noise" scale="2" xChannelSelector="R" yChannelSelector="G" result="displacedSource" />
-          
-          <!-- Create a displaced drop shadow of the text -->
-          <feOffset in="displacedSource" dx="1.5" dy="1.5" result="offset" />
-          <feColorMatrix type="matrix" values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.16 0" result="shadowColor" />
-          
-          <!-- Merge displaced source text and its rough shadow together -->
-          <feMerge>
-            <feMergeNode in="shadowColor" />
-            <feMergeNode in="displacedSource" />
-          </feMerge>
+          <!-- Displace the original source graphic (wider rough edges using native font color) -->
+          <feDisplacementMap in="SourceGraphic" in2="noise" scale="3.5" xChannelSelector="R" yChannelSelector="G" />
         </filter>
       </defs>
     </svg>
