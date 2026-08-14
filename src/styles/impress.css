@@ -86,9 +86,14 @@ html, body {
   box-sizing: border-box;
 }
 
-/* Noisy/Rough Stamp-like Edges on Titles & Images */
-h1, h2, h3, h4, h5, h6, .brand-title, .poster-bg-text, .rowdecoration {
+/* Noisy/Rough Stamp-like Edges on Titles */
+h1, h2, h3, h4, h5, h6, .brand-title, .poster-bg-text {
   filter: url(#noisy-edge);
+}
+
+/* Extra Noisy/Rough Printed Edges on Images */
+.rowdecoration {
+  filter: url(#noisy-edge-image);
 }
 
 /* Page Headings */

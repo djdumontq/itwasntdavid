@@ -32,6 +32,7 @@
     <!-- SVG Filter for Noisy/Rough Font Edges -->
     <svg style="position: absolute; width: 0; height: 0; pointer-events: none; overflow: hidden;" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
       <defs>
+        <!-- Filter for text headings -->
         <filter id="noisy-edge">
           <!-- Generate slightly wider noise pattern -->
           <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" result="noise" />
@@ -40,6 +41,20 @@
           <feDisplacementMap in="SourceGraphic" in2="noise" scale="4.5" xChannelSelector="R" yChannelSelector="G" result="displacedSource" />
           
           <!-- Merge the crisp original SourceGraphic on top of the displaced noisy background -->
+          <feMerge>
+            <feMergeNode in="displacedSource" />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
+
+        <!-- Filter for slide images (extra 30% noise spread) -->
+        <filter id="noisy-edge-image">
+          <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" result="noise" />
+          
+          <!-- Displace the image graphic with scale 6.0 -->
+          <feDisplacementMap in="SourceGraphic" in2="noise" scale="6.0" xChannelSelector="R" yChannelSelector="G" result="displacedSource" />
+          
+          <!-- Merge the clean image on top of the displaced image -->
           <feMerge>
             <feMergeNode in="displacedSource" />
             <feMergeNode in="SourceGraphic" />
