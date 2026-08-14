@@ -86,6 +86,11 @@ html, body {
   box-sizing: border-box;
 }
 
+/* Noisy/Rough Stamp-like Edges on Titles */
+h1, h2, h3, h4, h5, h6, .brand-title, .poster-bg-text {
+  filter: url(#noisy-edge);
+}
+
 /* Page Headings */
 .page h1 {
   font-family: 'Plus Jakarta Sans', sans-serif;
