@@ -23,7 +23,7 @@
         {
           "rowId": "ideology-lightswitch",
           "heading": "The Geopolitical Light Switch",
-          "text": "The world has edges, and things get complicated. Tensions shift, trade policies fracture, and tech giants can rewrite their terms of service over a weekend.\n\nWhen your entire business relies on an overseas monopoly, your brand is fragile. Someone else is holding the light switch. If they decide to flip it—whether due to a global crisis, a sudden embargo, or a simple boardroom whim—your business goes dark.",
+          "text": "The world has edges, and things get complicated. Tensions shift, trade policies fracture, and tech giants can rewrite their terms of service over a weekend.\n\nWhen your entire business relies on an overseas monopoly, your organization is fragile. Someone else is holding the light switch. If they decide to flip it—whether due to a global crisis, a sudden embargo, or a simple boardroom whim—your business goes dark.",
           "image": "/uploads/lightswitch.png",
           "isDarkRow": true
         },
