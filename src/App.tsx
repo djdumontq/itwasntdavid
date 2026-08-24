@@ -57,14 +57,29 @@ export default function App() {
   const [slidesMap, setSlidesMap] = useState<Record<string, SlideData>>(defaultSlidesMap);
   const [tinaPayloads, setTinaPayloads] = useState<Record<string, any>>({});
 
-  // Sync hash fragment (#/welcome -> welcome)
+  // Sync URL (supporting both pathnames for SEO landing pages and hash fragments for 3D transitions)
   useEffect(() => {
     const getHashId = () => {
       const hash = window.location.hash.replace(/^#\/?/, "");
-      return hash || "welcome";
+      if (hash) return hash;
+
+      const path = window.location.pathname.replace(/^\/|\/$/g, "");
+      const validSlides = ["welcome", "strategy", "ideology", "implementation", "contact", "imprint"];
+      if (validSlides.includes(path)) {
+        return path;
+      }
+      return "welcome";
     };
 
-    setActiveId(getHashId());
+    const initialId = getHashId();
+    setActiveId(initialId);
+
+    // If loaded via clean pathname (e.g. /strategy), rewrite the URL bar to hash format
+    // so subsequent navigation and transitions are smooth and consistent.
+    const path = window.location.pathname.replace(/^\/|\/$/g, "");
+    if (path && path !== "index.html") {
+      window.history.replaceState(null, "", `/#/${initialId}`);
+    }
 
     const handleHashChange = () => {
       setActiveId(getHashId());

@@ -7,44 +7,37 @@
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
-  <!-- Welcome Slide -->
-  <url>
-    <loc>https://itwasntdavid.de/#/welcome</loc>
-    <lastmod>2026-08-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
   <!-- Strategy Slide -->
   <url>
-    <loc>https://itwasntdavid.de/#/strategy</loc>
+    <loc>https://itwasntdavid.de/strategy</loc>
     <lastmod>2026-08-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <!-- Ideology Slide -->
   <url>
-    <loc>https://itwasntdavid.de/#/ideology</loc>
+    <loc>https://itwasntdavid.de/ideology</loc>
     <lastmod>2026-08-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <!-- Implementation Slide -->
   <url>
-    <loc>https://itwasntdavid.de/#/implementation</loc>
+    <loc>https://itwasntdavid.de/implementation</loc>
     <lastmod>2026-08-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <!-- Contact Slide -->
   <url>
-    <loc>https://itwasntdavid.de/#/contact</loc>
+    <loc>https://itwasntdavid.de/contact</loc>
     <lastmod>2026-08-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <!-- Imprint Slide -->
   <url>
-    <loc>https://itwasntdavid.de/#/imprint</loc>
+    <loc>https://itwasntdavid.de/imprint</loc>
     <lastmod>2026-08-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
