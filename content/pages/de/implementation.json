@@ -1,0 +1,62 @@
+{
+  "slideId": "implementation",
+  "title": "Implementierung",
+  "spatial": {
+    "x": 0,
+    "y": -2000,
+    "z": 10000,
+    "scale": 1,
+    "rotateX": 0,
+    "rotateY": 0,
+    "rotateZ": 0
+  },
+  "blocks": [
+    {
+      "heading": "Tools, denen ich vertraue",
+      "subheading": "Strategie ist nur eine Geschichte, bis man die Infrastruktur aufbaut, die sie trägt.\n\nWenn es um die Umsetzung geht, greife ich nicht einfach nach dem größten, angesagtesten SaaS-Anbieter. Ich suche nach Open-Source-Tools, die elegant, widerstandsfähig sind und Ihnen vor allem die absolute Kontrolle über Ihre eigenen Daten geben. Ich implementiere nur Systeme, die ich selbst gerne benutze. Hiermit baue ich:",
+      "cards": [
+        {
+          "title": "TinaCMS: Websites ohne Ballast",
+          "text": "Die meisten Content-Management-Systeme (wie WordPress) sind überladen und sperren Ihre Inhalte in eine unübersichtliche Datenbank. TinaCMS geht einen völlig anderen Weg. Es ist Git-gestützt, was bedeutet, dass die Inhalte Ihrer Website als saubere, portable Textdateien direkt neben Ihrem Code liegen.\n\nUnd für das Marketing-Team? Es bietet einen wunderschönen, visuellen Echtzeit-Editor. Die perfekte Brücke zwischen performanter, entwicklerfreundlicher Architektur und lifestyle-orientiertem, täglichem Storytelling.",
+          "image": "/uploads/tinacms-logo.png",
+          "gridSize": "4",
+          "isDarkCard": true
+        },
+        {
+          "title": "NocoBase: Daten zu Ihren Bedingungen",
+          "text": "Jedes Unternehmen läuft mit Datenbanken, aber Sie sollten keinem Giganten aus dem Silicon Valley eine monatliche Gebühr pro Benutzer zahlen müssen, nur um Ihre eigenen Informationen zu organisieren.\n\nNocoBase ist eine unglaublich flexible Open-Source-Plattform. Sie ermöglicht es uns, maßgeschneiderte, relationale Datenbanken aufzubauen, die sich Ihrem Unternehmen anpassen – und nicht umgekehrt.\n\nNutzbar für: Projektmanagement, die Verwaltung komplexer strukturierter Daten, Servicemanagement und den Aufbau maßgeschneiderter Arbeitsmanagementsysteme.",
+          "image": "/uploads/nocobase-logo.png",
+          "gridSize": "4",
+          "isDarkCard": false
+        },
+        {
+          "title": "Docmost: Das Gehirn des Unternehmens",
+          "text": "Eine Marke braucht einen zentralen Knotenpunkt – einen Ort, an dem Prozesse, Ideen und Dokumentationen leben. Aber das gesamte geistige Eigentum Ihres Unternehmens in einen proprietären Cloud-Arbeitsbereich zu legen, ist ein enormes Risiko.\n\nDocmost ist ein kollaborativer Open-Source-Arbeitsbereich, der als Gehirn Ihres Betriebs fungiert. Es fühlt sich für Teams flüssig, modern und intuitiv an, läuft aber vollständig zu Ihren Bedingungen.\n\nNutzbar für: Interne Dokumentation, Echtzeit-Zusammenarbeit im Team und den Aufbau eines sicheren, zentralisierten Wissensmanagement-Hubs.",
+          "image": "/uploads/docmost-logo.png",
+          "gridSize": "4",
+          "isDarkCard": true
+        }
+      ],
+      "_template": "bento_grid_module"
+    },
+    {
+      "rows": [
+        {
+          "rowId": "implementation-ai",
+          "heading": "KI-gestütztes Setup: Geschwindigkeit trifft Kontrolle",
+          "text": "Was haben alle diese Tools gemeinsam? Unter der Haube können sie komplett über die Befehlszeile (CLI) konfiguriert und eingerichtet werden.\n\nDas bringt einen enormen Vorteil: menschliche Editierbarkeit, unterstützt durch KI. Weil diese Tools auf sauberem Code und textbasierten Konfigurationen beruhen – statt auf klobigen, starren Menüs –, können wir künstliche Intelligenz nutzen, um die Setup-Skripte blitzschnell zu schreiben und bereitzustellen. Das Ergebnis? Ich kann Ihnen an einem einzigen Nachmittag helfen, maßgeschneiderte, voll funktionsfähige Systeme aufzubauen und zu starten, für die traditionelle IT-Teams Wochen bräuchten.",
+          "image": "/uploads/ai-setup.png",
+          "isDarkRow": false
+        },
+        {
+          "rowId": "implementation-hosting",
+          "heading": "Hosting-Beratung: In Reichweite halten",
+          "text": "Ein gutes Tool ist nur so sicher wie der Server, auf dem es läuft. Ich richte nicht nur die Software ein, sondern berate auch, wie Sie diese so hosten, dass sie in Ihrer Reichweite bleibt.\n\nMit sicheren, isolierten Container-Technologien wie Docker und Rootless Podman können wir eine Infrastruktur entwerfen, die genau zu Ihrer Größe passt. Ob das nun ein lokaler Server direkt in Ihrem Büro ist oder das Deployment bei einem sorgfältig ausgewählten, datenschutzfreundlichen europäischen Hoster – ich sorge dafür, dass Ihr Fundament robust, privat und wirklich Ihres ist.",
+          "image": "/uploads/docker-logo.png",
+          "isDarkRow": true
+        }
+      ],
+      "_template": "content_row_module"
+    }
+  ]
+}

@@ -6,21 +6,39 @@ import "./styles/fakechat.css";
 import { NavigationToolbar } from "./components/NavigationToolbar";
 import { SpatialCanvas, SlideData } from "./components/SpatialCanvas";
 
-// Import Slide Pages fallback data
-import welcomePage from "../content/pages/welcome.json";
-import strategyPage from "../content/pages/strategy.json";
-import ideologyPage from "../content/pages/ideology.json";
-import implementationPage from "../content/pages/implementation.json";
-import contactPage from "../content/pages/contact.json";
-import imprintPage from "../content/pages/imprint.json";
+// Import Slide Pages fallback data (EN)
+import welcomeEn from "../content/pages/en/welcome.json";
+import strategyEn from "../content/pages/en/strategy.json";
+import ideologyEn from "../content/pages/en/ideology.json";
+import implementationEn from "../content/pages/en/implementation.json";
+import contactEn from "../content/pages/en/contact.json";
+import imprintEn from "../content/pages/en/imprint.json";
 
-const defaultSlidesMap: Record<string, SlideData> = {
-  welcome: welcomePage as SlideData,
-  strategy: strategyPage as SlideData,
-  ideology: ideologyPage as SlideData,
-  implementation: implementationPage as SlideData,
-  contact: contactPage as SlideData,
-  imprint: imprintPage as SlideData,
+// Import Slide Pages fallback data (DE)
+import welcomeDe from "../content/pages/de/welcome.json";
+import strategyDe from "../content/pages/de/strategy.json";
+import ideologyDe from "../content/pages/de/ideology.json";
+import implementationDe from "../content/pages/de/implementation.json";
+import contactDe from "../content/pages/de/contact.json";
+import imprintDe from "../content/pages/de/imprint.json";
+
+const defaultSlidesMap: Record<string, Record<string, SlideData>> = {
+  en: {
+    welcome: welcomeEn as SlideData,
+    strategy: strategyEn as SlideData,
+    ideology: ideologyEn as SlideData,
+    implementation: implementationEn as SlideData,
+    contact: contactEn as SlideData,
+    imprint: imprintEn as SlideData,
+  },
+  de: {
+    welcome: welcomeDe as SlideData,
+    strategy: strategyDe as SlideData,
+    ideology: ideologyDe as SlideData,
+    implementation: implementationDe as SlideData,
+    contact: contactDe as SlideData,
+    imprint: imprintDe as SlideData,
+  }
 };
 
 function LiveTinaBinder({
@@ -53,58 +71,116 @@ function LiveTinaBinder({
 }
 
 export default function App() {
+  const [lang, setLang] = useState<"en" | "de">("en");
   const [activeId, setActiveId] = useState<string>("welcome");
-  const [slidesMap, setSlidesMap] = useState<Record<string, SlideData>>(defaultSlidesMap);
+  const [slidesMap, setSlidesMap] = useState<Record<string, SlideData>>(defaultSlidesMap.en);
   const [tinaPayloads, setTinaPayloads] = useState<Record<string, any>>({});
+
+  // Sync state with active defaultSlidesMap when language changes
+  useEffect(() => {
+    setSlidesMap((prev) => {
+      const nextMap = { ...defaultSlidesMap[lang] };
+      // Keep any active dynamic Tina updates in the map
+      Object.keys(nextMap).forEach(key => {
+        const payloadKey = `${lang}_${key}`;
+        if (tinaPayloads[payloadKey]?.data?.pages) {
+          const tinaData = tinaPayloads[payloadKey].data.pages;
+          nextMap[key] = {
+            slideId: tinaData.slideId || key,
+            title: tinaData.title || key,
+            spatial: tinaData.spatial,
+            blocks: tinaData.blocks,
+          };
+        }
+      });
+      return nextMap;
+    });
+  }, [lang]);
 
   // Sync URL (supporting both pathnames for SEO landing pages and hash fragments for 3D transitions)
   useEffect(() => {
-    const getHashId = () => {
-      const hash = window.location.hash.replace(/^#\/?/, "");
-      if (hash) return hash;
+    const parseUrl = () => {
+      let parsedLang: "en" | "de" = "en";
+      let parsedId = "welcome";
 
-      const path = window.location.pathname.replace(/^\/|\/$/g, "");
-      const validSlides = ["welcome", "strategy", "ideology", "implementation", "contact", "imprint"];
-      if (validSlides.includes(path)) {
-        return path;
+      // 1. Check hash first: e.g. #/de/strategy or #/strategy
+      const hash = window.location.hash.replace(/^#\/?/, "");
+      if (hash) {
+        if (hash.startsWith("de/")) {
+          parsedLang = "de";
+          parsedId = hash.substring(3) || "welcome";
+        } else {
+          parsedLang = "en";
+          parsedId = hash || "welcome";
+        }
+      } else {
+        // 2. Check pathname: e.g. /de/strategy or /strategy
+        const pathParts = window.location.pathname.replace(/^\/|\/$/g, "").split("/");
+        if (pathParts[0] === "de") {
+          parsedLang = "de";
+          parsedId = pathParts[1] || "welcome";
+        } else if (pathParts[0] && pathParts[0] !== "index.html") {
+          parsedLang = "en";
+          parsedId = pathParts[0];
+        }
       }
-      return "welcome";
+
+      const validSlides = ["welcome", "strategy", "ideology", "implementation", "contact", "imprint"];
+      if (!validSlides.includes(parsedId)) {
+        parsedId = "welcome";
+      }
+
+      return { parsedLang, parsedId };
     };
 
-    const initialId = getHashId();
-    setActiveId(initialId);
+    const { parsedLang, parsedId } = parseUrl();
+    setLang(parsedLang);
+    setActiveId(parsedId);
 
-    // If loaded via clean pathname (e.g. /strategy), rewrite the URL bar to hash format
-    // so subsequent navigation and transitions are smooth and consistent.
+    // Clean up address bar by converting path to standard hash representation
     const path = window.location.pathname.replace(/^\/|\/$/g, "");
     if (path && path !== "index.html") {
-      window.history.replaceState(null, "", `/#/${initialId}`);
+      const newHash = parsedLang === "en" ? `/#/${parsedId}` : `/#/de/${parsedId}`;
+      window.history.replaceState(null, "", newHash);
     }
 
     const handleHashChange = () => {
-      setActiveId(getHashId());
+      const { parsedLang: nextLang, parsedId: nextId } = parseUrl();
+      setLang(nextLang);
+      setActiveId(nextId);
     };
 
     window.addEventListener("hashchange", handleHashChange);
     return () => window.removeEventListener("hashchange", handleHashChange);
   }, []);
 
-  // Dynamic SEO Title and Meta Description updates based on active slide
+  // Dynamic SEO Title and Meta Description updates based on active slide and language
   useEffect(() => {
     // 1. Format dynamic title
     const slideTitle = slidesMap[activeId]?.title || activeId;
     const cleanTitle = slideTitle.charAt(0).toUpperCase() + slideTitle.slice(1);
     document.title = `David Dumont | ${cleanTitle}`;
 
-    // 2. Select optimized description
-    const descriptions: Record<string, string> = {
-      welcome: "Brand consultant helping leaders design honest strategies, write compelling stories, and deploy self-hosted digital infrastructure.",
-      strategy: "Beyond the 'New Logo' Fallacy. Explore David Dumont's approach to strategic brand development, closing communication gaps, and emotional strategy.",
-      ideology: "There is no cloud—just someone else's computer. Explore David Dumont's philosophy on digital sovereignty, data privacy, and hosting consulting.",
-      implementation: "Tools I trust. How David Dumont builds clean, Git-backed systems with open-source tech like TinaCMS, NocoBase, and Docmost.",
-      about: "Meet David Dumont. Learn about his career from traditional marketing agency lead to open-source self-hosting consultant.",
-      contact: "Get in touch with David Dumont. Connect via email, LinkedIn, or schedule a consulting session.",
-      imprint: "Legal imprint and contact details for David Dumont."
+    // 2. Select optimized description based on language and active slide
+    const descriptions: Record<string, Record<string, string>> = {
+      en: {
+        welcome: "Brand consultant helping leaders design honest strategies, write compelling stories, and deploy self-hosted digital infrastructure.",
+        strategy: "Beyond the 'New Logo' Fallacy. Explore David Dumont's approach to strategic brand development, closing communication gaps, and emotional strategy.",
+        ideology: "There is no cloud—just someone else's computer. Explore David Dumont's philosophy on digital sovereignty, data privacy, and hosting consulting.",
+        implementation: "Tools I trust. How David Dumont builds clean, Git-backed systems with open-source tech like TinaCMS, NocoBase, and Docmost.",
+        about: "Meet David Dumont. Learn about his career from traditional marketing agency lead to open-source self-hosting consultant.",
+        contact: "Get in touch with David Dumont. Connect via email, LinkedIn, or schedule a consulting session.",
+        imprint: "Legal imprint and contact details for David Dumont."
+      },
+      de: {
+        welcome: "Markenberater, der Führungskräfte bei der Gestaltung ehrlicher Strategien, dem Schreiben überzeugender Geschichten und dem Aufbau selbstgehosteter digitaler Infrastrukturen unterstützt.",
+        strategy: "Jenseits des Irrtums vom 'neuen Logo'. Entdecken Sie David Dumonts Ansatz zur strategischen Markenentwicklung, zum Schließen von Kommunikationslücken und zur emotionalen Strategie.",
+        ideology: "Es gibt keine Cloud – nur den Computer von jemand anderem. Erfahren Sie mehr über David Dumonts Philosophie zu digitaler Souveränität, Datenschutz und Hosting-Beratung.",
+        implementation: "Tools, denen ich vertraue. Wie David Dumont saubere, Git-gestützte Systeme mit Open-Source-Technologien wie TinaCMS, NocoBase und Docmost baut.",
+        about: "Über David Dumont. Erfahren Sie mehr über seinen Werdegang vom klassischen Marketing-Agenturleiter zum selbstständigen Open-Source-Berater.",
+        contact: "Kontaktieren Sie David Dumont. Schreiben Sie eine E-Mail, vernetzen Sie sich auf LinkedIn oder buchen Sie eine Beratungssitzung.",
+        imprint: "Impressum und rechtliche Hinweise für David Dumont."
+      }
     };
 
     let metaDesc = document.querySelector('meta[name="description"]');
@@ -113,25 +189,31 @@ export default function App() {
       metaDesc.setAttribute('name', 'description');
       document.head.appendChild(metaDesc);
     }
-    metaDesc.setAttribute('content', descriptions[activeId] || descriptions.welcome);
-  }, [activeId, slidesMap]);
+    const currentDesc = descriptions[lang] || descriptions.en;
+    metaDesc.setAttribute('content', currentDesc[activeId] || currentDesc.welcome);
+  }, [activeId, slidesMap, lang]);
 
-  // Fetch GraphQL payload for active slide without clearing payload state
+  // Fetch GraphQL payload for active slide and language without clearing payload state
   useEffect(() => {
-    const filename = `${activeId}.json`;
+    const filename = `${lang}/${activeId}.json`;
     client.queries
       .pages({ relativePath: filename })
       .then((res) => {
-        setTinaPayloads((prev) => ({ ...prev, [activeId]: res }));
+        setTinaPayloads((prev) => ({ ...prev, [`${lang}_${activeId}`]: res }));
       })
       .catch((err) => {
         console.warn(`TinaCMS query fallback for ${filename}:`, err);
       });
-  }, [activeId]);
+  }, [activeId, lang]);
 
   const handleSelectSlide = (id: string) => {
     setActiveId(id);
-    window.location.hash = `#/${id}`;
+    window.location.hash = lang === "en" ? `#/${id}` : `#/de/${id}`;
+  };
+
+  const handleSelectLanguage = (newLang: "en" | "de") => {
+    setLang(newLang);
+    window.location.hash = newLang === "en" ? `#/${activeId}` : `#/de/${activeId}`;
   };
 
   // Keyboard arrow navigation
@@ -162,7 +244,8 @@ export default function App() {
     }));
   }, []);
 
-  const currentPayload = tinaPayloads[activeId];
+  const currentPayloadKey = `${lang}_${activeId}`;
+  const currentPayload = tinaPayloads[currentPayloadKey];
 
   const slides: SlideData[] = Object.keys(slidesMap).map((id) => slidesMap[id]);
 
@@ -171,7 +254,7 @@ export default function App() {
       {/* Live TinaCMS Binder only renders when valid payload exists (no empty query error) */}
       {currentPayload && (
         <LiveTinaBinder
-          key={activeId}
+          key={`${lang}_${activeId}`}
           activeId={activeId}
           tinaPayload={currentPayload}
           onSlideDataUpdate={handleSlideUpdate}
@@ -185,6 +268,8 @@ export default function App() {
           .map((s) => ({ id: s.slideId, title: s.title || s.slideId }))}
         activeId={activeId}
         onSelectSlide={handleSelectSlide}
+        lang={lang}
+        onSelectLanguage={handleSelectLanguage}
       />
 
       <SpatialCanvas

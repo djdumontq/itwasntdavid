@@ -1,0 +1,61 @@
+{
+  "slideId": "strategy",
+  "title": "Strategisches Storytelling",
+  "spatial": {
+    "x": -2400,
+    "y": 0,
+    "z": 10000,
+    "scale": 1,
+    "rotateX": 0,
+    "rotateY": 0,
+    "rotateZ": 0
+  },
+  "blocks": [
+    {
+      "rows": [
+        {
+          "rowId": "strategy-no",
+          "heading": "Der Trugschluss vom \"neuen Logo\"",
+          "text": "Es war einmal ein CEO, der beschloss, in \"Markenkommunikation\" zu investieren. Das Ergebnis? Ein neues Logo und ein verordneter Bildschirmschoner, der die überarbeitete Mission, Vision und die Werte des Unternehmens anpreist.\n\nEchte Markenbildung geht jedoch viel tiefer als ein frischer Anstrich. Sie ist die Summe jeder einzelnen Interaktion.",
+          "image": "/uploads/No-1024x800.png"
+        },
+        {
+          "rowId": "strategy-storytime",
+          "heading": "Storytelling: Jenseits des Master-Narrativs",
+          "text": "Menschen sprechen über das Unerwartete. Sie erinnern sich an Dinge, die sie noch nie zuvor erlebt haben – sei es ein besonders charmanter Empfang an der Rezeption oder eine clevere Botschaft, die in der Produktverpackung versteckt ist.\n\nEs gibt nie nur eine Geschichte über Ihre Marke, sondern viele. Jede einzelne prägt den Charakter Ihrer Marke und trägt zu ihrer lebendigen Persönlichkeit bei. Indem wir spielerisch und experimentierfreudig bleiben, können wir mithilfe bewährter Frameworks Ihr übergeordnetes Markennarrativ in konkrete Rollen für jede einzelne Abteilung und jeden Mitarbeiter herunterbrechen.",
+          "image": "/uploads/Dragon_red-1024x800.png",
+          "isDarkRow": true
+        },
+        {
+          "rowId": "strategy-shortcuts",
+          "heading": "Lücken schließen",
+          "text": "Was manche als \"Abkürzungen\" bezeichnen, sind in Wahrheit ungenutzte Chancen. Es sind die Freiräume und Lücken in Ihrer Kommunikationsstrategie, die gezielt gestaltet und mit genau den Erlebnissen gefüllt werden können, die Sie sich für Ihre Kunden wünschen.",
+          "image": "/uploads/Shortcuts-Background_red-1024x770.png",
+          "isDarkRow": false
+        },
+        {
+          "rowId": "strategy-perfect",
+          "heading": "Das Problem mit \"perfekt\"",
+          "text": "Viele Marken flüchten sich ins Generische: Sie behaupten, Marktführer zu sein, rühmen sich ihrer Innovationen und setzen auf die Perfektion von Stockfotos. Aber im Wettbewerb um Makellosigkeit kann man nur verlieren.\n\nWas eine Marke tatsächlich magnetisch macht, ist ihre Komplexität – ihre Ecken und Kanten, ihre unerwarteten Merkmale und ihre Überraschungen. Perfektion ist vergesslich, Persönlichkeit bleibt im Gedächtnis.",
+          "image": "/uploads/Too-Good_red_pattern.png",
+          "isDarkRow": true
+        },
+        {
+          "rowId": "strategy-humble",
+          "heading": "Die Kraft der Bescheidenheit",
+          "text": "Kühne Versprechen gewinnen neue Kunden. Diese Versprechen zu halten, hilft Ihnen, sie zu binden. Aber sie zu überraschen, nachdem sie sich bereits für Sie entschieden haben? Das macht Gelegenheitskäufer zu lebenslangen Markenbotschaftern. Manchmal ist die beste Strategie, die Erwartungen tiefzuhalten und sie dann zu übertreffen.",
+          "image": "/uploads/Humble-1-1024x770.png",
+          "isDarkRow": false
+        },
+        {
+          "rowId": "strategy-functions",
+          "heading": "Emotionale und soziologische Strategie",
+          "text": "Alles, was Ihre Marke anbietet, erfüllt eine übergeordnete Funktion in der Gesellschaft. Oft decken völlig unterschiedliche Produkte exakt dasselbe menschliche Grundbedürfnis ab. Diese verborgenen Gemeinsamkeiten aufzudecken, erfordert eine mutige, kreative Interpretation – aber genau das schaltet ein starkes Framework frei, um Ihre Marke weiterzuentwickeln und in völlig neue Märkte zu expandieren.",
+          "image": "/uploads/Functions_black.png",
+          "isDarkRow": true
+        }
+      ],
+      "_template": "content_row_module"
+    }
+  ]
+}

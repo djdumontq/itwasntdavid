@@ -1,0 +1,41 @@
+{
+  "slideId": "ideology",
+  "title": "Technische Ideologie",
+  "spatial": {
+    "x": 2400,
+    "y": 0,
+    "z": 10000,
+    "scale": 1,
+    "rotateX": 0,
+    "rotateY": 0,
+    "rotateZ": 0
+  },
+  "blocks": [
+    {
+      "rows": [
+        {
+          "rowId": "ideology-no-cloud",
+          "heading": "Die Cloud ist nur der Computer von jemand anderem",
+          "text": "...und im Moment gehört dieser Computer einem ausländischen Monopol.\n\nDie Unternehmens-IT hat sich still und leise in eine Geiselnahme verwandelt. Die meisten Marken übergeben bereitwillig ihre gesamte betriebliche Lebensader an eine Handvoll Tech-Oligarchen und zahlen ein monatliches Lösegeld, nur um auf ihre eigenen Daten zugreifen zu können.\n\nDurch die Bindung an diese geschlossenen Ökosysteme lagern Unternehmen ihre eigene Innovationsfähigkeit aus und liefern sich ausländischen Anbietern auf Gedeih und Verderb aus. Es ist eine kalkulierte Falle: Diese Monopole machen ihre Preise nicht am Wert fest. Sie berechnen exakt, wie schmerzhaft ein Wechsel für Sie wäre, und setzen ihre Gebühren knapp unter die Kosten eines Wechsels.",
+          "image": "/uploads/no-cloud.png",
+          "isDarkRow": false
+        },
+        {
+          "rowId": "ideology-lightswitch",
+          "heading": "Der geopolitische Lichtschalter",
+          "text": "Die Welt hat Ecken und Kanten, und die Dinge werden kompliziert. Spannungen verschieben sich, Handelspolitiken zerbrechen und Tech-Giganten können ihre Nutzungsbedingungen an einem Wochenende umschreiben.\n\nWenn Ihr gesamtes Geschäft von einem ausländischen Monopol abhängt, ist Ihr Unternehmen extrem anfällig. Jemand anderes hat die Hand am Lichtschalter. Wenn sie beschließen, ihn umzulegen – sei es durch eine globale Krise, ein plötzliches Embargo oder eine einfache Laune im Vorstand –, bleibt Ihr Geschäft dunkel.",
+          "image": "/uploads/lightswitch.png",
+          "isDarkRow": true
+        },
+        {
+          "rowId": "ideology-reach",
+          "heading": "In Reichweite halten",
+          "text": "Digitale Souveränität ist das Gegenmittel für diese Anfälligkeit. Es ist die einfache, radikale Idee, dass Sie die Werkzeuge, auf die Sie sich verlassen, tatsächlich selbst besitzen sollten.\n\nIndem Sie Ihre Systeme auf Open-Source-Software aufbauen und sie dort hosten, wo Sie direkten Zugriff haben, immunisieren Sie Ihre Marke gegen das Chaos von außen. Die Software gehört der Community, und die Daten gehören ausschließlich Ihnen. Keine entzogenen Lizenzen. Keine ausländische Überwachung. Keine plötzlichen Aussperrungen.\n\nDas ist nicht nur eine technische Entscheidung. Es ist eine Philosophie der Unabhängigkeit, die sicherstellt, dass Ihr Fundament ebenso widerstandsfähig ist wie die Geschichten, die Sie erzählen.",
+          "image": "/uploads/sovereignty.png",
+          "isDarkRow": false
+        }
+      ],
+      "_template": "content_row_module"
+    }
+  ]
+}

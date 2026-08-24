@@ -1,0 +1,68 @@
+{
+  "slideId": "welcome",
+  "title": "Willkommen",
+  "spatial": {
+    "x": 0,
+    "y": 0,
+    "z": 12000,
+    "scale": 1,
+    "rotateX": 0,
+    "rotateY": 0,
+    "rotateZ": 0
+  },
+  "blocks": [
+    {
+      "chatMessages": [
+        {
+          "name": "ms1",
+          "msg": "Hallo! Ich bin David.",
+          "delay": 1000,
+          "align": "left"
+        },
+        {
+          "name": "ms2",
+          "msg": "Ich berate Unternehmen und Freiberufler dabei, ihre Marke zu kommunizieren und ihre Infrastruktur aufzubauen.",
+          "delay": 2000,
+          "align": "left"
+        },
+        {
+          "name": "ms3",
+          "msg": "Mir liegen strategisches Storytelling, digitale Souveränität und Open-Source-Tools am Herzen.",
+          "delay": 2000,
+          "align": "left"
+        },
+        {
+          "name": "ms4",
+          "msg": "Wie kann ich dir heute helfen?",
+          "delay": 1000,
+          "align": "left"
+        },
+        {
+          "name": "ms5",
+          "msg": "Lass uns über <a href='#de/strategy'>Strategisches Storytelling</a> sprechen.",
+          "delay": 1000,
+          "align": "right"
+        },
+        {
+          "name": "ms6",
+          "msg": "Erzähl mir mehr über <a href='#de/ideology'>Digitale Souveränität</a>.",
+          "delay": 1200,
+          "align": "right"
+        },
+        {
+          "name": "ms7",
+          "msg": "Ich brauche Hilfe bei <a href='#de/implementation'>Open-Source-Tools</a> (Websites, Kollaboration, Daten).",
+          "delay": 1400,
+          "align": "right"
+        },
+        {
+          "name": "ms8",
+          "msg": "Ich möchte einfach nur <a href='#de/contact'>Kontakt aufnehmen</a>.",
+          "delay": 1600,
+          "align": "right"
+        }
+      ],
+      "_template": "chat_module"
+    }
+  ]
+}

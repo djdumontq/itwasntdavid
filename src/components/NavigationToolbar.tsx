@@ -9,12 +9,16 @@ interface NavigationToolbarProps {
   slides: SlideNav[];
   activeId: string;
   onSelectSlide: (id: string) => void;
+  lang: "en" | "de";
+  onSelectLanguage: (lang: "en" | "de") => void;
 }
 
 export const NavigationToolbar: React.FC<NavigationToolbarProps> = ({
   slides,
   activeId,
   onSelectSlide,
+  lang,
+  onSelectLanguage,
 }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const toolbarRef = useRef<HTMLDivElement>(null);
@@ -51,7 +55,7 @@ export const NavigationToolbar: React.FC<NavigationToolbarProps> = ({
       <div id="impress-toolbar" ref={toolbarRef}>
         <section id="header-above" className="top-nav">
           <a
-            href="#welcome"
+            href={lang === "en" ? "#/welcome" : "#/de/welcome"}
             className="brand-title"
             onClick={() => {
               onSelectSlide("welcome");
@@ -74,7 +78,7 @@ export const NavigationToolbar: React.FC<NavigationToolbarProps> = ({
             {slides.map((s) => (
               <li key={s.id}>
                 <a
-                  href={`#${s.id}`}
+                  href={lang === "en" ? `#/${s.id}` : `#/de/${s.id}`}
                   className={activeId === s.id ? "active" : ""}
                   onClick={() => {
                     onSelectSlide(s.id);
@@ -85,6 +89,29 @@ export const NavigationToolbar: React.FC<NavigationToolbarProps> = ({
                 </a>
               </li>
             ))}
+            <li className="lang-switch-item">
+              <span className="lang-toggle-container">
+                <button
+                  className={`lang-btn ${lang === "en" ? "active" : ""}`}
+                  onClick={() => {
+                    onSelectLanguage("en");
+                    setMobileMenuOpen(false);
+                  }}
+                >
+                  EN
+                </button>
+                <span className="divider">/</span>
+                <button
+                  className={`lang-btn ${lang === "de" ? "active" : ""}`}
+                  onClick={() => {
+                    onSelectLanguage("de");
+                    setMobileMenuOpen(false);
+                  }}
+                >
+                  DE
+                </button>
+              </span>
+            </li>
           </ul>
         </section>
       </div>

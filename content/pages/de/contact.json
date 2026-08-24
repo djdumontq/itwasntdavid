@@ -1,0 +1,72 @@
+{
+  "slideId": "contact",
+  "title": "Über mich",
+  "spatial": {
+    "x": 0,
+    "y": 2000,
+    "z": 10000,
+    "scale": 1,
+    "rotateX": 0,
+    "rotateY": 0,
+    "rotateZ": 0
+  },
+  "blocks": [
+    {
+      "introHeading": "Warum liegt dem Marketing-Typen Open Source am Herzen?",
+      "introText": "Meine Karriere ist keine Liste von Jobtiteln; es ist eine Liste von Erkenntnissen über Organisationen, Kommunikation und Technologie.",
+      "items": [
+        {
+          "title": "Empathie",
+          "subtitle": "(Temi-Community, Arthen Kommunikation, Hieroglifs Translations)",
+          "text": "Als Freiwilliger in einem georgischen Waisenhaus zu arbeiten, hat mich gelehrt, dass hinter jeder Organisation und jedem System einfach Menschen stehen, die verstanden werden wollen. Die Leitung meiner ersten Marketing- und Tech-Projekte dort machte eines glasklar: Technologie und Marketing müssen immer den Menschen dienen. Empathie ist kein Modewort, sondern die leise, essenzielle Praxis des aktiven Zuhörens. Egal, ob ich eine Website oder ein Markennarrativ baue – meine Priorität ist es, dass das Endprodukt die Menschen, die es nutzen, wirklich unterstützt."
+        },
+        {
+          "title": "Konzept",
+          "subtitle": "(Brandway & China Academy of Art)",
+          "text": "Die Beratung zu Geschäftsentwicklung und Marketing in Europa und Asien offenbarte eine harte Wahrheit: Eine schöne Markenstrategie auf einem Whiteboard im Konferenzraum ist wenig wert, wenn sie nur in der Theorie existiert. Ich sorge für konzeptionelle Klarheit, um diesen Lärm zu durchbrechen. Ich verzichte auf generische Buzzwords und kopierte Marketingfunnel. Stattdessen wende ich die strategische Disziplin an, um ein klares, unverwechselbares Markennarrativ aufzubauen, das sich in einem überfüllten Markt wirklich behauptet."
+        },
+        {
+          "title": "Umsetzung",
+          "subtitle": "(MaintMaster Systems)",
+          "text": "Die Leitung von Marketingkommunikation und Webperformance hat bewiesen, dass der Markt sich nicht für Ihr Moodboard interessiert – sondern dafür, ob die Maschine tatsächlich funktioniert. Da ein Konzept rein gar nichts bedeutet, bis man das System baut, das die Botschaft transportiert, bringe ich unbändige Umsetzungskraft in jedes Projekt. Ich lasse Strategien nicht auf dem Whiteboard sterben, sondern verwandle übergeordnete Markennarrative in funktionierende Websites, messbare KPIs und gelieferte Ergebnisse."
+        },
+        {
+          "title": "Betriebssystem",
+          "subtitle": "(STAGIL & catworkx)",
+          "text": "Die Leitung digitaler Go-To-Market-Teams im Atlassian-Ökosystem hat mir gezeigt, wie kritisch das interne Betriebssystem eines Unternehmens ist. Ich habe aus nächster Nähe erlebt, wie eine strikte 'Single Source of Truth'-Philosophie (wie Jira) und leistungsstarke Kollaborationstechnologien ein ganzes Unternehmen erfolgreich steuern und lenken können. Aber ich sah auch die Kehrseite: den aggressiven Cloud-Zwang und erzwungene 'End of Life'-Fristen, die unabhängige Unternehmen in teure Anbieterabhängigkeiten trieben. Ich bringe diese doppelte Perspektive in Ihr Unternehmen ein, prüfe Ihren digitalen Stack auf Effizienz und baue zentrale Workflows auf – während ich Sie aktiv vor dem SaaS-Monopol schütze."
+        },
+        {
+          "title": "Souveränität",
+          "subtitle": "(Westwind Hamburg e.V. & Independent Consulting)",
+          "text": "Die Verwaltung digitaler Systeme für ehrenamtliche Vereine – bei denen wir Fahrräder reparieren, um Geflüchteten und Geringverdienern erschwingliche Mobilität zu ermöglichen – hat mich darin bestärkt, worauf es wirklich ankommt: Technologie muss der Mission dienen, nicht den Aktionären eines ausländischen Tech-Riesen. Ich bringe diese Philosophie der vollständigen digitalen Unabhängigkeit zu inhabergeführten Unternehmen und NGOs. Ich liefere einen modernen, KI-gestützten Open-Source-Stack – blitzschnelle Websites mit TinaCMS, strukturierte Daten mit NocoBase und sichere Team-Dokumentation mit Docmost –, damit Sie Ihre Identität wahren, Ihre Daten besitzen und Ihre Infrastruktur kontrollieren."
+        }
+      ],
+      "_template": "timeline_module"
+    },
+    {
+      "items": [
+        {
+          "icon": "fa-envelope",
+          "title": "Email",
+          "text": "<a href='mailto:davidi.dumont@gmail.com' style='color:var(--color-light);'>davidi.dumont@gmail.com</a>"
+        },
+        {
+          "icon": "fa-mobile-alt",
+          "title": "Telefon",
+          "text": "<a href='tel:+4917641641313' style='color:#FDFFFC;'>+49 176 41641313</a>"
+        },
+        {
+          "icon": "fa-map-marker-alt",
+          "title": "Standort",
+          "text": "Sternschanze, Hamburg"
+        },
+        {
+          "icon": "fa-info-circle",
+          "title": "Impressum",
+          "text": "<a href='#de/imprint' style='color:var(--color-light); text-decoration:underline;'>Impressum / Rechtliches</a>"
+        }
+      ],
+      "_template": "contact_cards_module"
+    }
+  ]
+}
