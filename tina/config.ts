@@ -35,13 +35,10 @@ export default defineConfig({
         format: "json",
         ui: {
           router: ({ document }) => {
-            const parts = document._sys.breadcrumbs; // e.g. ["en", "strategy"] or ["de", "strategy"]
-            if (parts.length > 1) {
-              const lang = parts[0];
-              const name = parts[1];
-              return lang === "en" ? `/#/${name}` : `/#/${lang}/${name}`;
-            }
-            return `/#/${document._sys.filename}`;
+            const parts = document._sys.breadcrumbs; // e.g. ["en"] or ["en", "strategy"]
+            const lang = parts.includes("de") ? "de" : "en";
+            const name = document._sys.filename; // e.g. "strategy", "imprint"
+            return lang === "en" ? `/#/${name}` : `/#/${lang}/${name}`;
           },
         },
         fields: [
