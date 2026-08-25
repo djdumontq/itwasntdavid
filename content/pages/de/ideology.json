@@ -15,22 +15,22 @@
       "rows": [
         {
           "rowId": "ideology-no-cloud",
-          "heading": "Die Cloud ist nur der Computer von jemand anderem",
-          "text": "...und im Moment gehört dieser Computer einem ausländischen Monopol.\n\nDie Unternehmens-IT hat sich still und leise in eine Geiselnahme verwandelt. Die meisten Marken übergeben bereitwillig ihre gesamte betriebliche Lebensader an eine Handvoll Tech-Oligarchen und zahlen ein monatliches Lösegeld, nur um auf ihre eigenen Daten zugreifen zu können.\n\nDurch die Bindung an diese geschlossenen Ökosysteme lagern Unternehmen ihre eigene Innovationsfähigkeit aus und liefern sich ausländischen Anbietern auf Gedeih und Verderb aus. Es ist eine kalkulierte Falle: Diese Monopole machen ihre Preise nicht am Wert fest. Sie berechnen exakt, wie schmerzhaft ein Wechsel für Sie wäre, und setzen ihre Gebühren knapp unter die Kosten eines Wechsels.",
+          "heading": "Die Cloud ist nur ein Computer von jemand anderem",
+          "text": "...und im Moment gehört dieser Computer einem ausländischen Monopol.\n\nDie Unternehmens-IT hat sich still und leise in eine Geiselsituation verwandelt. Die meisten Marken übergeben bereitwillig ihren gesamten Betrieb an eine Handvoll Tech-Oligarchen und zahlen ein monatliches Lösegeld, nur um auf ihre eigenen Daten zugreifen zu können.\n\nWer sich an geschlossene Ökosysteme bindet, lagert seine Innovationsfähigkeit aus und liefert sich ausländischen Anbietern aus. Das ist kein Zufall, sondern ein kalkuliertes Geschäftsmodell: Diese Monopole koppeln ihre Preise nicht an den Wert ihres Produkts. Sie berechnen stattdessen genau, wie teuer ein Wechsel für ein Unternehmen wäre, und platzieren ihre Gebühren strategisch knapp unterhalb dieser Wechselkosten.",
           "image": "/uploads/no-cloud.png",
           "isDarkRow": false
         },
         {
           "rowId": "ideology-lightswitch",
           "heading": "Der geopolitische Lichtschalter",
-          "text": "Die Welt hat Ecken und Kanten, und die Dinge werden kompliziert. Spannungen verschieben sich, Handelspolitiken zerbrechen und Tech-Giganten können ihre Nutzungsbedingungen an einem Wochenende umschreiben.\n\nWenn Ihr gesamtes Geschäft von einem ausländischen Monopol abhängt, ist Ihr Unternehmen extrem anfällig. Jemand anderes hat die Hand am Lichtschalter. Wenn sie beschließen, ihn umzulegen – sei es durch eine globale Krise, ein plötzliches Embargo oder eine einfache Laune im Vorstand –, bleibt Ihr Geschäft dunkel.",
+          "text": "Die globalen Spielregeln ändern sich rasant: Spannungen eskalieren, Handelsabkommen zerbrechen und Tech-Giganten schreiben ihre Bedingungen übers Wochenende neu.\n\nWenn Dein Geschäft von wenigen ausländischen Anbietern abhängt, bist Du hochgradig fragil. Ein anderer hält die Hand am Lichtschalter. Beschließt dieser, ihn umzulegen – wegen einer globalen Krise, eines Embargos oder einer Laune im Vorstand –, geht bei Dir das Licht aus.",
           "image": "/uploads/lightswitch.png",
           "isDarkRow": true
         },
         {
           "rowId": "ideology-reach",
           "heading": "In Reichweite halten",
-          "text": "Digitale Souveränität ist das Gegenmittel für diese Anfälligkeit. Es ist die einfache, radikale Idee, dass Sie die Werkzeuge, auf die Sie sich verlassen, tatsächlich selbst besitzen sollten.\n\nIndem Sie Ihre Systeme auf Open-Source-Software aufbauen und sie dort hosten, wo Sie direkten Zugriff haben, immunisieren Sie Ihre Marke gegen das Chaos von außen. Die Software gehört der Community, und die Daten gehören ausschließlich Ihnen. Keine entzogenen Lizenzen. Keine ausländische Überwachung. Keine plötzlichen Aussperrungen.\n\nDas ist nicht nur eine technische Entscheidung. Es ist eine Philosophie der Unabhängigkeit, die sicherstellt, dass Ihr Fundament ebenso widerstandsfähig ist wie die Geschichten, die Sie erzählen.",
+          "text": "Das Gegenmittel gegen diese Abhängigkeit heißt Digitale Souveränität. Dahinter steckt der radikale Gedanke, dass dir die Werkzeuge, auf die Du dein Geschäft baust, auch gehören müssen.\n\nWenn Du auf Open-Source-Software setzt und deine Systeme in der eigenen Hand behältst, immunisierst du deine Marke gegen externe Schocks. Die Software gehört allen, die Daten gehören nur Dir. Keine entzogenen Lizenzen. Keine Fremdüberwachung. Keine Lock-ins.\n\nDas ist keine bloße Technik-Entscheidung. Es ist ein klares Bekenntnis zur Unabhängigkeit – damit das Fundament deiner Marke so unverrückbar bleibt wie die Geschichten, die du erzählst.",
           "image": "/uploads/sovereignty.png",
           "isDarkRow": false
         }
