@@ -17,17 +17,18 @@ export const WelcomeChat: React.FC<WelcomeChatProps> = ({
   onNavigateSlide,
 }) => {
   const [activeMessageIndex, setActiveMessageIndex] = useState<number>(0);
-  const [typingMessageIndex, setTypingMessageIndex] = useState<number | null>(0);
+  const [typingMessageIndex, setTypingMessageIndex] = useState<number | null>(null);
   const chatContainerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     setActiveMessageIndex(0);
-    setTypingMessageIndex(0);
+    setTypingMessageIndex(null);
 
     if (!messages || messages.length === 0) return;
 
     let index = 0;
     let timer: NodeJS.Timeout;
+    let startTimer: NodeJS.Timeout;
 
     const processNext = () => {
       if (index >= messages.length) {
@@ -54,9 +55,15 @@ export const WelcomeChat: React.FC<WelcomeChatProps> = ({
       }, delay);
     };
 
-    processNext();
+    // Delay start of chat to allow the 1000ms 3D glide to settle smoothly
+    startTimer = setTimeout(() => {
+      processNext();
+    }, 1000);
 
-    return () => clearTimeout(timer);
+    return () => {
+      clearTimeout(timer);
+      clearTimeout(startTimer);
+    };
   }, [messages]);
 
   // Smooth auto-scroll chat to bottom as new messages arrive or morph
