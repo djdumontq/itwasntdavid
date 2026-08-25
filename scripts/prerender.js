@@ -66,8 +66,11 @@ function prerender() {
       const desc = descList[slideId] || descList.welcome;
       
       // Localized canonical / sharing URL paths
-      const pageUrlPath = lang === 'en' ? slideId : `de/${slideId}`;
-      const pageUrl = `${BASE_URL}/${pageUrlPath}`;
+      let pageUrlPath = lang === 'en' ? slideId : `de/${slideId}`;
+      if (slideId === 'welcome') {
+        pageUrlPath = lang === 'en' ? '' : 'de';
+      }
+      const pageUrl = pageUrlPath ? `${BASE_URL}/${pageUrlPath}` : `${BASE_URL}/`;
 
       let html = template;
       
