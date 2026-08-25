@@ -10,17 +10,26 @@ export interface ChatMessage {
 interface WelcomeChatProps {
   messages: ChatMessage[];
   onNavigateSlide: (id: string) => void;
+  isActive: boolean;
 }
 
 export const WelcomeChat: React.FC<WelcomeChatProps> = ({
   messages,
   onNavigateSlide,
+  isActive,
 }) => {
   const [activeMessageIndex, setActiveMessageIndex] = useState<number>(0);
   const [typingMessageIndex, setTypingMessageIndex] = useState<number | null>(null);
   const chatContainerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    // If the welcome slide is not active, reset chat indices and clear any running loops
+    if (!isActive) {
+      setActiveMessageIndex(0);
+      setTypingMessageIndex(null);
+      return;
+    }
+
     setActiveMessageIndex(0);
     setTypingMessageIndex(null);
 
@@ -64,7 +73,7 @@ export const WelcomeChat: React.FC<WelcomeChatProps> = ({
       clearTimeout(timer);
       clearTimeout(startTimer);
     };
-  }, [messages]);
+  }, [messages, isActive]);
 
   // Smooth auto-scroll chat to bottom as new messages arrive or morph
   useEffect(() => {

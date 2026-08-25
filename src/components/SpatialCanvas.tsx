@@ -115,6 +115,7 @@ export const SpatialCanvas: React.FC<SpatialCanvasProps> = ({
                       block={block}
                       slideTitle={bIdx === 0 ? slide.title : undefined}
                       onNavigateSlide={onNavigateSlide}
+                      isActive={isActive}
                     />
                   ))
                 ) : (
@@ -124,6 +125,7 @@ export const SpatialCanvas: React.FC<SpatialCanvasProps> = ({
                       <WelcomeChat
                         messages={slide.chatMessages || []}
                         onNavigateSlide={onNavigateSlide}
+                        isActive={isActive}
                       />
                     )}
 

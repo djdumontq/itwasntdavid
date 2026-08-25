@@ -11,12 +11,14 @@ interface SlideBlockRendererProps {
   block: any;
   slideTitle?: string;
   onNavigateSlide: (id: string) => void;
+  isActive: boolean;
 }
 
 export const SlideBlockRenderer: React.FC<SlideBlockRendererProps> = ({
   block,
   slideTitle,
   onNavigateSlide,
+  isActive,
 }) => {
   if (!block) return null;
 
@@ -33,6 +35,7 @@ export const SlideBlockRenderer: React.FC<SlideBlockRendererProps> = ({
         <WelcomeChat
           messages={block.chatMessages || []}
           onNavigateSlide={onNavigateSlide}
+          isActive={isActive}
         />
       </div>
     );
