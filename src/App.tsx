@@ -139,9 +139,9 @@ export default function App() {
     setLang(parsedLang);
     setActiveId(parsedId);
 
-    // Clean up address bar by converting path to standard hash representation
+    // Clean up address bar by converting path to standard hash representation (exclude admin previews)
     const path = window.location.pathname.replace(/^\/|\/$/g, "");
-    if (path && path !== "index.html") {
+    if (path && path !== "index.html" && !path.includes("admin")) {
       const newHash = parsedLang === "en" ? `/#/${parsedId}` : `/#/de/${parsedId}`;
       window.history.replaceState(null, "", newHash);
     }
