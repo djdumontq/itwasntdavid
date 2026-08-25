@@ -3,8 +3,8 @@
   "title": "Imprint",
   "description": "Legal imprint and contact details for David Dumont.",
   "spatial": {
-    "x": 4000,
-    "y": 4000,
+    "x": 0,
+    "y": 0,
     "z": 10000,
     "scale": 1,
     "rotateX": 0,
