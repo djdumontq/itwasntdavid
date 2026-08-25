@@ -61,6 +61,7 @@ function LiveTinaBinder({
       onSlideDataUpdate({
         slideId: data.pages.slideId || activeId,
         title: data.pages.title || activeId,
+        description: data.pages.description || "",
         spatial: data.pages.spatial,
         blocks: data.pages.blocks,
       });
@@ -88,6 +89,7 @@ export default function App() {
           nextMap[key] = {
             slideId: tinaData.slideId || key,
             title: tinaData.title || key,
+            description: tinaData.description || "",
             spatial: tinaData.spatial,
             blocks: tinaData.blocks,
           };
@@ -190,7 +192,7 @@ export default function App() {
       document.head.appendChild(metaDesc);
     }
     const currentDesc = descriptions[lang] || descriptions.en;
-    metaDesc.setAttribute('content', currentDesc[activeId] || currentDesc.welcome);
+    metaDesc.setAttribute('content', slidesMap[activeId]?.description || currentDesc[activeId] || currentDesc.welcome);
   }, [activeId, slidesMap, lang]);
 
   // Fetch GraphQL payload for active slide and language without clearing payload state

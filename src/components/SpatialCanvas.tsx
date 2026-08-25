@@ -19,6 +19,7 @@ export interface SpatialData {
 export interface SlideData {
   slideId: string;
   title?: string;
+  description?: string;
   slideType?: string;
   spatial?: SpatialData;
   blocks?: any[];

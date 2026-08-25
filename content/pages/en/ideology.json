@@ -1,6 +1,7 @@
 {
   "slideId": "ideology",
   "title": "Technical Ideology",
+  "description": "There is no cloud—just someone else's computer. Explore David Dumont's philosophy on digital sovereignty, data privacy, and hosting consulting.",
   "spatial": {
     "x": 2400,
     "y": 0,

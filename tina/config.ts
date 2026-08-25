@@ -58,6 +58,14 @@ export default defineConfig({
             required: true,
           },
           {
+            type: "string",
+            name: "description",
+            label: "SEO Meta Description",
+            ui: {
+              component: "textarea",
+            },
+          },
+          {
             type: "object",
             name: "spatial",
             label: "3D Spatial Position",

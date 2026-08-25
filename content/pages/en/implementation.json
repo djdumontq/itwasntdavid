@@ -1,6 +1,7 @@
 {
   "slideId": "implementation",
   "title": "Implementation",
+  "description": "Tools I trust. How David Dumont builds clean, Git-backed systems with open-source tech like TinaCMS, NocoBase, and Docmost.",
   "spatial": {
     "x": 0,
     "y": -2000,

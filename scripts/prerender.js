@@ -51,19 +51,22 @@ function prerender() {
       const slideId = path.basename(file, '.json');
       const jsonPath = path.join(langDir, file);
       let title = slideId.charAt(0).toUpperCase() + slideId.slice(1);
+      const descList = descriptions[lang] || descriptions.en;
+      let desc = descList[slideId] || descList.welcome;
       
       try {
         const data = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
         if (data.title) {
           title = data.title;
         }
+        if (data.description) {
+          desc = data.description;
+        }
       } catch (e) {
-        console.warn(`Could not read title from ${jsonPath}, using fallback.`);
+        console.warn(`Could not read metadata from ${jsonPath}, using fallback.`);
       }
 
       const fullTitle = `David Dumont | ${title}`;
-      const descList = descriptions[lang] || descriptions.en;
-      const desc = descList[slideId] || descList.welcome;
       
       // Localized canonical / sharing URL paths
       let pageUrlPath = lang === 'en' ? slideId : `de/${slideId}`;
