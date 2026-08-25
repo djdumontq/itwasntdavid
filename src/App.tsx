@@ -195,18 +195,23 @@ export default function App() {
     metaDesc.setAttribute('content', slidesMap[activeId]?.description || currentDesc[activeId] || currentDesc.welcome);
   }, [activeId, slidesMap, lang]);
 
-  // Fetch GraphQL payload for active slide and language without clearing payload state
+  // Fetch GraphQL payload for active slide and language without clearing payload state (with caching)
   useEffect(() => {
+    const payloadKey = `${lang}_${activeId}`;
+    if (tinaPayloads[payloadKey]) {
+      return; // Already loaded, skip query to avoid mid-transition re-renders
+    }
+
     const filename = `${lang}/${activeId}.json`;
     client.queries
       .pages({ relativePath: filename })
       .then((res) => {
-        setTinaPayloads((prev) => ({ ...prev, [`${lang}_${activeId}`]: res }));
+        setTinaPayloads((prev) => ({ ...prev, [payloadKey]: res }));
       })
       .catch((err) => {
         console.warn(`TinaCMS query fallback for ${filename}:`, err);
       });
-  }, [activeId, lang]);
+  }, [activeId, lang, tinaPayloads]);
 
   const handleSelectSlide = (id: string) => {
     setActiveId(id);

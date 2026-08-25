@@ -44,9 +44,8 @@ html, body {
   padding: 80px 0 120px 0;
   box-sizing: border-box;
   transform-style: preserve-3d;
-  transition: opacity 1s ease-in-out, filter 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
   opacity: 0.15;
-  filter: blur(2px);
   pointer-events: none;
   background: transparent;
   box-shadow: none;
@@ -60,7 +59,6 @@ html, body {
 
 .step.active {
   opacity: 1;
-  filter: blur(0px);
   pointer-events: auto;
 }
 
