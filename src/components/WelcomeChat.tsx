@@ -82,7 +82,11 @@ export const WelcomeChat: React.FC<WelcomeChatProps> = ({
       const href = target.getAttribute("href");
       if (href && href.startsWith("#")) {
         e.preventDefault();
-        onNavigateSlide(href.substring(1));
+        // Robust extraction of pure slide ID (e.g. "#de/strategy" or "#strategy" -> "strategy")
+        const slideId = href.replace(/^#\/?/, "").split("/").pop();
+        if (slideId) {
+          onNavigateSlide(slideId);
+        }
       }
     }
   };
