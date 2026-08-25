@@ -65,7 +65,7 @@ export const SpatialCanvas: React.FC<SpatialCanvasProps> = ({
     left: "50%",
     transformOrigin: "0% 0%",
     transformStyle: "preserve-3d",
-    transition: "all 1000ms ease-in-out",
+    transition: "transform 1000ms ease-in-out",
     perspective: `${1000 / targetScale}px`,
     transform: `scale(${targetScale})`,
   };
@@ -77,7 +77,7 @@ export const SpatialCanvas: React.FC<SpatialCanvasProps> = ({
     left: "0px",
     transformOrigin: "0% 0%",
     transformStyle: "preserve-3d",
-    transition: "all 1000ms ease-in-out",
+    transition: "transform 1000ms ease-in-out",
     transform: `rotateZ(${rz}deg) rotateY(${ry}deg) rotateX(${rx}deg) translate3d(${tx}px, ${ty}px, ${tz}px)`,
   };
 
