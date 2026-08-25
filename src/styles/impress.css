@@ -89,6 +89,15 @@ h1, h2, h3, h4, h5, h6, .poster-bg-text {
   filter: url(#noisy-edge);
 }
 
+.bento_card h1,
+.bento_card h2,
+.bento_card h3,
+.bento_card h4,
+.bento_card h5,
+.bento_card h6 {
+  filter: none;
+}
+
 /* Extra Noisy/Rough Printed Edges on Images */
 .rowdecoration {
   filter: url(#noisy-edge-image);
