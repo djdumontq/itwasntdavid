@@ -71,6 +71,9 @@ function prerender() {
 
       let html = template;
       
+      // Set correct lang attribute on html tag
+      html = html.replace('<html lang="en">', `<html lang="${lang}">`);
+
       // Replace Title
       html = html.replace(/<title>[^<]*<\/title>/g, `<title>${fullTitle}</title>`);
       

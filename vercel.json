@@ -1,4 +1,10 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
+  "cleanUrls": true,
+  "rewrites": [
+    {
+      "source": "/((?!de|welcome|strategy|ideology|implementation|contact|imprint|assets|uploads|images|admin|favicon.ico|favicon.png|sitemap.xml).*)",
+      "destination": "/index.html"
+    }
+  ]
 }
