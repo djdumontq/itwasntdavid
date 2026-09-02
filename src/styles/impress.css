@@ -1273,69 +1273,117 @@ h1, h2, h3, h4, h5, h6, .poster-bg-text {
   color: var(--color-dark);
 }
 
-.article_blockquote {
-  border: 2px solid var(--color-dark);
-  border-left: 6px solid var(--color-accent);
-  box-shadow: 4px 4px 0px var(--color-dark);
-  padding: 18px 24px;
-  margin: 20px 0 28px 0;
-  font-size: 19px;
-  line-height: 1.6;
-  background: rgba(255, 255, 255, 0.7);
-  border-radius: 12px;
-}
-
-.article_blockquote strong {
-  color: var(--color-dark);
-  font-weight: 700;
-}
-
-.article_inline_code {
-  background: var(--color-dark);
-  color: #F7F5F0;
-  padding: 4px 10px;
-  border-radius: 6px;
-  font-family: 'Courier New', Courier, monospace;
-  font-size: 0.84em;
-  font-weight: 700;
-  display: inline-block;
-  margin: 3px 2px 6px 2px;
-  box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.15);
-  letter-spacing: 0.5px;
-}
-
-.article_code_block {
-  position: relative;
-  background: #121820;
-  color: #00FF88;
-  padding: 38px 24px 20px 24px;
-  border-radius: 12px;
-  border: 2px solid var(--color-dark);
+/* Terminal Box Container */
+.article_terminal_wrapper {
+  margin: 28px 0 36px 0;
+  border-radius: 14px;
+  background: #10151C;
+  border: 3px solid var(--color-dark);
   box-shadow: 6px 6px 0px var(--color-accent);
-  font-family: 'Courier New', Courier, monospace;
-  font-size: 16px;
-  line-height: 1.55;
-  overflow-x: auto;
-  margin: 24px 0 32px 0;
+  overflow: hidden;
 }
 
-.article_code_block::before {
-  content: "● ● ●  ai prompt";
-  position: absolute;
-  top: 10px;
-  left: 18px;
-  font-size: 11px;
+.article_terminal_header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #1A222C;
+  padding: 12px 18px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.08);
+}
+
+.terminal_dots {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.terminal_dots .dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.dot_red { background: #FF5F56; }
+.dot_yellow { background: #FFBD2E; }
+.dot_green { background: #27C93F; }
+
+.terminal_title {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 13px;
   font-weight: 700;
-  letter-spacing: 1.5px;
-  color: rgba(247, 245, 240, 0.35);
-  font-family: 'Outfit', sans-serif;
+  color: rgba(247, 245, 240, 0.7);
+  letter-spacing: 0.8px;
   text-transform: uppercase;
 }
 
+.article_content_wrapper pre,
+.article_markdown_body pre,
+.article_code_block {
+  margin: 0 !important;
+  background: #10151C !important;
+  color: #00FF88 !important;
+  padding: 24px !important;
+  font-family: 'Courier New', Courier, monospace !important;
+  font-size: 18px !important;
+  font-weight: 600 !important;
+  line-height: 1.5 !important;
+  overflow-x: auto !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+}
+
+.article_content_wrapper pre code,
+.article_markdown_body pre code,
 .article_code_block code {
-  color: #00FF88;
-  font-weight: 600;
-  display: block;
+  color: #00FF88 !important;
+  font-family: 'Courier New', Courier, monospace !important;
+  font-size: 18px !important;
+  font-weight: 600 !important;
+  background: transparent !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+}
+
+/* Article Blockquotes & Callouts */
+.article_content_wrapper blockquote,
+.article_markdown_body blockquote,
+.article_blockquote {
+  border: 2px solid var(--color-dark) !important;
+  border-left: 6px solid var(--color-accent) !important;
+  box-shadow: 4px 4px 0px var(--color-dark) !important;
+  padding: 18px 24px !important;
+  margin: 20px 0 28px 0 !important;
+  font-size: 19px !important;
+  line-height: 1.6 !important;
+  background: rgba(255, 255, 255, 0.7) !important;
+  border-radius: 12px !important;
+}
+
+.article_content_wrapper blockquote strong,
+.article_markdown_body blockquote strong,
+.article_blockquote strong {
+  color: var(--color-dark) !important;
+  font-weight: 700 !important;
+}
+
+/* Article Inline Code Badges */
+.article_content_wrapper p > code,
+.article_markdown_body p > code,
+.article_inline_code {
+  background: var(--color-dark) !important;
+  color: #F7F5F0 !important;
+  padding: 4px 10px !important;
+  border-radius: 6px !important;
+  font-family: 'Courier New', Courier, monospace !important;
+  font-size: 0.86em !important;
+  font-weight: 700 !important;
+  display: inline-block !important;
+  margin: 3px 2px 6px 2px !important;
+  box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.15) !important;
+  letter-spacing: 0.5px !important;
 }
 
 .article_ul, .article_ol {

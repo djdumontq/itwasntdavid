@@ -41,10 +41,21 @@ export const MarkdownView: React.FC<MarkdownViewProps> = ({ content }) => {
 
   const flushCodeBlock = () => {
     if (inCodeBlock && codeBuffer.length > 0) {
+      const codeContent = codeBuffer.join("\n");
       elements.push(
-        <pre key={`code-${elements.length}`} className="article_code_block">
-          <code>{codeBuffer.join("\n")}</code>
-        </pre>
+        <div key={`code-terminal-${elements.length}`} className="article_terminal_wrapper">
+          <div className="article_terminal_header">
+            <span className="terminal_dots">
+              <span className="dot dot_red" />
+              <span className="dot dot_yellow" />
+              <span className="dot dot_green" />
+            </span>
+            <span className="terminal_title">ai prompt / bash</span>
+          </div>
+          <pre className="article_code_block">
+            <code>{codeContent}</code>
+          </pre>
+        </div>
       );
       codeBuffer = [];
       inCodeBlock = false;

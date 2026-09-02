@@ -9,6 +9,30 @@ interface ArticleSlideProps {
   onBackToBlog: () => void;
 }
 
+const tinaComponents = {
+  blockquote: (props: any) => (
+    <blockquote className="article_blockquote">{props.children}</blockquote>
+  ),
+  code_block: (props: any) => (
+    <div className="article_terminal_wrapper">
+      <div className="article_terminal_header">
+        <span className="terminal_dots">
+          <span className="dot dot_red" />
+          <span className="dot dot_yellow" />
+          <span className="dot dot_green" />
+        </span>
+        <span className="terminal_title">ai prompt / bash</span>
+      </div>
+      <pre className="article_code_block">
+        <code>{props.value || props.children}</code>
+      </pre>
+    </div>
+  ),
+  code: (props: any) => (
+    <code className="article_inline_code">{props.children}</code>
+  ),
+};
+
 export const ArticleSlide: React.FC<ArticleSlideProps> = ({
   post,
   lang,
@@ -67,7 +91,7 @@ export const ArticleSlide: React.FC<ArticleSlideProps> = ({
       <section className="article_content_wrapper">
         {isRichText ? (
           <div className="article_markdown_body">
-            <TinaMarkdown content={post.body} />
+            <TinaMarkdown content={post.body} components={tinaComponents} />
           </div>
         ) : (
           <MarkdownView content={typeof post.body === "string" ? post.body : ""} />
