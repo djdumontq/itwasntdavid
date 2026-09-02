@@ -58,8 +58,14 @@
         },
         {
           "name": "ms8",
-          "msg": "I'd just like to <a href='#contact'>get in touch</a>.",
+          "msg": "Show me your <a href='#blog'>Field Notes & Articles</a>.",
           "delay": 1600,
+          "align": "right"
+        },
+        {
+          "name": "ms9",
+          "msg": "I'd just like to <a href='#contact'>get in touch</a>.",
+          "delay": 1800,
           "align": "right"
         }
       ],

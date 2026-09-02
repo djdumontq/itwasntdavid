@@ -33,7 +33,6 @@ export const NavigationToolbar: React.FC<NavigationToolbarProps> = ({
       }
     };
 
-    // Use setTimeout so the initial hamburger click event doesn't immediately close it
     const timer = setTimeout(() => {
       window.addEventListener("click", handleClickOutside);
     }, 10);
@@ -44,14 +43,26 @@ export const NavigationToolbar: React.FC<NavigationToolbarProps> = ({
     };
   }, [mobileMenuOpen]);
 
+  // Close on escape key
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape" && mobileMenuOpen) {
+        setMobileMenuOpen(false);
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [mobileMenuOpen]);
+
   return (
     <>
-      {mobileMenuOpen && (
-        <div
-          className="menu-backdrop"
-          onClick={() => setMobileMenuOpen(false)}
-        />
-      )}
+      {/* Animated Backdrop Blur */}
+      <div
+        className={`menu-backdrop ${mobileMenuOpen ? "open" : ""}`}
+        onClick={() => setMobileMenuOpen(false)}
+        aria-hidden="true"
+      />
+
       <div id="impress-toolbar" ref={toolbarRef}>
         <section id="header-above" className="top-nav">
           <a
@@ -65,15 +76,17 @@ export const NavigationToolbar: React.FC<NavigationToolbarProps> = ({
             David Dumont
           </a>
 
-          {/* Mobile Hamburger Toggle Button */}
+          {/* Animated Mobile Hamburger Toggle Button */}
           <button
-            className="mobile-menu-btn"
+            className={`mobile-menu-btn ${mobileMenuOpen ? "open" : ""}`}
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle navigation menu"
+            aria-expanded={mobileMenuOpen}
           >
             <i className={mobileMenuOpen ? "fas fa-times" : "fas fa-bars"} />
           </button>
 
+          {/* Smooth Sliding & Fading Menu Drawer */}
           <ul className={`menu ${mobileMenuOpen ? "open" : ""}`}>
             {slides.map((s) => (
               <li key={s.id}>

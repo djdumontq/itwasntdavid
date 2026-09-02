@@ -1,0 +1,15 @@
+{
+  "slideId": "blog",
+  "title": "Field Notes",
+  "description": "Articles, insights, and field notes by David Dumont on brand storytelling, open-source systems, and digital sovereignty.",
+  "spatial": {
+    "x": -2400,
+    "y": -2000,
+    "z": 10000,
+    "scale": 1,
+    "rotateX": 0,
+    "rotateY": 0,
+    "rotateZ": 0
+  },
+  "blocks": []
+}

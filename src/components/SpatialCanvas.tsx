@@ -4,6 +4,9 @@ import { WelcomeChat, ChatMessage } from "./WelcomeChat";
 import { ContentSlide, ContentRow } from "./ContentSlide";
 import { ContactSlide, ContactItem } from "./ContactSlide";
 import { ImprintSlide } from "./ImprintSlide";
+import { BlogHubSlide } from "./BlogHubSlide";
+import { ArticleSlide } from "./ArticleSlide";
+import { BlogPostMeta, BlogPostFull } from "../data/posts";
 import { tinaField } from "tinacms/dist/react";
 
 export interface SpatialData {
@@ -27,23 +30,32 @@ export interface SlideData {
   contentRows?: ContentRow[];
   contactItems?: ContactItem[];
   body?: any;
+  postData?: BlogPostFull;
 }
 
 interface SpatialCanvasProps {
   slides: SlideData[];
   activeId: string;
   onNavigateSlide: (id: string) => void;
+  posts?: BlogPostMeta[];
+  lang?: "en" | "de";
+  onSelectArticle?: (slug: string) => void;
+  onBackToBlog?: () => void;
 }
 
 export const SpatialCanvas: React.FC<SpatialCanvasProps> = ({
   slides,
   activeId,
   onNavigateSlide,
+  posts = [],
+  lang = "en",
+  onSelectArticle = () => {},
+  onBackToBlog = () => {},
 }) => {
   const activeSlide =
     slides.find((s) => s.slideId === activeId) || slides[0] || { slideId: "welcome" };
 
-  const spatial = activeSlide.spatial || { x: 0, y: 0, z: 0, scale: 1 };
+  const spatial = activeSlide.spatial || { x: 0, y: 0, z: 12000, scale: 1 };
 
   // Original impress.js setup from daviddumont.de (windowScale = 1)
   const windowScale = 1;
@@ -107,8 +119,23 @@ export const SpatialCanvas: React.FC<SpatialCanvasProps> = ({
                 style={stepStyle}
                 data-tina-field={tinaField(slide, "spatial")}
               >
-                {/* Render Modular Blocks if available */}
-                {slide.blocks && slide.blocks.length > 0 ? (
+                {/* 1. Blog Hub Slide */}
+                {slide.slideId === "blog" ? (
+                  <BlogHubSlide
+                    title={slide.title}
+                    posts={posts}
+                    lang={lang}
+                    onSelectArticle={onSelectArticle}
+                  />
+                ) : slide.slideType === "blog_article" && slide.postData ? (
+                  /* 2. Blog Article Slide positioned behind listing in 3D space */
+                  <ArticleSlide
+                    post={slide.postData}
+                    lang={lang}
+                    onBackToBlog={onBackToBlog}
+                  />
+                ) : slide.blocks && slide.blocks.length > 0 ? (
+                  /* 3. Modular Slide Blocks */
                   slide.blocks.map((block: any, bIdx: number) => (
                     <SlideBlockRenderer
                       key={block.id || bIdx}
@@ -119,7 +146,7 @@ export const SpatialCanvas: React.FC<SpatialCanvasProps> = ({
                     />
                   ))
                 ) : (
-                  /* Fallback to legacy slideType */
+                  /* 4. Legacy Slide Fallbacks */
                   <>
                     {slide.slideType === "welcome_chat" && (
                       <WelcomeChat

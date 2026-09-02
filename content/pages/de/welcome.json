@@ -58,8 +58,14 @@
         },
         {
           "name": "ms8",
-          "msg": "Ich möchte einfach nur <a href='#de/contact'>Kontakt aufnehmen</a>.",
+          "msg": "Zeige mir deine <a href='#de/blog'>Notizen & Artikel</a>.",
           "delay": 1600,
+          "align": "right"
+        },
+        {
+          "name": "ms9",
+          "msg": "Ich möchte einfach nur <a href='#de/contact'>Kontakt aufnehmen</a>.",
+          "delay": 1800,
           "align": "right"
         }
       ],

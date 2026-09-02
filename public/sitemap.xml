@@ -1,78 +1,111 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- English Language Pages -->
   <url>
-    <loc>https://itwasntdavid.de/</loc>
-    <lastmod>2026-08-24</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://itwasntdavid.de/strategy</loc>
-    <lastmod>2026-08-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://itwasntdavid.de/ideology</loc>
-    <lastmod>2026-08-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://itwasntdavid.de/implementation</loc>
-    <lastmod>2026-08-24</lastmod>
+    <loc>https://itwasntdavid.de/blog</loc>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://itwasntdavid.de/contact</loc>
-    <lastmod>2026-08-24</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://itwasntdavid.de/ideology</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://itwasntdavid.de/implementation</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://itwasntdavid.de/imprint</loc>
-    <lastmod>2026-08-24</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
-
-  <!-- German Language Pages -->
   <url>
-    <loc>https://itwasntdavid.de/de</loc>
-    <lastmod>2026-08-24</lastmod>
+    <loc>https://itwasntdavid.de/strategy</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://itwasntdavid.de/</loc>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>daily</changefreq>
-    <priority>0.9</priority>
+    <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://itwasntdavid.de/de/strategy</loc>
-    <lastmod>2026-08-24</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://itwasntdavid.de/blog/git-backed-cms-tinacms</loc>
+    <lastmod>2026-08-28</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://itwasntdavid.de/de/ideology</loc>
-    <lastmod>2026-08-24</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://itwasntdavid.de/blog/why-digital-sovereignty-matters</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://itwasntdavid.de/de/implementation</loc>
-    <lastmod>2026-08-24</lastmod>
+    <loc>https://itwasntdavid.de/de/blog</loc>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://itwasntdavid.de/de/contact</loc>
-    <lastmod>2026-08-24</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://itwasntdavid.de/de/ideology</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://itwasntdavid.de/de/implementation</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://itwasntdavid.de/de/imprint</loc>
-    <lastmod>2026-08-24</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://itwasntdavid.de/de/strategy</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://itwasntdavid.de/de</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://itwasntdavid.de/de/blog/git-gestuetzte-cms-tinacms</loc>
+    <lastmod>2026-08-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://itwasntdavid.de/de/blog/warum-digitale-souveraenitaet</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 </urlset>

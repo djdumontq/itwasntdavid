@@ -1,0 +1,15 @@
+{
+  "slideId": "blog",
+  "title": "Notizen",
+  "description": "Artikel, Gedanken und Notizen von David Dumont über Marken-Storytelling, Open-Source-Systeme und digitale Souveränität.",
+  "spatial": {
+    "x": -2400,
+    "y": -2000,
+    "z": 10000,
+    "scale": 1,
+    "rotateX": 0,
+    "rotateY": 0,
+    "rotateZ": 0
+  },
+  "blocks": []
+}
