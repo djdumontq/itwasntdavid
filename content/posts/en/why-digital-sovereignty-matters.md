@@ -8,7 +8,7 @@ tags:
   - "Digital Sovereignty"
   - "Open Source"
   - "Strategy"
-featured: true
+featured: false
 readingTime: "4 min read"
 ---
 
