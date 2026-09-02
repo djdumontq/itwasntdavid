@@ -7,7 +7,6 @@ interface MarkdownViewProps {
 export const MarkdownView: React.FC<MarkdownViewProps> = ({ content }) => {
   if (!content) return null;
 
-  // Split by double newlines or lines
   const lines = content.split(/\r?\n/);
   const elements: React.ReactNode[] = [];
   let inCodeBlock = false;
@@ -52,6 +51,38 @@ export const MarkdownView: React.FC<MarkdownViewProps> = ({ content }) => {
     }
   };
 
+  const formatTextStyles = (text: string): React.ReactNode => {
+    // Process inline code `code`, bold **text**, and italic *text*
+    const codeParts = text.split(/(`[^`]+`)/g);
+
+    return codeParts.map((part, pIdx) => {
+      if (part.startsWith("`") && part.endsWith("`") && part.length > 1) {
+        return (
+          <code key={`code-inline-${pIdx}`} className="article_inline_code">
+            {part.slice(1, -1)}
+          </code>
+        );
+      }
+
+      // Inside normal text, handle **bold** and *italic*
+      const boldParts = part.split(/(\*\*[^*]+\*\*)/g);
+      return boldParts.map((bPart, bIdx) => {
+        if (bPart.startsWith("**") && bPart.endsWith("**") && bPart.length > 3) {
+          const innerBold = bPart.slice(2, -2);
+          return <strong key={`b-${pIdx}-${bIdx}`}>{innerBold}</strong>;
+        }
+
+        const italicParts = bPart.split(/(\*[^*]+\*)/g);
+        return italicParts.map((iPart, iIdx) => {
+          if (iPart.startsWith("*") && iPart.endsWith("*") && iPart.length > 2) {
+            return <em key={`em-${pIdx}-${bIdx}-${iIdx}`}>{iPart.slice(1, -1)}</em>;
+          }
+          return iPart;
+        });
+      });
+    });
+  };
+
   const renderInline = (text: string): React.ReactNode => {
     // Process markdown links [label](url)
     const linkRegex = /\[([^\]]+)\]\(([^)]+)\)/g;
@@ -78,28 +109,6 @@ export const MarkdownView: React.FC<MarkdownViewProps> = ({ content }) => {
     }
 
     return parts.length > 0 ? parts : formatTextStyles(text);
-  };
-
-  const formatTextStyles = (text: string): React.ReactNode => {
-    // Basic bold **text** and inline `code`
-    const boldRegex = /\*\*([^*]+)\*\*/g;
-    const segments: React.ReactNode[] = [];
-    let lastIdx = 0;
-    let bMatch: RegExpExecArray | null;
-
-    while ((bMatch = boldRegex.exec(text)) !== null) {
-      if (bMatch.index > lastIdx) {
-        segments.push(bMatch.index, text.substring(lastIdx, bMatch.index));
-      }
-      segments.push(
-        <strong key={`b-${bMatch.index}`}>{bMatch[1]}</strong>
-      );
-      lastIdx = bMatch.index + bMatch[0].length;
-    }
-    if (lastIdx < text.length) {
-      segments.push(text.substring(lastIdx));
-    }
-    return segments;
   };
 
   for (let i = 0; i < lines.length; i++) {

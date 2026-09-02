@@ -20,7 +20,7 @@ Sie dient dazu, das Management vor dem existenziellen Risiko zu schützen, jemal
 
 Linkedinese entsteht, wenn Marketing versucht, Beschaffungsalgorithmen, Agentur-Buzzwords und Vorstands-Konsens gleichzeitig zu befriedigen. Es klingt prestige-trächtig beim Schreiben, war teuer in der Entwicklung – und ist für den Leser vollkommen austauschbar und bedeutungslos.
 
-Wenn Sie wissen wollen, ob die Markenstimme Ihres Unternehmens an chronischer Belanglosigkeit leidet, gibt es einen einfachen, herrlich unbequemen Test: **Füttern Sie Ihre Unternehmensbeschreibung in eine KI und fordern Sie eine Übersetzung aus dem Linkedinese in ungeschminkte Realität.**
+Wenn Sie wissen wollen, ob die Markenstimme Ihres Unternehmens an chronischer Belanglosigkeit leidet, gibt es einen einfachen, herrlich unbequemen Test: **Bitten Sie die KI Ihrer Wahl, Ihre Unternehmensbeschreibung aus dem Linkedinese auf Deutsch (oder Englisch) zu übersetzen.**
 
 Machen wir den Test an einem klassischen, realen Archetyp aus der Welt der IT-Dienstleister.
 
@@ -41,34 +41,62 @@ Betrachten wir ein archetypisches Unternehmensprofil eines Enterprise-IT-Dienstl
 ## Die schonungslos ehrliche Übersetzung
 
 ### 1. Die Einleitung
-> **Linkedinese:** *„[COMPANY NAME] is more than a company name, it’s a call to action…“*
-> 
-> **Klartext:** Das Marketing hat 40.000 € an eine Branding-Agentur gezahlt, um ein Wortspiel im Firmennamen strategisch zu rechtfertigen.
+
+`Linkedinese:`
+> *„[COMPANY NAME] is more than a company name, it’s a call to action…“*
+
+`Klartext:`
+> **Das Marketing hat 40.000 € an eine Branding-Agentur gezahlt, um ein Wortspiel im Firmennamen strategisch zu rechtfertigen.**
+
+---
 
 ### 2. Der Kunden-Pitch
-> **Linkedinese:** *„…führender IT-Dienstleister, der sich auf Cloud-Plattformen und digitale Lösungen für Enterprise Customers, Fortune 1000 und Kunden aus dem öffentlichen Sektor spezialisiert hat.“*
-> 
-> **Klartext:** Wir verkaufen Standard-IT-Beratung, Softwarelizenzen und Cloud-Migrationen an Konzerne und Behörden, die panische Angst davor haben, es selbst zu tun.
+
+`Linkedinese:`
+> *„…führender IT-Dienstleister, der sich auf Cloud-Plattformen und digitale Lösungen für Enterprise Customers, Fortune 1000 und Kunden aus dem öffentlichen Sektor spezialisiert hat.“*
+
+`Klartext:`
+> **Wir verkaufen Standard-IT-Beratung, Softwarelizenzen und Cloud-Migrationen an Konzerne und Behörden, die panische Angst davor haben, es selbst zu tun.**
+
+---
 
 ### 3. Das Buzzword-Gewitter
-> **Linkedinese:** *„…fördert digitale Innovation und operative Exzellenz, indem es Kunden im Rahmen ihrer IT-Strategien berät, die Cloud-Transformation beschleunigt sowie AI, Daten-, Software- und System-Engineering nutzt…“*
-> 
-> **Klartext:** Wir haben jedes einzelne Tech-Buzzword in einen einzigen Schachtelsatz gepresst, damit uns Einkaufs- und Suchalgorithmen finden.
+
+`Linkedinese:`
+> *„…fördert digitale Innovation und operative Exzellenz, indem es Kunden im Rahmen ihrer IT-Strategien berät, die Cloud-Transformation beschleunigt sowie AI, Daten-, Software- und System-Engineering nutzt…“*
+
+`Klartext:`
+> **Wir haben jedes einzelne Tech-Buzzword in einen einzigen Schachtelsatz gepresst, damit uns Einkaufs- und Suchalgorithmen finden.**
+
+---
 
 ### 4. Das Partner-Ökosystem
-> **Linkedinese:** *„Als strategischer Partner von AWS, Atlassian, Google, Microsoft, IBM und SAP unterstützt die Gruppe Unternehmen dabei, den Wert ihrer Cloud-Plattformen zu maximieren.“*
-> 
-> **Klartext:** Wir haben Partnerschaften mit buchstäblich jedem Software-Monopolisten auf diesem Planeten. Das bedeutet: Wir verkaufen Ihnen gerne diejenige proprietäre Lizenz, die uns die höchste Partner-Provision einbringt.
+
+`Linkedinese:`
+> *„Als strategischer Partner von AWS, Atlassian, Google, Microsoft, IBM und SAP unterstützt die Gruppe Unternehmen dabei, den Wert ihrer Cloud-Plattformen zu maximieren.“*
+
+`Klartext:`
+> **Wir haben Partnerschaften mit buchstäblich jedem Software-Monopolisten auf diesem Planeten. Das bedeutet: Wir verkaufen Ihnen gerne diejenige proprietäre Lizenz, die uns die höchste Partner-Provision einbringt.**
+
+---
 
 ### 5. Das Full-Lifecycle-Versprechen
-> **Linkedinese:** *„Darüber hinaus konzipiert und implementiert die Gruppe digitale Geschäftsmodelle… Zur Sicherstellung des langfristigen Erfolges betreibt und optimiert die Gruppe dabei kontinuierlich…“*
-> 
-> **Klartext:** Wir richten Ihre proprietären Tools ein und binden Sie in mehrjährige Managed-Services-Verträge, damit Sie uns nie wieder loswerden.
+
+`Linkedinese:`
+> *„Darüber hinaus konzipiert und implementiert die Gruppe digitale Geschäftsmodelle… Zur Sicherstellung des langfristigen Erfolges betreibt und optimiert die Gruppe dabei kontinuierlich…“*
+
+`Klartext:`
+> **Wir richten Ihre proprietären Tools ein und binden Sie in mehrjährige Managed-Services-Verträge, damit Sie uns nie wieder loswerden.**
+
+---
 
 ### 6. Der globale Fußabdruck
-> **Linkedinese:** *„Zusätzlich betreibt das Unternehmen Service-Hubs in Mitteleuropa, Südamerika und Südostasien.“*
-> 
-> **Klartext:** Deutsche Projektmanager schreiben die Rechnungen; Entwickler in fernen Zeitzonen schreiben den eigentlichen Code.
+
+`Linkedinese:`
+> *„Zusätzlich betreibt das Unternehmen Service-Hubs in Mitteleuropa, Südamerika und Südostasien.“*
+
+`Klartext:`
+> **Deutsche Projektmanager schreiben die Rechnungen; Entwickler in fernen Zeitzonen schreiben den eigentlichen Code.**
 
 ---
 
@@ -93,15 +121,10 @@ Diese Wörter sind Platzhalter. Sie signalisieren dem Leser: *„Uns sind die ko
 
 ## Trauen Sie sich den Test mit Ihrer eigenen Marke?
 
-Hier ist die Einladung: Nehmen Sie sich 30 Sekunden Zeit, öffnen Sie ChatGPT, Claude oder die KI Ihrer Wahl, und kopieren Sie diesen Prompt:
+Nehmen Sie sich 10 Sekunden Zeit. Öffnen Sie ChatGPT, Claude oder die KI Ihrer Wahl, und fragen Sie einfach:
 
 ```text
-Agiere als schonungslos ehrlicher, zynischer Markenstratege, der Unternehmens-Phrasen verabscheut. 
-Übersetze die folgende Unternehmensbeschreibung aus dem "Linkedinese" in ungeschminkten, glasklaren Klartext. 
-Entlarve jedes Buzzword, erkläre, was wir unter der Marketing-Hülle tatsächlich meinen, 
-und zeige auf, an welchen Stellen wir vollkommen austauschbar mit unseren Wettbewerbern klingen:
-
-[HIER DEN EIGENEN "ÜBER UNS"-TEXT ODER DIE LINKEDIN-BIO EINFÜGEN]
+translate {your LinkedIn Bio or any other about us text} from linkedinese to english
 ```
 
 ### Was Sie mit dem Ergebnis anfangen

@@ -20,7 +20,7 @@ It is designed to protect leadership from the terrifying risk of saying anything
 
 Linkedinese is what happens when marketing tries to optimize for procurement algorithms, agency buzzwords, and executive consensus all at once. It feels prestigious to write, expensive to produce, and completely forgettable to read.
 
-If you want to know whether your company’s brand voice suffers from terminal genericness, there is a simple, delightfully uncomfortable test: **Feed your company description into an AI and ask it to translate from Linkedinese into plain, honest reality.**
+If you want to know whether your company’s brand voice suffers from terminal genericness, there is a simple, delightfully uncomfortable test: **Ask the AI of your choice to translate your company description from Linkedinese to English.**
 
 Let’s run the test on a classic, real-world archetype from the enterprise IT consulting world.
 
@@ -41,34 +41,62 @@ Consider this archetypal company profile from an enterprise IT services provider
 ## The Brutally Honest Translation
 
 ### 1. The Preamble
-> **Linkedinese:** *„[COMPANY NAME] is more than a company name, it’s a call to action…“*
-> 
-> **Plain Truth:** Marketing spent €40,000 on a brand agency to justify a pun in our company name.
+
+`Linkedinese:`
+> *„[COMPANY NAME] is more than a company name, it’s a call to action…“*
+
+`Plain Truth:`
+> **Marketing spent €40,000 on a brand agency to justify a pun in our company name.**
+
+---
 
 ### 2. The Customer Pitch
-> **Linkedinese:** *„…führender IT-Dienstleister, der sich auf Cloud-Plattformen und digitale Lösungen für Enterprise Customers, Fortune 1000 und Kunden aus dem öffentlichen Sektor spezialisiert hat.“*
-> 
-> **Plain Truth:** We sell standard IT consulting, software licenses, and cloud migrations to corporations and government agencies who are terrified of doing it themselves.
+
+`Linkedinese:`
+> *„…führender IT-Dienstleister, der sich auf Cloud-Plattformen und digitale Lösungen für Enterprise Customers, Fortune 1000 und Kunden aus dem öffentlichen Sektor spezialisiert hat.“*
+
+`Plain Truth:`
+> **We sell standard IT consulting, software licenses, and cloud migrations to corporations and government agencies who are terrified of doing it themselves.**
+
+---
 
 ### 3. The Buzzword Cascade
-> **Linkedinese:** *„…fördert digitale Innovation und operative Exzellenz, indem es Kunden im Rahmen ihrer IT-Strategien berät, die Cloud-Transformation beschleunigt sowie AI, Daten-, Software- und System-Engineering nutzt…“*
-> 
-> **Plain Truth:** We jammed every single tech buzzword into one run-on sentence so enterprise procurement search algorithms can find us.
+
+`Linkedinese:`
+> *„…fördert digitale Innovation und operative Exzellenz, indem es Kunden im Rahmen ihrer IT-Strategien berät, die Cloud-Transformation beschleunigt sowie AI, Daten-, Software- und System-Engineering nutzt…“*
+
+`Plain Truth:`
+> **We jammed every single tech buzzword into one run-on sentence so enterprise procurement search algorithms can find us.**
+
+---
 
 ### 4. The Partner Ecosystem
-> **Linkedinese:** *„Als strategischer Partner von AWS, Atlassian, Google, Microsoft, IBM und SAP unterstützt die Gruppe Unternehmen dabei, den Wert ihrer Cloud-Plattformen zu maximieren.“*
-> 
-> **Plain Truth:** We partner with literally every major software monopoly on Earth, which means we will happily sell you whichever proprietary license pays us the highest partner commission.
+
+`Linkedinese:`
+> *„Als strategischer Partner von AWS, Atlassian, Google, Microsoft, IBM und SAP unterstützt die Gruppe Unternehmen dabei, den Wert ihrer Cloud-Plattformen zu maximieren.“*
+
+`Plain Truth:`
+> **We partner with literally every major software monopoly on Earth, which means we will happily sell you whichever proprietary license pays us the highest partner commission.**
+
+---
 
 ### 5. The "Full-Lifecycle" Promise
-> **Linkedinese:** *„Darüber hinaus konzipiert und implementiert die Gruppe digitale Geschäftsmodelle… Zur Sicherstellung des langfristigen Erfolges betreibt und optimiert die Gruppe dabei kontinuierlich…“*
-> 
-> **Plain Truth:** We set up your proprietary tools and lock you into recurring, multi-year managed services contracts so you can never get rid of us.
+
+`Linkedinese:`
+> *„Darüber hinaus konzipiert und implementiert die Gruppe digitale Geschäftsmodelle… Zur Sicherstellung des langfristigen Erfolges betreibt und optimiert die Gruppe dabei kontinuierlich…“*
+
+`Plain Truth:`
+> **We set up your proprietary tools and lock you into recurring, multi-year managed services contracts so you can never get rid of us.**
+
+---
 
 ### 6. The Global Footprint
-> **Linkedinese:** *„Zusätzlich betreibt das Unternehmen Service-Hubs in Mitteleuropa, Südamerika und Südostasien.“*
-> 
-> **Plain Truth:** German project managers write the invoices; offshore developers in different time zones actually write the code.
+
+`Linkedinese:`
+> *„Zusätzlich betreibt das Unternehmen Service-Hubs in Mitteleuropa, Südamerika und Südostasien.“*
+
+`Plain Truth:`
+> **German project managers write the invoices; offshore developers in different time zones actually write the code.**
 
 ---
 
@@ -93,15 +121,10 @@ These words are placeholders. They signal to the reader: *„We ran out of real 
 
 ## Do You Dare to Try It With Your Own Brand?
 
-Here is an invitation. Take 30 seconds, open ChatGPT, Claude, or whichever AI you use, and paste this exact prompt:
+Take 10 seconds. Open ChatGPT, Claude, or any AI of your choice, and simply ask:
 
 ```text
-Act as a brutally honest, cynical brand strategist who despises corporate jargon. 
-Translate the following company description from "Linkedinese" into plain, unvarnished English. 
-Roast every buzzword, explain what we actually mean beneath the marketing veneer, 
-and tell me where we sound completely interchangeable with our competitors:
-
-[PASTE YOUR "ABOUT US" OR LINKEDIN COMPANY BIO HERE]
+translate {your LinkedIn Bio or any other about us text} from linkedinese to english
 ```
 
 ### What to Do With the Results
