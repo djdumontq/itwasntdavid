@@ -14,74 +14,6 @@ export interface BlogPostFull extends BlogPostMeta {
   body: any; // string markdown or TinaCMS rich-text AST
 }
 
-// Vite glob imports for dynamic, on-demand loading of all markdown posts
-const allPostModules = {
-  ...import.meta.glob("../../content/posts/en/*.md", {
-    query: "?raw",
-    import: "default",
-  }),
-  ...import.meta.glob("../../content/posts/de/*.md", {
-    query: "?raw",
-    import: "default",
-  }),
-};
-
-// Seed metadata for English posts (lightweight index for 3D canvas card grid)
-export const postsMetaEn: BlogPostMeta[] = [
-  {
-    slug: "why-digital-sovereignty-matters",
-    title: "Why Digital Sovereignty is the Best Brand Strategy",
-    date: "2026-08-15",
-    description: "Most companies outsource their entire digital infrastructure to foreign cloud monopolies. Here is why taking ownership of your stack makes your brand resilient, trustworthy, and un-cancellable.",
-    image: "/uploads/no-cloud.png",
-    tags: ["Digital Sovereignty", "Open Source", "Strategy"],
-    featured: true,
-    readingTime: "4 min read",
-    lang: "en",
-  },
-  {
-    slug: "git-backed-cms-tinacms",
-    title: "Git-Backed CMS: Why We Abandoned Bloated Databases",
-    date: "2026-08-28",
-    description: "Traditional CMS platforms lock your content into complex, vulnerable SQL databases. Git-backed architecture with TinaCMS gives you visual editing with plain-text version control.",
-    image: "/uploads/tinacms-logo.png",
-    tags: ["TinaCMS", "Websites", "Open Source"],
-    featured: false,
-    readingTime: "5 min read",
-    lang: "en",
-  },
-];
-
-// Seed metadata for German posts (lightweight index for 3D canvas card grid)
-export const postsMetaDe: BlogPostMeta[] = [
-  {
-    slug: "warum-digitale-souveraenitaet",
-    title: "Warum digitale Souveränität die beste Markenstrategie ist",
-    date: "2026-08-15",
-    description: "Die meisten Unternehmen lagern ihre gesamte digitale Infrastruktur an ausländische Cloud-Monopole aus. Warum die Kontrolle über den eigenen Stack Ihre Marke krisenfest, vertrauenswürdig und unabhängig macht.",
-    image: "/uploads/no-cloud.png",
-    tags: ["Digitale Souveränität", "Open Source", "Strategie"],
-    featured: true,
-    readingTime: "4 Min. Lesezeit",
-    lang: "de",
-  },
-  {
-    slug: "git-gestuetzte-cms-tinacms",
-    title: "Git-gestützte CMS: Warum wir überladene Datenbanken hinter uns lassen",
-    date: "2026-08-28",
-    description: "Klassische CMS sperren Inhalte in komplexe, wartungsintensive SQL-Datenbanken ein. Die Git-gestützte Architektur mit TinaCMS vereint visuelle Bearbeitung mit versionierten Klartextdateien.",
-    image: "/uploads/tinacms-logo.png",
-    tags: ["TinaCMS", "Websites", "Open Source"],
-    featured: false,
-    readingTime: "5 Min. Lesezeit",
-    lang: "de",
-  },
-];
-
-export const getPostsList = (lang: "en" | "de"): BlogPostMeta[] => {
-  return lang === "de" ? postsMetaDe : postsMetaEn;
-};
-
 // Helper to parse markdown frontmatter
 export function parseFrontmatter(rawContent: string): { meta: Record<string, any>; body: string } {
   const frontmatterRegex = /^---\r?\n([\s\S]*?)\r?\n---\r?\n([\s\S]*)$/;
@@ -123,18 +55,66 @@ export function parseFrontmatter(rawContent: string): { meta: Record<string, any
   return { meta, body };
 }
 
-// On-demand dynamic loader for raw post markdown files
+// Synchronously import all markdown files eager at build/dev time
+const rawPostsEn = import.meta.glob("../../content/posts/en/*.md", {
+  query: "?raw",
+  import: "default",
+  eager: true,
+}) as Record<string, string>;
+
+const rawPostsDe = import.meta.glob("../../content/posts/de/*.md", {
+  query: "?raw",
+  import: "default",
+  eager: true,
+}) as Record<string, string>;
+
+function extractPostsFromGlob(
+  globMap: Record<string, string>,
+  lang: "en" | "de"
+): BlogPostMeta[] {
+  const posts: BlogPostMeta[] = [];
+
+  Object.entries(globMap).forEach(([filePath, rawContent]) => {
+    const filename = filePath.split("/").pop()?.replace(/\.md$/, "") || "";
+    const { meta } = parseFrontmatter(rawContent);
+
+    posts.push({
+      slug: meta.slug || filename,
+      title: meta.title || filename,
+      date: meta.date ? meta.date.split("T")[0] : new Date().toISOString().split("T")[0],
+      description: meta.description || "",
+      image: meta.image || "",
+      tags: Array.isArray(meta.tags) ? meta.tags : [],
+      featured: !!meta.featured,
+      readingTime: meta.readingTime || (lang === "de" ? "5 Min. Lesezeit" : "5 min read"),
+      lang,
+    });
+  });
+
+  // Sort newest first
+  return posts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+}
+
+export const postsMetaEn: BlogPostMeta[] = extractPostsFromGlob(rawPostsEn, "en");
+export const postsMetaDe: BlogPostMeta[] = extractPostsFromGlob(rawPostsDe, "de");
+
+export const getPostsList = (lang: "en" | "de"): BlogPostMeta[] => {
+  return lang === "de" ? extractPostsFromGlob(rawPostsDe, "de") : extractPostsFromGlob(rawPostsEn, "en");
+};
+
+// On-demand loader for full post markdown
 export const loadPostMarkdown = async (
   lang: "en" | "de",
   slug: string
 ): Promise<BlogPostFull | null> => {
   try {
-    const matchingKey = Object.keys(allPostModules).find(
+    const globMap = lang === "de" ? rawPostsDe : rawPostsEn;
+    const matchingKey = Object.keys(globMap).find(
       (k) => k.endsWith(`/${lang}/${slug}.md`) || k.endsWith(`/${slug}.md`)
     );
 
-    if (matchingKey && typeof allPostModules[matchingKey] === "function") {
-      const rawContent = (await allPostModules[matchingKey]()) as string;
+    if (matchingKey && globMap[matchingKey]) {
+      const rawContent = globMap[matchingKey];
       const { meta, body } = parseFrontmatter(rawContent);
 
       const list = getPostsList(lang);
@@ -146,7 +126,7 @@ export const loadPostMarkdown = async (
         image: meta.image || "",
         tags: Array.isArray(meta.tags) ? meta.tags : [],
         featured: !!meta.featured,
-        readingTime: meta.readingTime || "4 min read",
+        readingTime: meta.readingTime || "5 min read",
         lang,
       };
 
@@ -157,6 +137,7 @@ export const loadPostMarkdown = async (
         image: meta.image || matchedMeta.image,
         tags: Array.isArray(meta.tags) && meta.tags.length > 0 ? meta.tags : matchedMeta.tags,
         date: meta.date ? meta.date.split("T")[0] : matchedMeta.date,
+        featured: typeof meta.featured === "boolean" ? meta.featured : matchedMeta.featured,
         body,
       };
     }
