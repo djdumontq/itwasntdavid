@@ -94,8 +94,37 @@ h1, h2, h3, h4, h5, h6, .poster-bg-text {
 .bento_card h3,
 .bento_card h4,
 .bento_card h5,
-.bento_card h6 {
-  filter: none;
+.bento_card h6,
+.blog_hub_container h1,
+.blog_hub_container h2,
+.blog_hub_container h3,
+.blog_hub_container h4,
+.blog_hub_container h5,
+.blog_hub_container h6,
+.blog_title,
+.blog_featured_title,
+.blog_card_title,
+.article_slide_container h1,
+.article_slide_container h2,
+.article_slide_container h3,
+.article_slide_container h4,
+.article_slide_container h5,
+.article_slide_container h6,
+.article_main_title,
+.article_h1,
+.article_h2,
+.article_h3,
+.article_h4,
+.article_content_wrapper h1,
+.article_content_wrapper h2,
+.article_content_wrapper h3,
+.article_content_wrapper h4,
+.article_markdown_body h1,
+.article_markdown_body h2,
+.article_markdown_body h3,
+.article_author_info h4,
+.article_related_card h4 {
+  filter: none !important;
 }
 
 /* Extra Noisy/Rough Printed Edges on Images */
@@ -1170,7 +1199,6 @@ h1, h2, h3, h4, h5, h6, .poster-bg-text {
   line-height: 1.2;
   color: var(--color-dark);
   margin: 0 0 20px 0;
-  filter: url(#noisy-edge);
 }
 
 .article_tags {
@@ -1227,7 +1255,6 @@ h1, h2, h3, h4, h5, h6, .poster-bg-text {
   font-weight: 800;
   margin: 45px 0 20px 0;
   color: var(--color-dark);
-  filter: url(#noisy-edge);
 }
 
 .article_h2 {
