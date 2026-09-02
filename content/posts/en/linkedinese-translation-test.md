@@ -9,7 +9,7 @@ tags:
   - "Storytelling"
   - "Positioning"
 featured: true
-readingTime: "5 min read"
+readingTime: "4 min read"
 ---
 
 ## The Thesaurus Firewall
@@ -20,7 +20,11 @@ It is designed to protect leadership from the terrifying risk of saying anything
 
 Linkedinese is what happens when marketing tries to optimize for procurement algorithms, agency buzzwords, and executive consensus all at once. It feels prestigious to write, expensive to produce, and completely forgettable to read.
 
-If you want to know whether your company’s brand voice suffers from terminal genericness, there is a simple, delightfully uncomfortable test: **Ask the AI of your choice to translate your company description from Linkedinese to English.**
+If you want to know whether your company’s brand voice suffers from terminal genericness, there is a simple, delightfully uncomfortable test:
+
+```text
+translate {your LinkedIn Bio or any other about us text} from linkedinese to english
+```
 
 Let’s run the test on a classic, real-world archetype from the enterprise IT consulting world.
 
@@ -40,8 +44,6 @@ Consider this archetypal company profile from an enterprise IT services provider
 
 ## The Brutally Honest Translation
 
-### 1. The Preamble
-
 `Linkedinese:`
 > *„[COMPANY NAME] is more than a company name, it’s a call to action…“*
 
@@ -49,8 +51,6 @@ Consider this archetypal company profile from an enterprise IT services provider
 > **Marketing spent €40,000 on a brand agency to justify a pun in our company name.**
 
 ---
-
-### 2. The Customer Pitch
 
 `Linkedinese:`
 > *„…führender IT-Dienstleister, der sich auf Cloud-Plattformen und digitale Lösungen für Enterprise Customers, Fortune 1000 und Kunden aus dem öffentlichen Sektor spezialisiert hat.“*
@@ -60,8 +60,6 @@ Consider this archetypal company profile from an enterprise IT services provider
 
 ---
 
-### 3. The Buzzword Cascade
-
 `Linkedinese:`
 > *„…fördert digitale Innovation und operative Exzellenz, indem es Kunden im Rahmen ihrer IT-Strategien berät, die Cloud-Transformation beschleunigt sowie AI, Daten-, Software- und System-Engineering nutzt…“*
 
@@ -69,8 +67,6 @@ Consider this archetypal company profile from an enterprise IT services provider
 > **We jammed every single tech buzzword into one run-on sentence so enterprise procurement search algorithms can find us.**
 
 ---
-
-### 4. The Partner Ecosystem
 
 `Linkedinese:`
 > *„Als strategischer Partner von AWS, Atlassian, Google, Microsoft, IBM und SAP unterstützt die Gruppe Unternehmen dabei, den Wert ihrer Cloud-Plattformen zu maximieren.“*
@@ -80,8 +76,6 @@ Consider this archetypal company profile from an enterprise IT services provider
 
 ---
 
-### 5. The "Full-Lifecycle" Promise
-
 `Linkedinese:`
 > *„Darüber hinaus konzipiert und implementiert die Gruppe digitale Geschäftsmodelle… Zur Sicherstellung des langfristigen Erfolges betreibt und optimiert die Gruppe dabei kontinuierlich…“*
 
@@ -89,8 +83,6 @@ Consider this archetypal company profile from an enterprise IT services provider
 > **We set up your proprietary tools and lock you into recurring, multi-year managed services contracts so you can never get rid of us.**
 
 ---
-
-### 6. The Global Footprint
 
 `Linkedinese:`
 > *„Zusätzlich betreibt das Unternehmen Service-Hubs in Mitteleuropa, Südamerika und Südostasien.“*
@@ -104,18 +96,9 @@ Consider this archetypal company profile from an enterprise IT services provider
 
 If any of this sounded painfully familiar, don't worry—you are in good company. 90% of B2B websites fall into the same three traps:
 
-### 1. The "Competitor Swap" Test
-Take your homepage headline or "About Us" paragraph. Replace your company name with the name of your three biggest competitors.
-* **If the paragraph is still 100% true for them, you do not have a brand positioning.** You have a generic category description.
-
-### 2. The "We Also Do Everything" Trap
-When companies are terrified of leaving money on the table, they dilute their message until it has no flavor:
-* *„We do strategy, but also implementation, but also AI, but also legacy support, for startups, but also Fortune 500s, and government…“*
-When you claim to do everything for everyone, you stand for nothing to anyone.
-
-### 3. The Empty Calories Lexicon
-Search your copy for words like *zukunftsfähig*, *ganzheitlich*, *innovativ*, *operative Exzellenz*, or *End-to-End*. 
-These words are placeholders. They signal to the reader: *„We ran out of real things to say, so here are some syllables that sound like serious business.“*
+* **The "Competitor Swap" Test:** Replace your company name with your three biggest competitors. If the text is still 100% true for them, you don't have a positioning—you have a category description.
+* **The "We Also Do Everything" Trap:** When you claim to do strategy, implementation, AI, and legacy maintenance for startups and Fortune 500s alike, you stand for nothing to anyone.
+* **The Empty Calories Lexicon:** Words like *zukunftsfähig*, *ganzheitlich*, *innovativ*, *operative Exzellenz*, or *End-to-End* are placeholders signalling you ran out of real things to say.
 
 ---
 

@@ -9,7 +9,7 @@ tags:
   - "Storytelling"
   - "Positionierung"
 featured: true
-readingTime: "5 Min. Lesezeit"
+readingTime: "4 Min. Lesezeit"
 ---
 
 ## Die Synonym-Firewall
@@ -20,7 +20,11 @@ Sie dient dazu, das Management vor dem existenziellen Risiko zu schützen, jemal
 
 Linkedinese entsteht, wenn Marketing versucht, Beschaffungsalgorithmen, Agentur-Buzzwords und Vorstands-Konsens gleichzeitig zu befriedigen. Es klingt prestige-trächtig beim Schreiben, war teuer in der Entwicklung – und ist für den Leser vollkommen austauschbar und bedeutungslos.
 
-Wenn Sie wissen wollen, ob die Markenstimme Ihres Unternehmens an chronischer Belanglosigkeit leidet, gibt es einen einfachen, herrlich unbequemen Test: **Bitten Sie die KI Ihrer Wahl, Ihre Unternehmensbeschreibung aus dem Linkedinese auf Deutsch (oder Englisch) zu übersetzen.**
+Wenn Sie wissen wollen, ob die Markenstimme Ihres Unternehmens an chronischer Belanglosigkeit leidet, gibt es einen einfachen, herrlich unbequemen Test:
+
+```text
+translate {your LinkedIn Bio or any other about us text} from linkedinese to english
+```
 
 Machen wir den Test an einem klassischen, realen Archetyp aus der Welt der IT-Dienstleister.
 
@@ -40,8 +44,6 @@ Betrachten wir ein archetypisches Unternehmensprofil eines Enterprise-IT-Dienstl
 
 ## Die schonungslos ehrliche Übersetzung
 
-### 1. Die Einleitung
-
 `Linkedinese:`
 > *„[COMPANY NAME] is more than a company name, it’s a call to action…“*
 
@@ -49,8 +51,6 @@ Betrachten wir ein archetypisches Unternehmensprofil eines Enterprise-IT-Dienstl
 > **Das Marketing hat 40.000 € an eine Branding-Agentur gezahlt, um ein Wortspiel im Firmennamen strategisch zu rechtfertigen.**
 
 ---
-
-### 2. Der Kunden-Pitch
 
 `Linkedinese:`
 > *„…führender IT-Dienstleister, der sich auf Cloud-Plattformen und digitale Lösungen für Enterprise Customers, Fortune 1000 und Kunden aus dem öffentlichen Sektor spezialisiert hat.“*
@@ -60,8 +60,6 @@ Betrachten wir ein archetypisches Unternehmensprofil eines Enterprise-IT-Dienstl
 
 ---
 
-### 3. Das Buzzword-Gewitter
-
 `Linkedinese:`
 > *„…fördert digitale Innovation und operative Exzellenz, indem es Kunden im Rahmen ihrer IT-Strategien berät, die Cloud-Transformation beschleunigt sowie AI, Daten-, Software- und System-Engineering nutzt…“*
 
@@ -69,8 +67,6 @@ Betrachten wir ein archetypisches Unternehmensprofil eines Enterprise-IT-Dienstl
 > **Wir haben jedes einzelne Tech-Buzzword in einen einzigen Schachtelsatz gepresst, damit uns Einkaufs- und Suchalgorithmen finden.**
 
 ---
-
-### 4. Das Partner-Ökosystem
 
 `Linkedinese:`
 > *„Als strategischer Partner von AWS, Atlassian, Google, Microsoft, IBM und SAP unterstützt die Gruppe Unternehmen dabei, den Wert ihrer Cloud-Plattformen zu maximieren.“*
@@ -80,8 +76,6 @@ Betrachten wir ein archetypisches Unternehmensprofil eines Enterprise-IT-Dienstl
 
 ---
 
-### 5. Das Full-Lifecycle-Versprechen
-
 `Linkedinese:`
 > *„Darüber hinaus konzipiert und implementiert die Gruppe digitale Geschäftsmodelle… Zur Sicherstellung des langfristigen Erfolges betreibt und optimiert die Gruppe dabei kontinuierlich…“*
 
@@ -89,8 +83,6 @@ Betrachten wir ein archetypisches Unternehmensprofil eines Enterprise-IT-Dienstl
 > **Wir richten Ihre proprietären Tools ein und binden Sie in mehrjährige Managed-Services-Verträge, damit Sie uns nie wieder loswerden.**
 
 ---
-
-### 6. Der globale Fußabdruck
 
 `Linkedinese:`
 > *„Zusätzlich betreibt das Unternehmen Service-Hubs in Mitteleuropa, Südamerika und Südostasien.“*
@@ -104,18 +96,9 @@ Betrachten wir ein archetypisches Unternehmensprofil eines Enterprise-IT-Dienstl
 
 Kommt Ihnen etwas davon schmerzhaft vertraut vor? Keine Sorge – Sie sind in bester Gesellschaft. 90 % aller B2B-Websites tappen in dieselben drei Fallen:
 
-### 1. Der "Wettbewerber-Tausch-Test"
-Nehmen Sie Ihre Homepage-Headline oder den "Über uns"-Absatz. Ersetzen Sie Ihren Firmennamen durch die Namen Ihrer drei größten Wettbewerber.
-* **Wenn der Text für alle drei immer noch zu 100 % wahr ist, haben Sie keine Markenpositionierung.** Sie haben eine Branchenbeschreibung.
-
-### 2. Die "Wir machen auch alles"-Falle
-Aus Angst, Umsatzchancen zu verpassen, wird die Botschaft so lange weichgespült, bis sie nach absolut nichts mehr schmeckt:
-* *„Wir machen Strategie, aber auch Umsetzung, aber auch KI, aber auch Legacy-Wartung, für Startups, Konzerne und den Mittelstand…“*
-Wer behauptet, alles für jeden zu tun, steht am Ende für niemanden.
-
-### 3. Das Lexikon der leeren Kalorien
-Suchen Sie in Ihren Texten nach Wörtern wie *zukunftsfähig*, *ganzheitlich*, *innovativ*, *operative Exzellenz*, *agil* oder *End-to-End*. 
-Diese Wörter sind Platzhalter. Sie signalisieren dem Leser: *„Uns sind die konkreten Inhalte ausgegangen, also haben wir ein paar Silben eingefügt, die nach seriöser Wirtschaft klingen.“*
+* **Der "Wettbewerber-Tausch-Test":** Ersetzen Sie Ihren Firmennamen durch Ihre drei größten Wettbewerber. Ist der Text für alle immer noch 100 % wahr, haben Sie keine Positionierung, sondern eine Branchenbeschreibung.
+* **Die "Wir machen auch alles"-Falle:** Wer behauptet, Strategie, Umsetzung, KI und Legacy-Wartung für Startups und Konzerne gleichzeitig zu machen, steht am Ende für niemanden.
+* **Das Lexikon der leeren Kalorien:** Wörter wie *zukunftsfähig*, *ganzheitlich*, *innovativ*, *operative Exzellenz* oder *End-to-End* signalisieren dem Leser nur, dass Ihnen die konkreten Inhalte ausgegangen sind.
 
 ---
 
