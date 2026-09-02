@@ -1329,7 +1329,10 @@ h1, h2, h3, h4, h5, h6, .poster-bg-text {
   font-size: 18px !important;
   font-weight: 600 !important;
   line-height: 1.5 !important;
-  overflow-x: auto !important;
+  white-space: pre-wrap !important;
+  word-break: break-word !important;
+  overflow-wrap: break-word !important;
+  overflow-x: hidden !important;
   border: none !important;
   box-shadow: none !important;
   border-radius: 0 !important;
@@ -1345,6 +1348,9 @@ h1, h2, h3, h4, h5, h6, .poster-bg-text {
   background: transparent !important;
   padding: 0 !important;
   box-shadow: none !important;
+  white-space: pre-wrap !important;
+  word-break: break-word !important;
+  overflow-wrap: break-word !important;
 }
 
 /* Article Blockquotes & Callouts */
