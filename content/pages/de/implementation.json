@@ -25,17 +25,21 @@
         },
         {
           "title": "NocoBase: Daten zu Deinen Bedingungen",
-          "text": "Jedes Unternehmen läuft mit Datenbanken, aber Du solltest sollten keinem Giganten aus dem Silicon Valley eine monatliche Gebühr pro Benutzer zahlen müssen, nur um Deine eigenen Informationen sehen zu dürfen. \n\nNocoBase ist eine unglaublich flexible Open-Source-Plattform. Sie ermöglicht es uns, maßgeschneiderte, relationale Datenbanken aufzubauen, und sie an Dein Unternehmen anzupassen – und nicht umgekehrt.\n\nNutzbar für: Projektmanagement, die Verwaltung komplexer strukturierter Daten, Servicemanagement und den Aufbau maßgeschneiderter Work-Management Systeme.",
+          "text": "Jedes Unternehmen läuft mit Datenbanken, aber Du solltest keinem Giganten aus dem Silicon Valley eine monatliche Gebühr pro Benutzer zahlen müssen, nur um Deine eigenen Informationen sehen zu dürfen. \n\nNocoBase ist eine unglaublich flexible Open-Source-Plattform. Sie ermöglicht es uns, maßgeschneiderte, relationale Datenbanken aufzubauen, und sie an Dein Unternehmen anzupassen – und nicht umgekehrt.\n\nNutzbar für: Projektmanagement, Einsatzdisposition, Kostenkontrolle und maßgeschneiderte Work-Management-Systeme.",
           "image": "/uploads/nocobase-logo.png",
           "gridSize": "4",
-          "isDarkCard": false
+          "isDarkCard": false,
+          "linkUrl": "#/de/blog/fallstudie-westwind-souveraene-infrastruktur",
+          "linkText": "Fallstudie: Westwind Hamburg"
         },
         {
           "title": "Docmost: Das Gehirn des Unternehmens",
           "text": "Jede starke Marke braucht einen Knotenpunkt, an dem Prozesse, Ideen und Wissen gebündelt werden. Doch sein wertvollstes geistiges Eigentum einer fremden, proprietären Cloud anzuvertrauen, ist hochriskant.\n\nHier kommt Docmost ins Spiel: Eine kollaborative Open-Source-Plattform, die wie das zentrale Gehirn deines Unternehmens funktioniert. Sie bietet deinem Team ein modernes, schnelles Nutzererlebnis – bleibt dabei aber vollständig unter deiner Kontrolle.\n\nEinsatzbereiche: Interne Dokumentationen, Echtzeit-Kollaboration und der Aufbau einer sicheren, zentralen Wissensdatenbank.",
           "image": "/uploads/docmost-logo.png",
           "gridSize": "4",
-          "isDarkCard": true
+          "isDarkCard": true,
+          "linkUrl": "#/de/blog/fallstudie-westwind-souveraene-infrastruktur",
+          "linkText": "Fallstudie: Westwind Hamburg"
         }
       ],
       "_template": "bento_grid_module"

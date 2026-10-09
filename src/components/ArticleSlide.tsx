@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState, useEffect, useMemo } from "react";
+import { createPortal } from "react-dom";
 import { BlogPostFull } from "../data/posts";
 import { MarkdownView } from "./MarkdownView";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
@@ -9,35 +10,76 @@ interface ArticleSlideProps {
   onBackToBlog: () => void;
 }
 
-const tinaComponents = {
-  blockquote: (props: any) => (
-    <blockquote className="article_blockquote">{props.children}</blockquote>
-  ),
-  code_block: (props: any) => (
-    <div className="article_terminal_wrapper">
-      <div className="article_terminal_header">
-        <span className="terminal_dots">
-          <span className="dot dot_red" />
-          <span className="dot dot_yellow" />
-          <span className="dot dot_green" />
-        </span>
-        <span className="terminal_title">ai prompt / bash</span>
-      </div>
-      <pre className="article_code_block">
-        <code>{props.value || props.children}</code>
-      </pre>
-    </div>
-  ),
-  code: (props: any) => (
-    <code className="article_inline_code">{props.children}</code>
-  ),
-};
-
 export const ArticleSlide: React.FC<ArticleSlideProps> = ({
   post,
   lang,
   onBackToBlog,
 }) => {
+  const [lightboxImage, setLightboxImage] = useState<{ src: string; alt?: string } | null>(null);
+
+  // Close lightbox on Escape key
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setLightboxImage(null);
+      }
+    };
+    if (lightboxImage) {
+      window.addEventListener("keydown", handleKeyDown);
+    }
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [lightboxImage]);
+
+  const tinaComponents = useMemo(
+    () => ({
+      blockquote: (props: any) => (
+        <blockquote className="article_blockquote">{props.children}</blockquote>
+      ),
+      code_block: (props: any) => (
+        <div className="article_terminal_wrapper">
+          <div className="article_terminal_header">
+            <span className="terminal_dots">
+              <span className="dot dot_red" />
+              <span className="dot dot_yellow" />
+              <span className="dot dot_green" />
+            </span>
+            <span className="terminal_title">ai prompt / bash</span>
+          </div>
+          <pre className="article_code_block">
+            <code>{props.value || props.children}</code>
+          </pre>
+        </div>
+      ),
+      code: (props: any) => (
+        <code className="article_inline_code">{props.children}</code>
+      ),
+      img: (props: any) => (
+        <figure className="article_figure">
+          <div
+            className="article_img_container"
+            onClick={() => setLightboxImage({ src: props.url || props.src, alt: props.alt })}
+            role="button"
+            tabIndex={0}
+            title={lang === "de" ? "Klicken zum Vergrößern" : "Click to enlarge"}
+          >
+            <img
+              src={props.url || props.src}
+              alt={props.alt}
+              className="article_inline_img"
+              loading="lazy"
+            />
+            <div className="article_img_zoom_hint">
+              <i className="fas fa-search-plus" />
+              <span>{lang === "de" ? "Vergrößern" : "Enlarge"}</span>
+            </div>
+          </div>
+          {props.alt && <figcaption className="article_figcaption">{props.alt}</figcaption>}
+        </figure>
+      ),
+    }),
+    [lang]
+  );
+
   const isRichText = typeof post.body === "object" && post.body !== null;
 
   return (
@@ -77,11 +119,13 @@ export const ArticleSlide: React.FC<ArticleSlideProps> = ({
         )}
 
         {post.image && (
-          <div className="article_hero_image_wrapper pictureside">
+          <div className="article_hero_image_wrapper">
             <img
               src={post.image}
               alt={post.title}
-              className="article_hero_image rowdecoration"
+              className="article_hero_image"
+              onClick={() => setLightboxImage({ src: post.image!, alt: post.title })}
+              title={lang === "de" ? "Klicken zum Vergrößern" : "Click to enlarge"}
             />
           </div>
         )}
@@ -94,7 +138,11 @@ export const ArticleSlide: React.FC<ArticleSlideProps> = ({
             <TinaMarkdown content={post.body} components={tinaComponents} />
           </div>
         ) : (
-          <MarkdownView content={typeof post.body === "string" ? post.body : ""} />
+          <MarkdownView
+            content={typeof post.body === "string" ? post.body : ""}
+            lang={lang}
+            onImageClick={(src, alt) => setLightboxImage({ src, alt })}
+          />
         )}
       </section>
 
@@ -122,6 +170,47 @@ export const ArticleSlide: React.FC<ArticleSlideProps> = ({
           </a>
         </div>
       </footer>
+
+      {/* Lightbox Modal rendered via Portal directly into document.body to break out of transformed 3D scroll container */}
+      {lightboxImage &&
+        typeof document !== "undefined" &&
+        createPortal(
+          <div
+            className="article_lightbox_overlay"
+            onClick={() => setLightboxImage(null)}
+            role="dialog"
+            aria-modal="true"
+          >
+            <button
+              className="article_lightbox_close_btn"
+              onClick={(e) => {
+                e.stopPropagation();
+                setLightboxImage(null);
+              }}
+              title={lang === "de" ? "Schließen (Esc)" : "Close (Esc)"}
+              aria-label="Close Lightbox"
+            >
+              <i className="fas fa-times" />
+            </button>
+
+            <div
+              className="article_lightbox_content"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <img
+                src={lightboxImage.src}
+                alt={lightboxImage.alt || "Fullscreen preview"}
+                className="article_lightbox_img"
+              />
+              {lightboxImage.alt && (
+                <div className="article_lightbox_caption">
+                  {lightboxImage.alt}
+                </div>
+              )}
+            </div>
+          </div>,
+          document.body
+        )}
     </div>
   );
 };

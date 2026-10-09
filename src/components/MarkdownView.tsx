@@ -2,9 +2,15 @@ import React from "react";
 
 interface MarkdownViewProps {
   content: string;
+  lang?: "en" | "de";
+  onImageClick?: (src: string, alt?: string) => void;
 }
 
-export const MarkdownView: React.FC<MarkdownViewProps> = ({ content }) => {
+export const MarkdownView: React.FC<MarkdownViewProps> = ({
+  content,
+  lang = "de",
+  onImageClick,
+}) => {
   if (!content) return null;
 
   const lines = content.split(/\r?\n/);
@@ -95,23 +101,39 @@ export const MarkdownView: React.FC<MarkdownViewProps> = ({ content }) => {
   };
 
   const renderInline = (text: string): React.ReactNode => {
-    // Process markdown links [label](url)
-    const linkRegex = /\[([^\]]+)\]\(([^)]+)\)/g;
+    // Process markdown images ![label](url) and links [label](url)
+    const mediaRegex = /(!?)\[([^\]]*)\]\(([^)]+)\)/g;
     const parts: React.ReactNode[] = [];
     let lastIndex = 0;
     let match: RegExpExecArray | null;
 
-    while ((match = linkRegex.exec(text)) !== null) {
+    while ((match = mediaRegex.exec(text)) !== null) {
       if (match.index > lastIndex) {
         parts.push(formatTextStyles(text.substring(lastIndex, match.index)));
       }
-      const label = match[1];
-      const url = match[2];
-      parts.push(
-        <a key={`link-${match.index}`} href={url} target={url.startsWith("http") ? "_blank" : undefined} rel="noopener noreferrer">
-          {label}
-        </a>
-      );
+      const isImage = match[1] === "!";
+      const label = match[2];
+      const url = match[3];
+
+      if (isImage) {
+        parts.push(
+          <span
+            key={`inline-img-${match.index}`}
+            className="article_inline_img_badge"
+            onClick={() => onImageClick?.(url, label)}
+            role="button"
+            tabIndex={0}
+          >
+            <img src={url} alt={label} className="article_inline_img" loading="lazy" />
+          </span>
+        );
+      } else {
+        parts.push(
+          <a key={`link-${match.index}`} href={url} target={url.startsWith("http") ? "_blank" : undefined} rel="noopener noreferrer">
+            {label}
+          </a>
+        );
+      }
       lastIndex = match.index + match[0].length;
     }
 
@@ -144,6 +166,33 @@ export const MarkdownView: React.FC<MarkdownViewProps> = ({ content }) => {
     // Handle empty line
     if (line.trim() === "") {
       flushList();
+      continue;
+    }
+
+    // Handle Standalone Images ![alt](url)
+    const imgMatch = line.trim().match(/^!\[(.*?)\]\((.*?)\)$/);
+    if (imgMatch) {
+      flushList();
+      const altText = imgMatch[1];
+      const imgSrc = imgMatch[2];
+      elements.push(
+        <figure key={`figure-${i}`} className="article_figure">
+          <div
+            className="article_img_container"
+            onClick={() => onImageClick?.(imgSrc, altText)}
+            role="button"
+            tabIndex={0}
+            title={lang === "de" ? "Klicken zum Vergrößern" : "Click to enlarge"}
+          >
+            <img src={imgSrc} alt={altText} className="article_inline_img" loading="lazy" />
+            <div className="article_img_zoom_hint">
+              <i className="fas fa-search-plus" />
+              <span>{lang === "de" ? "Vergrößern" : "Enlarge"}</span>
+            </div>
+          </div>
+          {altText && <figcaption className="article_figcaption">{altText}</figcaption>}
+        </figure>
+      );
       continue;
     }
 

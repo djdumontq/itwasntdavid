@@ -227,6 +227,8 @@ export default defineConfig({
                         options: ["1x1", "2x1", "1x2", "2x2"],
                       },
                       { type: "boolean", name: "isDarkCard", label: "Dark Highlight Card" },
+                      { type: "string", name: "linkUrl", label: "Action Link URL (e.g. #/de/blog/...)" },
+                      { type: "string", name: "linkText", label: "Action Link Label (e.g. Fallstudie ansehen)" },
                     ],
                   },
                 ],

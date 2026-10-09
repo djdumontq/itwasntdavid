@@ -6,6 +6,8 @@ export interface BentoCard {
   image?: string;
   gridSize?: "4" | "6" | "8" | "12" | string;
   isDarkCard?: boolean;
+  linkUrl?: string;
+  linkText?: string;
 }
 
 interface BentoGridSlideProps {
@@ -67,6 +69,15 @@ export const BentoGridSlide: React.FC<BentoGridSlideProps> = ({
                         src={card.image}
                         alt={card.title || "Card illustration"}
                       />
+                    </div>
+                  )}
+                  {card.linkUrl && (
+                    <div className="bento_card_footer">
+                      <a href={card.linkUrl} className="bento_card_link">
+                        <i className="fas fa-file-alt" />
+                        <span>{card.linkText || "Fallstudie ansehen"}</span>
+                        <i className="fas fa-arrow-right" />
+                      </a>
                     </div>
                   )}
                 </div>

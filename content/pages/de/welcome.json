@@ -22,7 +22,7 @@
         },
         {
           "name": "ms2",
-          "msg": "Ich berate Unternehmen und Freiberufler dabei, ihre Marke zu kommunizieren und ihre Infrastruktur aufzubauen.",
+          "msg": "Ich helfe NGOs, Freiberuflern und Unternehmen  dabei, ihre Marke zu kommunizieren und ihre Infrastruktur aufzubauen.",
           "delay": 2000,
           "align": "left"
         },
@@ -64,7 +64,7 @@
         },
         {
           "name": "ms9",
-          "msg": "Ich möchte einfach nur <a href='#de/contact'>Kontakt aufnehmen</a>.",
+          "msg": "Ich möchte <a href='#de/contact'>Kontakt aufnehmen</a>.",
           "delay": 1800,
           "align": "right"
         }

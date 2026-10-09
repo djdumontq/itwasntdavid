@@ -99,11 +99,11 @@ export const BlogHubSlide: React.FC<BlogHubSlideProps> = ({
           </div>
 
           {featuredPost.image && (
-            <div className="blog_featured_image_wrapper pictureside">
+            <div className="blog_featured_image_wrapper">
               <img
                 src={featuredPost.image}
                 alt={featuredPost.title}
-                className="blog_featured_image rowdecoration"
+                className="blog_featured_image"
               />
             </div>
           )}
