@@ -115,7 +115,7 @@ export const SpatialCanvas: React.FC<SpatialCanvasProps> = ({
 
             const isExcludedFromCta = ["welcome", "contact", "imprint"].includes(slide.slideId);
             const shouldShowCta =
-              slide.showAuthorCta !== undefined ? slide.showAuthorCta : !isExcludedFromCta;
+              slide.showAuthorCta === false ? false : !isExcludedFromCta;
 
             return (
               <div
