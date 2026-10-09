@@ -107,6 +107,11 @@ export default defineConfig({
             ],
           },
           {
+            type: "boolean",
+            name: "showAuthorCta",
+            label: "Show Author CTA Card at Bottom",
+          },
+          {
             type: "object",
             name: "blocks",
             label: "Slide Content Modules",

@@ -1590,7 +1590,23 @@ h1, h2, h3, h4, h5, h6, .poster-bg-text {
   margin: 40px 0;
 }
 
-/* Author Bio Card */
+/* Author Bio Card & Slide CTA */
+.slide_cta_container,
+.slide_cta_wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.slide_cta_container .article_author_card,
+.slide_cta_wrapper .article_author_card {
+  width: 100%;
+  max-width: 900px;
+  margin: 60px auto 40px auto;
+  box-sizing: border-box;
+}
+
 .article_author_card {
   display: flex;
   gap: 24px;

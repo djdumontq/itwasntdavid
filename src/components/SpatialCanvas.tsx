@@ -6,6 +6,7 @@ import { ContactSlide, ContactItem } from "./ContactSlide";
 import { ImprintSlide } from "./ImprintSlide";
 import { BlogHubSlide } from "./BlogHubSlide";
 import { ArticleSlide } from "./ArticleSlide";
+import { AuthorCtaCard } from "./AuthorCtaCard";
 import { BlogPostMeta, BlogPostFull } from "../data/posts";
 import { tinaField } from "tinacms/dist/react";
 
@@ -31,6 +32,7 @@ export interface SlideData {
   contactItems?: ContactItem[];
   body?: any;
   postData?: BlogPostFull;
+  showAuthorCta?: boolean;
 }
 
 interface SpatialCanvasProps {
@@ -111,6 +113,10 @@ export const SpatialCanvas: React.FC<SpatialCanvasProps> = ({
               transform: `translate3d(${s.x || 0}px, ${s.y || 0}px, ${s.z || 0}px) translate(-50%, -50%) rotateX(${s.rotateX || 0}deg) rotateY(${s.rotateY || 0}deg) rotateZ(${s.rotateZ || 0}deg) scale(${s.scale || 1})`,
             };
 
+            const isExcludedFromCta = ["welcome", "contact", "imprint"].includes(slide.slideId);
+            const shouldShowCta =
+              slide.showAuthorCta !== undefined ? slide.showAuthorCta : !isExcludedFromCta;
+
             return (
               <div
                 key={slide.slideId}
@@ -136,15 +142,22 @@ export const SpatialCanvas: React.FC<SpatialCanvasProps> = ({
                   />
                 ) : slide.blocks && slide.blocks.length > 0 ? (
                   /* 3. Modular Slide Blocks */
-                  slide.blocks.map((block: any, bIdx: number) => (
-                    <SlideBlockRenderer
-                      key={block.id || bIdx}
-                      block={block}
-                      slideTitle={bIdx === 0 ? slide.title : undefined}
-                      onNavigateSlide={onNavigateSlide}
-                      isActive={isActive}
-                    />
-                  ))
+                  <>
+                    {slide.blocks.map((block: any, bIdx: number) => (
+                      <SlideBlockRenderer
+                        key={block.id || bIdx}
+                        block={block}
+                        slideTitle={bIdx === 0 ? slide.title : undefined}
+                        onNavigateSlide={onNavigateSlide}
+                        isActive={isActive}
+                      />
+                    ))}
+                    {shouldShowCta && (
+                      <div className="container slide_cta_container">
+                        <AuthorCtaCard lang={lang} onNavigate={onNavigateSlide} />
+                      </div>
+                    )}
+                  </>
                 ) : (
                   /* 4. Legacy Slide Fallbacks */
                   <>
@@ -157,10 +170,17 @@ export const SpatialCanvas: React.FC<SpatialCanvasProps> = ({
                     )}
 
                     {slide.slideType === "content_blocks" && (
-                      <ContentSlide
-                        title={slide.title || ""}
-                        rows={slide.contentRows || []}
-                      />
+                      <>
+                        <ContentSlide
+                          title={slide.title || ""}
+                          rows={slide.contentRows || []}
+                        />
+                        {shouldShowCta && (
+                          <div className="container slide_cta_container">
+                            <AuthorCtaCard lang={lang} onNavigate={onNavigateSlide} />
+                          </div>
+                        )}
+                      </>
                     )}
 
                     {slide.slideType === "contact_info" && (

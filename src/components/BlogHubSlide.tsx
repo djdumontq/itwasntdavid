@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { BlogPostMeta } from "../data/posts";
+import { AuthorCtaCard } from "./AuthorCtaCard";
 
 interface BlogHubSlideProps {
   title?: string;
@@ -154,6 +155,10 @@ export const BlogHubSlide: React.FC<BlogHubSlideProps> = ({
             </article>
           );
         })}
+      </div>
+
+      <div className="slide_cta_wrapper">
+        <AuthorCtaCard lang={lang} />
       </div>
     </div>
   );

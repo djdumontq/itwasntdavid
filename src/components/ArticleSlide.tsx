@@ -3,6 +3,7 @@ import { createPortal } from "react-dom";
 import { BlogPostFull } from "../data/posts";
 import { MarkdownView } from "./MarkdownView";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
+import { AuthorCtaCard } from "./AuthorCtaCard";
 
 interface ArticleSlideProps {
   post: BlogPostFull;
@@ -147,29 +148,7 @@ export const ArticleSlide: React.FC<ArticleSlideProps> = ({
       </section>
 
       {/* Author Card Footer */}
-      <footer className="article_author_card">
-        <img
-          src="/images/profile-small.png"
-          alt="David Dumont"
-          className="article_author_avatar"
-        />
-        <div className="article_author_info">
-          <h4>David Dumont</h4>
-          <p className="article_author_role">
-            {lang === "de"
-              ? "Markenberater & Verfechter digitaler Souveränität"
-              : "Brand Consultant & Digital Sovereignty Advocate"}
-          </p>
-          <p className="article_author_bio">
-            {lang === "de"
-              ? "Ich berate Unternehmen bei der Gestaltung ehrlicher Markenstrategien und dem Aufbau unabhängiger, selbstgehosteter Open-Source-Infrastrukturen."
-              : "Helping organizations design honest strategies, write memorable stories, and take ownership of their digital stack with open-source tools."}
-          </p>
-          <a href={lang === "de" ? "#/de/contact" : "#/contact"} className="article_author_cta">
-            {lang === "de" ? "Gespräch anfragen" : "Get in touch"} <i className="fas fa-arrow-right" />
-          </a>
-        </div>
-      </footer>
+      <AuthorCtaCard lang={lang} />
 
       {/* Lightbox Modal rendered via Portal directly into document.body to break out of transformed 3D scroll container */}
       {lightboxImage &&

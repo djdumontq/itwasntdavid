@@ -126,6 +126,7 @@ function LiveTinaBinder({
         description: data.pages.description || "",
         spatial: data.pages.spatial,
         blocks: data.pages.blocks,
+        showAuthorCta: data.pages.showAuthorCta,
       });
     } else if (data?.posts && activeArticleSlug) {
       onArticleDataUpdate({
@@ -172,6 +173,7 @@ export default function App() {
             description: tinaData.description || "",
             spatial: tinaData.spatial,
             blocks: tinaData.blocks,
+            showAuthorCta: tinaData.showAuthorCta,
           };
         }
       });
