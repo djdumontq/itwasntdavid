@@ -291,6 +291,7 @@ h1, h2, h3, h4, h5, h6, .poster-bg-text {
   height: 100vh;
   z-index: 999;
   background: rgba(0, 0, 0, 0.25);
+  -webkit-backdrop-filter: blur(2px);
   backdrop-filter: blur(2px);
   cursor: pointer;
 }
@@ -303,8 +304,8 @@ h1, h2, h3, h4, h5, h6, .poster-bg-text {
   width: 100vw;
   z-index: 1000;
   background: rgba(247, 245, 240, 0.45);
-  backdrop-filter: blur(12px) saturate(120%);
   -webkit-backdrop-filter: blur(12px) saturate(120%);
+  backdrop-filter: blur(12px) saturate(120%);
   border-bottom: 1px solid rgba(31, 40, 51, 0.08);
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
 }
@@ -341,8 +342,8 @@ h1, h2, h3, h4, h5, h6, .poster-bg-text {
   width: 100vw;
   height: 100vh;
   background: rgba(31, 40, 51, 0.35);
-  backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
   z-index: 999;
   opacity: 0;
   visibility: hidden;
@@ -448,8 +449,8 @@ h1, h2, h3, h4, h5, h6, .poster-bg-text {
     left: 0;
     width: 100vw;
     background: rgba(247, 245, 240, 0.97);
-    backdrop-filter: blur(20px) saturate(140%);
     -webkit-backdrop-filter: blur(20px) saturate(140%);
+    backdrop-filter: blur(20px) saturate(140%);
     flex-direction: column;
     padding: 16px 20px 24px 20px;
     gap: 6px;
@@ -1175,8 +1176,8 @@ h1, h2, h3, h4, h5, h6, .poster-bg-text {
   width: 100%;
   height: 60px;
   background: rgba(247, 245, 240, 0.85);
-  backdrop-filter: blur(12px) saturate(120%);
   -webkit-backdrop-filter: blur(12px) saturate(120%);
+  backdrop-filter: blur(12px) saturate(120%);
   border-bottom: 1px solid rgba(31, 40, 51, 0.08);
   z-index: 2050;
 }
@@ -1381,6 +1382,7 @@ h1, h2, h3, h4, h5, h6, .poster-bg-text {
   gap: 7px;
   pointer-events: none;
   opacity: 0.85;
+  -webkit-backdrop-filter: blur(4px);
   backdrop-filter: blur(4px);
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
   transition: opacity 0.2s ease, transform 0.2s ease, background 0.2s ease;
@@ -1780,6 +1782,7 @@ h1, h2, h3, h4, h5, h6, .poster-bg-text {
   width: 100vw;
   height: 100vh;
   background: rgba(18, 24, 32, 0.94);
+  -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
   z-index: 999999;
   display: flex;
