@@ -169,6 +169,53 @@ export const MarkdownView: React.FC<MarkdownViewProps> = ({
       continue;
     }
 
+    // Handle Markdown Tables
+    if (line.trim().startsWith("|") && line.trim().endsWith("|")) {
+      flushList();
+      const tableLines: string[] = [line];
+      while (i + 1 < lines.length && lines[i + 1].trim().startsWith("|") && lines[i + 1].trim().endsWith("|")) {
+        i++;
+        tableLines.push(lines[i]);
+      }
+
+      if (tableLines.length >= 2) {
+        const parseRow = (rowStr: string) =>
+          rowStr
+            .trim()
+            .replace(/^\||\|$/g, "")
+            .split("|")
+            .map((c) => c.trim());
+
+        const headers = parseRow(tableLines[0]);
+        const hasDivider = tableLines.length > 1 && /^[\s|:\-]+$/.test(tableLines[1]);
+        const dataRows = (hasDivider ? tableLines.slice(2) : tableLines.slice(1)).map(parseRow);
+
+        elements.push(
+          <div key={`table-${i}`} className="article_table_container">
+            <table className="article_table">
+              <thead>
+                <tr>
+                  {headers.map((h, hIdx) => (
+                    <th key={`th-${hIdx}`}>{renderInline(h)}</th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {dataRows.map((r, rIdx) => (
+                  <tr key={`tr-${rIdx}`}>
+                    {r.map((cell, cIdx) => (
+                      <td key={`td-${rIdx}-${cIdx}`}>{renderInline(cell)}</td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        );
+        continue;
+      }
+    }
+
     // Handle Standalone Images ![alt](url)
     const imgMatch = line.trim().match(/^!\[(.*?)\]\((.*?)\)$/);
     if (imgMatch) {

@@ -1579,6 +1579,58 @@ h1, h2, h3, h4, h5, h6, .poster-bg-text {
   padding: 0;
 }
 
+/* Article Tables */
+.article_table_container {
+  width: 100%;
+  overflow-x: auto;
+  margin: 32px 0;
+  border-radius: 12px;
+  border: 2px solid var(--color-dark);
+  box-shadow: 4px 4px 0px var(--color-dark);
+  background: #ffffff;
+}
+
+.article_table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: left;
+}
+
+.article_table th {
+  background-color: var(--color-light);
+  color: var(--color-dark);
+  font-weight: 700;
+  padding: 14px 18px;
+  border-bottom: 2px solid var(--color-dark);
+  border-right: 1px solid rgba(31, 40, 51, 0.12);
+  white-space: nowrap;
+}
+
+.article_table th:last-child {
+  border-right: none;
+}
+
+.article_table td {
+  padding: 14px 18px;
+  border-bottom: 1px solid rgba(31, 40, 51, 0.1);
+  border-right: 1px solid rgba(31, 40, 51, 0.08);
+  color: rgba(31, 40, 51, 0.9);
+}
+
+.article_table td:last-child {
+  border-right: none;
+}
+
+.article_table tr:last-child td {
+  border-bottom: none;
+}
+
+.article_table tr:hover td {
+  background-color: rgba(247, 245, 240, 0.6);
+}
+
 .article_ul li, .article_ol li {
   margin-bottom: 8px;
 }

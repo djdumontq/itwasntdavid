@@ -61,6 +61,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://itwasntdavid.de/blog/digital-marketing-in-the-age-of-claude-gemini-and-vibe-coding</loc>
+    <lastmod>2026-10-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://itwasntdavid.de/blog/why-digital-sovereignty-matters</loc>
     <lastmod>2026-08-15</lastmod>
     <changefreq>monthly</changefreq>
@@ -117,6 +123,12 @@
   <url>
     <loc>https://itwasntdavid.de/de/blog/fallstudie-westwind-souveraene-infrastruktur</loc>
     <lastmod>2026-10-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://itwasntdavid.de/de/blog/digitales-marketing-im-zeitalter-von-claude-gemini-und-vibe-coding</loc>
+    <lastmod>2026-10-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

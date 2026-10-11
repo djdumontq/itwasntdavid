@@ -10,7 +10,7 @@ tags:
   - "NocoBase"
   - "Docmost"
   - "Coolify"
-featured: true
+featured: false
 readingTime: "3 Min. Lesezeit"
 lang: "de"
 ---
