@@ -17,6 +17,20 @@ export const ArticleSlide: React.FC<ArticleSlideProps> = ({
   onBackToBlog,
 }) => {
   const [lightboxImage, setLightboxImage] = useState<{ src: string; alt?: string } | null>(null);
+  const [copied, setCopied] = useState(false);
+
+  const handleCopyLink = async () => {
+    const canonicalUrl = `https://itwasntdavid.de${lang === "en" ? `/blog/${post.slug}` : `/de/blog/${post.slug}`}`;
+    if (navigator.clipboard) {
+      try {
+        await navigator.clipboard.writeText(canonicalUrl);
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2000);
+      } catch (err) {
+        console.warn("Failed to copy link:", err);
+      }
+    }
+  };
 
   // Close lightbox on Escape key
   useEffect(() => {
@@ -85,10 +99,18 @@ export const ArticleSlide: React.FC<ArticleSlideProps> = ({
 
   return (
     <div className="container article_slide_container">
-      {/* Navigation Breadcrumb back to blog overview */}
+      {/* Navigation Breadcrumb back to blog overview & Share button */}
       <div className="article_slide_nav_bar">
         <button className="article_slide_back_btn" onClick={onBackToBlog}>
           <i className="fas fa-arrow-left" /> {lang === "de" ? "Zurück zu allen Notizen" : "Back to Field Notes"}
+        </button>
+        <button
+          className="article_share_btn"
+          onClick={handleCopyLink}
+          title={lang === "de" ? "Artikel-Link kopieren" : "Copy article link"}
+        >
+          <i className={copied ? "fas fa-check" : "fas fa-share-alt"} />
+          <span>{copied ? (lang === "de" ? "Kopiert!" : "Copied!") : (lang === "de" ? "Link teilen" : "Share link")}</span>
         </button>
       </div>
 

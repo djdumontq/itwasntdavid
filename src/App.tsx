@@ -147,6 +147,61 @@ function LiveTinaBinder({
   return null;
 }
 
+export function getCanonicalRoutePath(
+  targetLang: "en" | "de",
+  slide: string,
+  article: string | null
+): string {
+  if (article) {
+    return targetLang === "en" ? `/blog/${article}` : `/de/blog/${article}`;
+  }
+  if (slide === "welcome") {
+    return targetLang === "en" ? `/` : `/de`;
+  }
+  return targetLang === "en" ? `/${slide}` : `/de/${slide}`;
+}
+
+// Curated 3D spatial distribution for blog articles scattered across the canvas at z: 7500
+const ARTICLE_SCATTER_POSITIONS: Array<{ x: number; y: number }> = [
+  { x: -2800, y: -2200 }, // Northwest (adjacent to Blog Hub)
+  { x: 800, y: -2600 },   // North-Northeast
+  { x: 2800, y: -1000 },  // East-Northeast
+  { x: 1900, y: 1700 },   // Southeast
+  { x: -1600, y: 2000 },  // Southwest
+  { x: -800, y: -700 },   // Central-West
+  { x: 2200, y: 800 },    // Mid-East
+  { x: 400, y: 2200 },    // South-Central
+  { x: -3200, y: -300 },  // Far-West
+  { x: 1200, y: -1400 },  // Central-Northeast
+  { x: -2200, y: 800 },   // Mid-Southwest
+  { x: 3000, y: 2200 },   // Far-Southeast
+];
+
+export function getArticleSpatialCoordinates(idx: number): {
+  x: number;
+  y: number;
+  z: number;
+  scale: number;
+} {
+  if (idx < ARTICLE_SCATTER_POSITIONS.length) {
+    return {
+      x: ARTICLE_SCATTER_POSITIONS[idx].x,
+      y: ARTICLE_SCATTER_POSITIONS[idx].y,
+      z: 7500,
+      scale: 1,
+    };
+  }
+  // Deterministic golden spiral scatter for any posts beyond the curated array
+  const angle = idx * 2.39996; // ~137.5 degrees
+  const radius = 1800 + (idx % 4) * 700;
+  return {
+    x: Math.round(Math.cos(angle) * radius),
+    y: Math.round(Math.sin(angle) * radius),
+    z: 7500,
+    scale: 1,
+  };
+}
+
 export default function App() {
   const [lang, setLang] = useState<"en" | "de">("en");
   const [activeId, setActiveId] = useState<string>("welcome");
@@ -185,7 +240,8 @@ export default function App() {
   useEffect(() => {
     const syncFromUrl = () => {
       let raw = window.location.hash;
-      if (!raw || raw === "#" || raw === "#/") {
+      const hadHash = !!(raw && raw !== "#" && raw !== "#/");
+      if (!hadHash) {
         raw = window.location.pathname;
       }
 
@@ -197,13 +253,14 @@ export default function App() {
       setActiveId(nextId);
       setActiveArticleSlug(nextSlug);
 
-      // Clean address bar in top-level browser (do not modify in iframe to prevent TinaCMS router loop)
+      // Clean address bar: if user entered via a legacy hash link or /index.html, upgrade to clean HTML5 URL
       const isInIframe = typeof window !== "undefined" && window.self !== window.top;
-      if (!isInIframe && window.location.pathname !== "/" && window.location.pathname !== "/index.html") {
-        const articleSuffix = nextSlug ? `/${nextSlug}` : "";
-        const targetPath = nextSlug ? "blog" : nextId;
-        const newHash = nextLang === "en" ? `/#/${targetPath}${articleSuffix}` : `/#/de/${targetPath}${articleSuffix}`;
-        window.history.replaceState(null, "", newHash);
+      if (!isInIframe) {
+        const cleanPath = getCanonicalRoutePath(nextLang, nextId, nextSlug);
+        if (hadHash || window.location.pathname === "/index.html") {
+          window.history.replaceState(null, "", cleanPath);
+          lastParsedRoute.current = cleanPath;
+        }
       }
     };
 
@@ -292,15 +349,12 @@ export default function App() {
     };
   }, [activeArticleSlug, lang]);
 
-  // Dynamic SEO Title and Meta Description updates based on active slide/article and language
+  // Dynamic SEO Title, Open Graph, and Twitter Meta Tag updates based on active slide/article and language
   useEffect(() => {
-    if (activeArticle) {
-      document.title = `David Dumont | ${activeArticle.title}`;
-    } else {
-      const slideTitle = slidesMap[activeId]?.title || activeId;
-      const cleanTitle = slideTitle.charAt(0).toUpperCase() + slideTitle.slice(1);
-      document.title = `David Dumont | ${cleanTitle}`;
-    }
+    const slideTitle = slidesMap[activeId]?.title || activeId;
+    const cleanTitle = slideTitle.charAt(0).toUpperCase() + slideTitle.slice(1);
+    const pageTitle = activeArticle ? `David Dumont | ${activeArticle.title}` : `David Dumont | ${cleanTitle}`;
+    document.title = pageTitle;
 
     const descriptions: Record<string, Record<string, string>> = {
       en: {
@@ -325,23 +379,61 @@ export default function App() {
       },
     };
 
-    let metaDesc = document.querySelector('meta[name="description"]');
-    if (!metaDesc) {
-      metaDesc = document.createElement("meta");
-      metaDesc.setAttribute("name", "description");
-      document.head.appendChild(metaDesc);
+    const currentDesc = descriptions[lang] || descriptions.en;
+    const pageDesc = activeArticle
+      ? activeArticle.description
+      : (slidesMap[activeId]?.description || currentDesc[activeId] || currentDesc.welcome);
+
+    const BASE_URL = "https://itwasntdavid.de";
+    const canonicalPath = getCanonicalRoutePath(lang, activeId, activeArticleSlug);
+    const fullPageUrl = canonicalPath === "/" ? `${BASE_URL}/` : `${BASE_URL}${canonicalPath}`;
+
+    let fullImageUrl = `${BASE_URL}/images/profile-small.png`;
+    if (activeArticle && activeArticle.image) {
+      if (activeArticle.image.startsWith("http://") || activeArticle.image.startsWith("https://")) {
+        fullImageUrl = activeArticle.image;
+      } else if (activeArticle.image.startsWith("/")) {
+        fullImageUrl = `${BASE_URL}${activeArticle.image}`;
+      } else {
+        fullImageUrl = `${BASE_URL}/${activeArticle.image}`;
+      }
     }
 
-    if (activeArticle) {
-      metaDesc.setAttribute("content", activeArticle.description);
-    } else {
-      const currentDesc = descriptions[lang] || descriptions.en;
-      metaDesc.setAttribute(
-        "content",
-        slidesMap[activeId]?.description || currentDesc[activeId] || currentDesc.welcome
-      );
+    const setMetaTag = (attr: "name" | "property", key: string, content: string) => {
+      let tag = document.querySelector(`meta[${attr}="${key}"]`);
+      if (!tag) {
+        tag = document.createElement("meta");
+        tag.setAttribute(attr, key);
+        document.head.appendChild(tag);
+      }
+      tag.setAttribute("content", content);
+    };
+
+    // Primary SEO
+    setMetaTag("name", "description", pageDesc);
+
+    // Canonical link
+    let canonicalLink = document.querySelector('link[rel="canonical"]');
+    if (!canonicalLink) {
+      canonicalLink = document.createElement("link");
+      canonicalLink.setAttribute("rel", "canonical");
+      document.head.appendChild(canonicalLink);
     }
-  }, [activeId, activeArticle, slidesMap, lang]);
+    canonicalLink.setAttribute("href", fullPageUrl);
+
+    // Open Graph
+    setMetaTag("property", "og:type", activeArticle ? "article" : "website");
+    setMetaTag("property", "og:title", pageTitle);
+    setMetaTag("property", "og:description", pageDesc);
+    setMetaTag("property", "og:url", fullPageUrl);
+    setMetaTag("property", "og:image", fullImageUrl);
+
+    // Twitter
+    setMetaTag("property", "twitter:title", pageTitle);
+    setMetaTag("property", "twitter:description", pageDesc);
+    setMetaTag("property", "twitter:url", fullPageUrl);
+    setMetaTag("property", "twitter:image", fullImageUrl);
+  }, [activeId, activeArticleSlug, activeArticle, slidesMap, lang]);
 
   // Fetch GraphQL payload for active slide OR active post and language without clearing payload state (with caching)
   useEffect(() => {
@@ -377,31 +469,42 @@ export default function App() {
   }, [activeId, activeArticleSlug, lang, tinaPayloads]);
 
   // User interactions in the presentation (Canvas ➔ Sidebar)
+  const navigateTo = (newLang: "en" | "de", nextId: string, nextSlug: string | null = null) => {
+    setLang(newLang);
+    setActiveId(nextId);
+    setActiveArticleSlug(nextSlug);
+    if (!nextSlug) {
+      setActiveArticle(null);
+    }
+    const cleanPath = getCanonicalRoutePath(newLang, nextId, nextSlug);
+    lastParsedRoute.current = cleanPath;
+    const isInIframe = typeof window !== "undefined" && window.self !== window.top;
+    if (!isInIframe) {
+      if (window.location.pathname !== cleanPath || window.location.hash) {
+        window.history.pushState(null, "", cleanPath);
+      }
+    } else {
+      window.history.replaceState(null, "", cleanPath);
+    }
+  };
+
   const handleSelectSlide = (id: string) => {
-    setActiveId(id);
-    setActiveArticleSlug(null);
-    window.location.hash = lang === "en" ? `#/${id}` : `#/de/${id}`;
+    navigateTo(lang, id, null);
   };
 
   const handleSelectArticle = (slug: string) => {
-    setActiveId(slug);
-    setActiveArticleSlug(slug);
-    window.location.hash = lang === "en" ? `#/blog/${slug}` : `#/de/blog/${slug}`;
+    navigateTo(lang, slug, slug);
   };
 
   const handleBackToBlogHub = () => {
-    setActiveId("blog");
-    setActiveArticleSlug(null);
-    setActiveArticle(null);
-    window.location.hash = lang === "en" ? `#/blog` : `#/de/blog`;
+    navigateTo(lang, "blog", null);
   };
 
   const handleSelectLanguage = (newLang: "en" | "de") => {
-    setLang(newLang);
     if (activeArticleSlug) {
-      window.location.hash = newLang === "en" ? `#/blog` : `#/de/blog`;
+      navigateTo(newLang, "blog", null);
     } else {
-      window.location.hash = newLang === "en" ? `#/${activeId}` : `#/de/${activeId}`;
+      navigateTo(newLang, activeId, null);
     }
   };
 
@@ -449,7 +552,7 @@ export default function App() {
   // Base 7 standard presentation slide pages
   const baseSlides: SlideData[] = Object.keys(slidesMap).map((id) => slidesMap[id]);
 
-  // Spatial blog article slides positioned in 3D depth directly behind the blog listing hub (z: 10000 -> z: 7500)
+  // Spatial blog article slides scattered across the 3D canvas (z: 7500)
   const articleSlides: SlideData[] = postsList.map((p, idx) => {
     const isCurrentActive = activeArticleSlug === p.slug;
     const postData: BlogPostFull = isCurrentActive && activeArticle
@@ -464,12 +567,7 @@ export default function App() {
       title: p.title,
       description: p.description,
       slideType: "blog_article",
-      spatial: {
-        x: -2400 + idx * 1500,
-        y: -2000,
-        z: 7500, // Zoomed in 2500px behind the blog hub card!
-        scale: 1,
-      },
+      spatial: getArticleSpatialCoordinates(idx),
       postData,
     };
   });

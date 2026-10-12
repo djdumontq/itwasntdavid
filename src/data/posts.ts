@@ -55,6 +55,20 @@ export function parseFrontmatter(rawContent: string): { meta: Record<string, any
   return { meta, body };
 }
 
+// Helper to extract first image from markdown body
+export function extractFirstImageFromMarkdown(body: string): string | undefined {
+  if (!body) return undefined;
+  const mdMatch = body.match(/!\[.*?\]\(\s*([^\s\)]+)(?:\s+["'][^"']*["'])?\s*\)/);
+  if (mdMatch && mdMatch[1]) {
+    return mdMatch[1].trim();
+  }
+  const htmlMatch = body.match(/<img\s+[^>]*?src=["']([^"']+)["']/i);
+  if (htmlMatch && htmlMatch[1]) {
+    return htmlMatch[1].trim();
+  }
+  return undefined;
+}
+
 // Synchronously import all markdown files eager at build/dev time
 const rawPostsEn = import.meta.glob("../../content/posts/en/*.md", {
   query: "?raw",
@@ -76,14 +90,22 @@ function extractPostsFromGlob(
 
   Object.entries(globMap).forEach(([filePath, rawContent]) => {
     const filename = filePath.split("/").pop()?.replace(/\.md$/, "") || "";
-    const { meta } = parseFrontmatter(rawContent);
+    const { meta, body } = parseFrontmatter(rawContent);
+
+    const resolvedImage =
+      meta.image ||
+      meta.featuredImage ||
+      meta.coverImage ||
+      meta.heroImage ||
+      extractFirstImageFromMarkdown(body) ||
+      "";
 
     posts.push({
       slug: meta.slug || filename,
       title: meta.title || filename,
       date: meta.date ? meta.date.split("T")[0] : new Date().toISOString().split("T")[0],
       description: meta.description || "",
-      image: meta.image || "",
+      image: resolvedImage,
       tags: Array.isArray(meta.tags) ? meta.tags : [],
       featured: !!meta.featured,
       readingTime: meta.readingTime || (lang === "de" ? "5 Min. Lesezeit" : "5 min read"),
@@ -123,18 +145,27 @@ export const loadPostMarkdown = async (
         title: meta.title || slug.replace(/-/g, " "),
         date: meta.date ? meta.date.split("T")[0] : "",
         description: meta.description || "",
-        image: meta.image || "",
+        image: meta.image || meta.featuredImage || meta.coverImage || meta.heroImage || extractFirstImageFromMarkdown(body) || "",
         tags: Array.isArray(meta.tags) ? meta.tags : [],
         featured: !!meta.featured,
         readingTime: meta.readingTime || "5 min read",
         lang,
       };
 
+      const finalImage =
+        meta.image ||
+        meta.featuredImage ||
+        meta.coverImage ||
+        meta.heroImage ||
+        extractFirstImageFromMarkdown(body) ||
+        matchedMeta.image ||
+        "";
+
       return {
         ...matchedMeta,
         title: meta.title || matchedMeta.title,
         description: meta.description || matchedMeta.description,
-        image: meta.image || matchedMeta.image,
+        image: finalImage,
         tags: Array.isArray(meta.tags) && meta.tags.length > 0 ? meta.tags : matchedMeta.tags,
         date: meta.date ? meta.date.split("T")[0] : matchedMeta.date,
         featured: typeof meta.featured === "boolean" ? meta.featured : matchedMeta.featured,

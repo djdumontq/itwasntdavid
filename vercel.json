@@ -3,7 +3,7 @@
   "cleanUrls": true,
   "rewrites": [
     {
-      "source": "/((?!de|welcome|strategy|ideology|implementation|contact|imprint|assets|uploads|images|admin|favicon.ico|favicon.png|sitemap.xml).*)",
+      "source": "/((?!de|blog|welcome|strategy|ideology|implementation|contact|imprint|assets|uploads|images|admin|favicon.ico|favicon.png|apple-touch-icon.png|sitemap.xml|rss.xml).*)",
       "destination": "/index.html"
     }
   ]

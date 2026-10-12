@@ -69,6 +69,30 @@ function parseMarkdownFrontmatter(content) {
   return { meta, body };
 }
 
+function extractFirstImage(body) {
+  if (!body) return null;
+  const mdMatch = body.match(/!\[.*?\]\(\s*([^\s\)]+)(?:\s+["'][^"']*["'])?\s*\)/);
+  if (mdMatch && mdMatch[1]) {
+    return mdMatch[1].trim();
+  }
+  const htmlMatch = body.match(/<img\s+[^>]*?src=["']([^"']+)["']/i);
+  if (htmlMatch && htmlMatch[1]) {
+    return htmlMatch[1].trim();
+  }
+  return null;
+}
+
+function resolveImageUrl(imgUrl) {
+  if (!imgUrl) return `${BASE_URL}/images/profile-small.png`;
+  if (imgUrl.startsWith('http://') || imgUrl.startsWith('https://')) {
+    return imgUrl;
+  }
+  if (imgUrl.startsWith('/')) {
+    return `${BASE_URL}${imgUrl}`;
+  }
+  return `${BASE_URL}/${imgUrl}`;
+}
+
 function generateRssFeed(posts, lang) {
   const isDe = lang === 'de';
   const feedTitle = isDe ? 'David Dumont — Notizen & Gedanken' : 'David Dumont — Field Notes & Insights';
@@ -212,14 +236,15 @@ function prerender() {
       postFiles.forEach(file => {
         const filePath = path.join(langPostsDir, file);
         const fileContent = fs.readFileSync(filePath, 'utf8');
-        const { meta } = parseMarkdownFrontmatter(fileContent);
+        const { meta, body } = parseMarkdownFrontmatter(fileContent);
 
         const slug = meta.slug || path.basename(file, '.md');
         const title = meta.title || slug;
         const desc = meta.description || descriptions[lang].blog;
         const fullTitle = `David Dumont | ${title}`;
         const date = meta.date || new Date().toISOString();
-        const image = meta.image ? `${BASE_URL}${meta.image}` : `${BASE_URL}/images/profile-small.png`;
+        const rawImage = meta.image || meta.featuredImage || meta.coverImage || meta.heroImage || extractFirstImage(body);
+        const image = resolveImageUrl(rawImage);
 
         const articleUrlPath = lang === 'en' ? `blog/${slug}` : `de/blog/${slug}`;
         const pageUrl = `${BASE_URL}/${articleUrlPath}`;
